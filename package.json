@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^8.2.2",
-    "vite": "^5.1.6"
+    "concurrently": "^8.2.2"
   }
 }
