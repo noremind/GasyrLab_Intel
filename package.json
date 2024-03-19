@@ -1,0 +1,19 @@
+{
+  "name": "gasyrlab_intel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"client:dev": "cd client && npm run dev",
+		"client:scss": "cd client && npm run scss",
+
+
+		"dev": "concurrently \" npm run client:dev \" \" npm run client:scss\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
