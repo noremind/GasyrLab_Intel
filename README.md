@@ -11,7 +11,7 @@
  We are the Intel Group, and we're excited to be participating in the Gasyr Foundation School competition! Our team is made up of passionate developers who are dedicated to building innovative and impactful projects. On this GitHub profile, you'll find our latest project for the competition, as well as other projects we've worked on in the past. We're always looking for new challenges and opportunities to learn and grow, so feel free to explore our repositories and let us know if you have any feedback or suggestions.Thanks for stopping by, and we hope you enjoy our work!
  </p>
 
-![Logo](markdown-img/logo.png){width=500px}
+<img src="markdown-img/logo.png" width="500px">
 </div>
 
 ---
