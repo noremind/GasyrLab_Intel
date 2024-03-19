@@ -4,12 +4,18 @@
 ### Our team:
 * Dinmuhammed Muslimuly - Leader :star2:
 * Beisembay Norem 
-* Nartaiuly ISSA
+* Nartaiuly Issa
 * Rahimzhanov Rustem
 * Omar Omar
 
 ---
 
+
+
+#####  Install Project
+```sh
+ git clone https://github.com/noremind/GasyrLab_Intel.git
+```
 
 ##### Project Setup
 
