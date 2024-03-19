@@ -1,8 +1,8 @@
 
-# Gasyr.Lab Intel Group
+# Gasyr.Lab <span style="color: #0068B5">INTEL</span> Group
 
-### Our team:
-* Dinmuhammed Muslimuly - Leader :star2:
+ ### Our team:
+* Dinmuhammed Muslimuly - Leader :star:
 * Beisembay Norem 
 * Nartaiuly Issa
 * Rahimzhanov Rustem
