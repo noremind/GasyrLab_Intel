@@ -1,30 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "gasyrlab_intel",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "client:dev": "cd client && npm run dev",
-    "client:scss": "cd client && npm run scss",
-    "client:build": "cd client && npm run build",
-    "client:preview": "cd client && npm run preview",
-    "client:install": "cd client && npm i",
-    "server:install": "cd server && npm i",
-
-
-
-    "dev": "concurrently \" npm run client:dev \" \" npm run client:scss\"",
-    "build": "concurrently \" npm run client:build \"",
-		"init": "npm i && npm install --prefix ./client && npm install --prefix ./server"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "concurrently": "^8.2.2"
-  }
-======
 	"name": "gasyrlab_intel",
 	"version": "1.0.0",
 	"description": "",
@@ -38,7 +12,7 @@
 		"server:install": "cd server && npm i",
 		"dev": "concurrently \" npm run client:dev \" \" npm run client:scss\"",
 		"build": "concurrently \" npm run client:build \"",
-		"install": "npm i && npm run client:install && npm run server:install "
+		"init": "npm i && npm install --prefix ./client && npm install --prefix ./server"
 	},
 	"keywords": [],
 	"author": "",
@@ -46,5 +20,4 @@
 	"dependencies": {
 		"concurrently": "^8.2.2"
 	}
->>>>>>> a49c984285ca60eaac1edaecb4ad0520229b059f
 }
