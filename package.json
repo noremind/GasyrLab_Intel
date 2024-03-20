@@ -15,7 +15,7 @@
 
     "dev": "concurrently \" npm run client:dev \" \" npm run client:scss\"",
     "build": "concurrently \" npm run client:build \"",
-		"install": "concurrently \"npm install\" \" npm run client:install \" \"npm run server:install\" "
+		"init": "npm i && npm install --prefix ./client && npm install --prefix ./server"
   },
   "keywords": [],
   "author": "",

@@ -9,10 +9,10 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-
-		"scss": "sass --watch src/assets/scss/main.scss:src/assets/style/main.css"
+    "scss": "sass --watch src/assets/scss/main.scss:src/assets/style/main.css"
   },
   "dependencies": {
+    "gasyrlab_intel": "file:..",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
