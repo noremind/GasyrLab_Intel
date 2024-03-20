@@ -1,5 +1,5 @@
 
-# 🌟 Gasyr Lab INTEL Group 🌟
+# 🌟 Development Gasyr.Lab INTEL Group 🌟
 
 
 
@@ -68,7 +68,7 @@ Our team is creating a website online courses for __<u>"Gasyr Foundation School"
 
 To install the project, follow these steps:
 
-1. Clone the repository:
+1. __Clone the repository__
 
 ```sh
  git clone https://github.com/noremind/GasyrLab_Intel.git
@@ -86,11 +86,12 @@ npm install
 npm run dev
 ```
 
-4. __Compile and Minify for Production__
 
+4. __Copy this path rather open in Browser__
 ```sh
-npm run build
+http://localhost:5173/
 ```
+
 
 
 
