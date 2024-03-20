@@ -6,16 +6,11 @@
 ## Hello and welcome! :wave:
 
 
-
-
 We are the Intel Group, and we're thrilled to be participating in the Gasyr Foundation School competition with our latest project! Our team is composed of passionate developers, led by our dedicated Project Manager and Team Leader, who are committed to crafting innovative and impactful projects. We firmly believe that this endeavor represents our finest work to date.
 
 On this GitHub profile, you'll find all the details about our project, including its features, functionality, and technical specifications. We've worked hard to create a project that is both useful and user-friendly, and we're excited to share it with the world.
 
 Thanks for stopping by, and we hope you enjoy our work!
-
-
-
 
 
 <p align="center">
@@ -53,7 +48,7 @@ Our team is creating a website online courses for __<u>"Gasyr Foundation School"
 | Rahimzhanov Rustem   | Project Manager      |
 | Nartaiuly Issa    | Developer      |
 | Beisembay Norem | Developer      |
-| Omar Omar        | Developer      |
+| Shermakhan Omar        | Developer      |
 
 </div>
 

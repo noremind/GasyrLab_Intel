@@ -87,7 +87,7 @@ legend {
 }
 
 body {
-  background-color: #000;
+  background-image: url("@/assets/images/svg/light-bg.svg");
 }
 
 /*# sourceMappingURL=main.css.map */
