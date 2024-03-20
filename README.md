@@ -88,7 +88,7 @@ npm run dev
 ```
 
 
-4. __Copy this path rather open in Browser__
+4. __Copy this path futher open in Browser__
 ```sh
 http://localhost:5173/
 ```
