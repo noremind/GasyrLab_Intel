@@ -77,7 +77,7 @@ To install the project, follow these steps:
 2. __Project Setup__
 
 ```sh
-npm run install
+npm run init
 ```
 
 
