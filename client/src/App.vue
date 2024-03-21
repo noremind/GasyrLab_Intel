@@ -1,11 +1,13 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Btn from '@/components/littleComponent/switchBtnLang.vue'
+import Btn from '@/components/littleComponent/SwitchBtnLang.vue'
+import Header from '@/components/HeaderComponent.vue'
 </script>
 
 <template>
+  <Header />
   <Btn></Btn>
   <RouterView />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
