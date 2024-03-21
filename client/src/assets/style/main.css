@@ -90,4 +90,8 @@ body {
   background-image: url("@/assets/images/svg/light-bg.svg");
 }
 
+.none {
+  display: none !important;
+}
+
 /*# sourceMappingURL=main.css.map */
