@@ -1,8 +1,24 @@
 body {
   background-image: url('@/assets/images/svg/light-bg.svg');
-  /* background-color: #000000; //For dark mode */
+  //  background-color: #000; //For dark mode
 }
 
 .none {
   display: none !important;
+}
+
+.container{
+	max-width: 1160px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.dark{
+	background-image: url('@/assets/images/svg/dark-bg.svg');
+	background-color: #16171d;
+  color: #fff;
+}
+
+.dark [alt]{ //For alt attibute
+	color: #fff;
 }
