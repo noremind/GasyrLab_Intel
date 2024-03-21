@@ -12,6 +12,7 @@
     "scss": "sass --watch src/assets/scss/main.scss:src/assets/style/main.css"
   },
   "dependencies": {
+    "@vue-a11y/dark-mode": "^1.1.1",
     "gasyrlab_intel": "file:..",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
