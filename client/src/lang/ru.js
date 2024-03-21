@@ -1,5 +1,6 @@
 export default {
 	header: {
-		title: 'Управлять'
+		title: 'Управлять',
+		text: 'Эксперт'
 	},
 }

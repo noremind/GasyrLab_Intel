@@ -1,5 +1,7 @@
 export default {
 	header: {
-		title: 'Manage'
+		title: 'Manage',
+		text: 'Expert'
 	}
 }
+

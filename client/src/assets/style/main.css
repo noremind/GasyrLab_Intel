@@ -88,6 +88,11 @@ legend {
 
 body {
   background-image: url("@/assets/images/svg/light-bg.svg");
+  /* background-color: #000000; //For dark mode */
+}
+
+.none {
+  display: none !important;
 }
 
 .none {

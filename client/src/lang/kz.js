@@ -1,5 +1,6 @@
 export default {
 	header: {
-		title: 'Басқару'
+		title: 'Басқару',
+		text: 'Шебер'
 	}
 }

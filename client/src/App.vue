@@ -4,8 +4,9 @@ import Btn from '@/components/littleComponent/SwitchBtnLang.vue'
 </script>
 
 <template>
+  <Header />
   <Btn></Btn>
   <RouterView />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
