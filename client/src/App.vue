@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Btn from '@/components/littleComponent/switchBtnLang.vue'
+import Btn from '@/components/littleComponent/SwitchBtnLang.vue'
 </script>
 
 <template>
