@@ -1,3 +1,27 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("@/assets/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url("@/assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url("@/assets/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url("@/assets/fonts/Montserrat/Montserrat-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200;
+}
 /* Reset and base styles  */
 * {
   padding: 0px;
@@ -87,7 +111,9 @@ legend {
 }
 
 body {
-  background-image: url("@/assets/images/svg/light-bg.svg");
+  background-image: url("@/assets/images/theme/light-bg.svg");
+  font-family: Montserrat, sans-serif;
+  transition: all 0.4s ease;
 }
 
 .none {
@@ -95,19 +121,40 @@ body {
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 1230px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 .dark {
-  background-image: url("@/assets/images/svg/dark-bg.svg");
+  background-image: url("@/assets/images/theme/dark-bg.svg");
   background-color: #16171d;
   color: #fff;
 }
 
 .dark [alt] {
   color: #fff;
+}
+
+.dark a {
+  color: #fff;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+}
+
+.nav__list {
+  display: flex;
+  gap: clamp(0.625rem, -0.057rem + 3.41vw, 2.5rem);
 }
 
 /*# sourceMappingURL=main.css.map */

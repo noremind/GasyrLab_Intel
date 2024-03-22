@@ -1,16 +1,27 @@
 <template>
-  <header class="header-details">
-    <div class="container">
-      <a href="#"><img src="" alt="Gasyr Lab" /></a>
+  <header class="course-header">
+    <div class="course-header__wrapper">
+      <div class="container">
+        <a href="#"
+          ><img
+            class="course-header__logo"
+            src="../assets/images/logo/Gasyr_logo.png"
+            width="80px"
+            alt="Gasyr Lab"
+        /></a>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="details">
-      <h1 class="details__title">Python-разработчик</h1>
+    <section class="course-info">
+      <div class="course-info__wrapper">
+        <div class="container">
+          <h1 class="course-info">Python-разработчик</h1>
+        </div>
+      </div>
     </section>
   </main>
-  <div class="container"></div>
 </template>
 
 <script setup></script>
