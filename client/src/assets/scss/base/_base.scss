@@ -30,6 +30,10 @@ body {
 	color: abs.$theme-light-color;
 }
 
+.dark svg path[fill]{
+	fill: abs.$theme-dark-color;
+}
+
 
 .title{
 
