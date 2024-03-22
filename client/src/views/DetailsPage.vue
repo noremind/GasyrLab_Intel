@@ -2,13 +2,7 @@
   <header class="course-header">
     <div class="course-header__wrapper">
       <div class="container">
-        <a href="#"
-          ><img
-            class="course-header__logo"
-            src="../assets/images/logo/Gasyr_logo.png"
-            width="80px"
-            alt="Gasyr Lab"
-        /></a>
+        <a href="#"><img class="course-header__logo" width="80px" alt="Gasyr Lab" /></a>
       </div>
     </div>
   </header>
