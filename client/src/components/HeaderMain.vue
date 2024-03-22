@@ -104,7 +104,7 @@
           <li class="mobile-dropdown__list-item">
             <div class="flex-box">
               <p>Имя пользователя</p>
-              <button @click="closeDropdown()">
+              <button @click="closeBurgerMenu()">
                 {{ t('page.main.header.dropdown.log_out') }}
               </button>
             </div>
@@ -136,9 +136,13 @@ function toggleOpenDropdown() {
 function closeDropdown() {
   isOpenUserDropdown.value = false
 }
+
+function closeBurgerMenu() {
+  isOpenBurgerMenu.value = false
+}
+
 function toggleBurgerMenu() {
   isOpenBurgerMenu.value = !isOpenBurgerMenu.value
-  console.log(isOpenBurgerMenu.value)
 }
 </script>
 
