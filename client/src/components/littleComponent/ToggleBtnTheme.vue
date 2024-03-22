@@ -22,10 +22,6 @@ const theme = useThemeModeStore()
 <style lang="scss" scoped>
 .theme {
   position: relative;
-
-  &__wrapper {
-    position: absolute;
-  }
 }
 
 .theme-enter-active,
