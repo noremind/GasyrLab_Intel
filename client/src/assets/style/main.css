@@ -140,13 +140,10 @@ body {
   color: #fff;
 }
 
-<<<<<<< HEAD
 .dark svg path[fill] {
   fill: #16171d;
 }
 
-=======
->>>>>>> 4567020cbeec503dde8d6db65ef086f3f84916d9
 .flex-box {
   display: flex;
   justify-content: space-between;
