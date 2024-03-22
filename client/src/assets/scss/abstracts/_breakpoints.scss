@@ -9,8 +9,8 @@ $breakpoints: (
 	laptop-lg: 1440px
 );
 
-@mixin breakpoints($size){
-	@media(max-width: map.get($breakpoints, $size)){
+@mixin breakpoint($size){
+	@media(max-width: map-get($breakpoints, $size)){
 		@content
 	}
 }

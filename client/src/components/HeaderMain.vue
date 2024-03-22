@@ -7,7 +7,7 @@
             ><img class="logo" src="@/assets/images/logo/Gasyr_logo.svg" alt="Gasyr Lab"
           /></router-link>
 
-          <nav v-if="closeLaptopScreen()" class="nav">
+          <nav class="nav nav--hidden">
             <ul class="nav__list">
               <li class="nav__list-item">
                 <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
@@ -25,14 +25,17 @@
           </nav>
         </div>
 
-        <div class="header__user">
-          <button v-if="closeLaptopScreen()" @click="toggleOpenDropdown" class="header__user-btn">
+        <div class="header__user header__user--hidden">
+          <button @click="toggleOpenDropdown" class="header__user-btn header__user-btn--hidden">
             <img class="header__user-img" src="@/assets/images/icons/user.png" alt="User icon" />
           </button>
 
           <LangBtn></LangBtn>
           <TransitionGroup tag="div" name="dropdown">
-            <div v-if="isOpenUserDropdown" class="header__user-dropdown">
+            <div
+              v-if="isOpenUserDropdown"
+              class="header__user-dropdown header__user-dropdown--hidden"
+            >
               <div class="flex-box">
                 <p>Имя пользователя</p>
                 <button @click="closeDropdown()">
@@ -43,9 +46,9 @@
             </div>
           </TransitionGroup>
 
-          <div v-if="!closeLaptopScreen()">
+          <div class="burger burger--hidden">
             <Transition mode="out-in" name="burger">
-              <button class="lang__btn" @click="toggleBurgerMenu()" v-if="!isOpenBurgerMenu">
+              <button class="burger__btn" @click="toggleBurgerMenu()" v-if="!isOpenBurgerMenu">
                 <img
                   v-if="theme.isDark"
                   class="burger__icon"
@@ -59,7 +62,7 @@
                   alt="Burger menu icon"
                 />
               </button>
-              <button class="lang__btn" @click="toggleBurgerMenu()" v-else-if="isOpenBurgerMenu">
+              <button class="burger__btn" @click="toggleBurgerMenu()" v-else-if="isOpenBurgerMenu">
                 <img
                   v-if="theme.isDark"
                   class="burger__icon"
@@ -77,8 +80,12 @@
           </div>
         </div>
       </div>
-      <div class="mobile-dropdown" v-if="isOpenBurgerMenu">
-        <ul class="mobile-dropdown__list">
+      <transition-group
+        tag="div"
+        name="mobile-dropdown"
+        class="mobile-dropdown mobile-dropdown--hidden"
+      >
+        <ul v-if="isOpenBurgerMenu" class="mobile-dropdown__list">
           <li class="mobile-dropdown__list-item">
             <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.my_training') }}</a>
           </li>
@@ -103,13 +110,12 @@
             </div>
           </li>
         </ul>
-      </div>
+      </transition-group>
     </div>
   </header>
 </template>
 
 <script setup>
-import { useScreenStore } from '@/stores/mediaScreen.js'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
@@ -117,7 +123,6 @@ import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
 import ThemeBtn from '@/components/littleComponent/ToggleBtnTheme.vue'
 import { useThemeModeStore } from '@/stores/themeMode.js'
 
-const screenStore = useScreenStore()
 const theme = useThemeModeStore()
 
 const { t } = useI18n()
@@ -128,14 +133,6 @@ function toggleOpenDropdown() {
   isOpenUserDropdown.value = !isOpenUserDropdown.value
 }
 
-function closeLaptopScreen() {
-  if (screenStore.isLaptop) {
-    isOpenBurgerMenu.value = false
-    return true
-  } else {
-    return false
-  }
-}
 function closeDropdown() {
   isOpenUserDropdown.value = false
 }
@@ -158,6 +155,12 @@ function toggleBurgerMenu() {
     margin-top: 20px;
   }
 
+  &--hidden {
+    @include abs.breakpoint('tablet') {
+      display: none;
+    }
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -168,12 +171,18 @@ function toggleBurgerMenu() {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
+    max-width: 150px;
     gap: 10px;
   }
 
   &__user-btn {
     display: block;
+
+    &--hidden {
+      @include abs.breakpoint('tablet') {
+        display: none;
+      }
+    }
   }
 
   &__user-dropdown {
@@ -185,11 +194,17 @@ function toggleBurgerMenu() {
     min-height: 150px;
     position: absolute;
     top: 60px;
-    right: -50px;
+    right: 0px;
 
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    &--hidden {
+      @include abs.breakpoint('tablet') {
+        display: none;
+      }
+    }
   }
 
   .dark &__user-dropdown {
@@ -204,6 +219,12 @@ function toggleBurgerMenu() {
 }
 
 .mobile-dropdown {
+  display: none;
+  &--hidden {
+    @include abs.breakpoint('tablet') {
+      display: block;
+    }
+  }
   &__list {
     background-color: abs.$theme-dark-color;
     color: abs.$theme-light-color;
@@ -222,6 +243,20 @@ function toggleBurgerMenu() {
   & a {
     color: inherit;
   }
+}
+
+.mobile-dropdown-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.mobile-dropdown-leave-active {
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.mobile-dropdown-enter-from,
+.mobile-dropdown-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
 }
 
 .burger-enter-active {
@@ -243,10 +278,17 @@ function toggleBurgerMenu() {
 }
 
 .burger {
+  display: none;
+
   &__icon {
-    position: relative;
-    width: 40px;
+    max-width: 30px;
     transform: rotate(180deg);
+  }
+
+  &--hidden {
+    @include abs.breakpoint('tablet') {
+      display: block;
+    }
   }
 }
 
