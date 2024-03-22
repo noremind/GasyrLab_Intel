@@ -1,0 +1,16 @@
+$breakpoints: (
+	mobile-md: 320px,
+	mobile-lg: 425px,
+
+	tablet: 768px,
+
+	laptop-sm: 1024px,
+	laptop-md: 1200px,
+	laptop-lg: 1440px
+);
+
+@mixin breakpoints($size){
+	@media(max-width: map.get($breakpoints, $size)){
+		@content
+	}
+}
