@@ -17,7 +17,6 @@
 	"license": "ISC",
 	"dependencies": {
 		"concurrently": "^8.2.2",
-		"vercel": "^33.6.1",
 		"vue-i18n": "^9.9.0"
 	},
 	"devDependencies": {
