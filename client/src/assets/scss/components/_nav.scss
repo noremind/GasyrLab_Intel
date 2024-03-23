@@ -1,0 +1,19 @@
+@use '../abstracts' as abs;
+
+.nav{
+
+	&__list{
+		display: flex;
+		gap: clamp(0.625rem, -0.057rem + 3.41vw, 2.5rem);
+	}
+
+	&--hidden{
+		display: block;
+	}
+
+	@include abs.breakpoint('tablet'){
+		&--hidden{
+			display: none;
+		}
+	}
+}

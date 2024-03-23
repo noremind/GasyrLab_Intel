@@ -1,5 +1,5 @@
 
-# 🌟 Development Gasyr.Lab INTEL Group 🌟
+# 🌟 Development Gasyr.Lab Intel Group 🌟
 
 
 
@@ -14,7 +14,7 @@ Thanks for stopping by, and we hope you enjoy our work!
 
 
 <p align="center">
-	<img src="markdown-img/logo.png" width="500px">
+	<img src="markdown-img/Gasyr_logo.svg" width="250px">
 </p>
 
 ---
@@ -24,7 +24,7 @@ Thanks for stopping by, and we hope you enjoy our work!
 
 ## 🚀 About the Project
 
-Our team is creating a website online courses for __<u>"Gasyr Foundation School"</u>__. On our web site, users can sign up for a variety of courses to learn new skills or improve existing ones. Each course includes video lessons, quizzes, and assignments to help users master the material. Users can track their progress and access course materials at any time from their personal account. Our website is designed to be user-friendly and accessible to anyone who wants to learn something new.
+Our team is creating a website for the __"Gasyr Foundation School"__ that offers online courses to help users learn new skills or improve existing ones. Our website features a variety of courses, each of which includes video lessons, quizzes, and assignments to help users master the material. Users can sign up for courses and track their progress through their personal account. Additionally, our website is designed to be user-friendly and accessible, with a dark and light mode option and adaptive design for all devices. Whether you're looking to learn something new or advance your career, our website is the perfect place to start your journey.
 
 
 
@@ -34,13 +34,11 @@ Our team is creating a website online courses for __<u>"Gasyr Foundation School"
 
 ## 📝 Table of Contents
 
-- [Our Team](#sparkles-our-team)
-- [Installation](#gear-installation)
+- :paperclip: [Our Team](#sparkles-our-team)
+- :paperclip: [Web site](#zap-web-site)
+- :paperclip: [Installation](#gear-installation)
 
 ## :sparkles: Our Team
-
-
-
 
 | Name             | Role            |
 | ---------------- | -------------- |
@@ -50,9 +48,12 @@ Our team is creating a website online courses for __<u>"Gasyr Foundation School"
 | Beisembay Norem | Developer      |
 | Shermakhan Omar        | Developer      |
 
-</div>
+<br>
 
-
+## :zap: Web site
+```sh
+https://gasyr-intel.vercel.app/
+```
 
 
 <br>

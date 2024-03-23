@@ -1,12 +1,19 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Btn from '@/components/littleComponent/SwitchBtnLang.vue'
+import { storeToRefs } from 'pinia'
+import { onMounted } from 'vue'
+import { useThemeModeStore } from './stores/themeMode'
+const theme = useThemeModeStore()
+
+const { isDark } = storeToRefs(theme)
+
+onMounted(() => {
+  isDark
+})
 </script>
 
 <template>
-  <Header />
-  <Btn></Btn>
   <RouterView />
 </template>
 
-<style lang="scss" scoped></style>
+<style></style>

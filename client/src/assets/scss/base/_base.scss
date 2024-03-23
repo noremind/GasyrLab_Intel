@@ -1,8 +1,55 @@
+@use '../abstracts' as abs;
+
 body {
-  background-image: url('@/assets/images/svg/light-bg.svg');
-  /* background-color: #000000; //For dark mode */
+  background-image: url('@/assets/images/theme/light-bg.svg');
+	font-family: abs.$main-font;
+	transition: all .4s ease;
 }
 
 .none {
   display: none !important;
+}
+
+.container{
+	max-width: 1230px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.dark{
+	background-image: url('@/assets/images/theme/dark-bg.svg');
+	background-color: abs.$theme-dark-color;
+  color: abs.$theme-light-color;
+}
+
+.dark [alt]{ //For alt attibute
+	color: abs.$theme-light-color;
+}
+
+.dark a{
+	color: abs.$theme-light-color;
+}
+
+.dark svg path[fill]{
+	fill: abs.$theme-dark-color;
+}
+
+
+.title{
+
+}
+
+.flex-box{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+
+.btn{
+
+	&--active{
+
+	}
 }

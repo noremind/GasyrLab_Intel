@@ -17,14 +17,16 @@ import ru from '@/lang/ru.js'
 import en from '@/lang/en.js'
 
 const i18n = createI18n({
-  legacy: false,
-  locale: 'ru',
-  fallbackLocale: 'ru',
-  messages: {
-    kz,
-    ru,
-    en
-  }
+	legacy: false,
+	locale: 'ru',
+	fallbackLocale: 'ru',
+	messages: {
+		kz,
+		ru,
+		en
+	}
 })
 
-app.use(i18n).mount('#app')
+app.use(i18n)
+
+app.mount('#app')
