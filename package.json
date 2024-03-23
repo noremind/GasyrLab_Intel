@@ -8,8 +8,6 @@
 		"client:scss": "cd client && npm run scss",
 		"client:build": "cd client && npm run build",
 		"client:preview": "cd client && npm run preview",
-
-		
 		"dev": "concurrently \" npm run client:dev \" \" npm run client:scss\"",
 		"build": "concurrently \" npm run client:build \"",
 		"init": "npm i && npm install --prefix ./client && npm install --prefix ./server"
@@ -18,14 +16,10 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-<<<<<<< HEAD
-		"concurrently": "^8.2.2"
-=======
 		"concurrently": "^8.2.2",
 		"vue-i18n": "^9.9.0"
 	},
 	"devDependencies": {
 		"sass": "^1.72.0"
->>>>>>> 25cfb710a08830448ac422b1f84f83ec39fca663
 	}
 }
