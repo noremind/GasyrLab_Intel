@@ -25,5 +25,10 @@ export default {
 			footer: {}
 		},
 		// ... another page texts
+	},
+	global: {
+		btn: {
+			default: 'Learn More'
+		}
 	}
 }

@@ -144,11 +144,30 @@ body {
   fill: #16171d;
 }
 
+.title {
+  font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
+  color: #212529;
+  font-weight: 500;
+}
+.dark .title {
+  color: #f5f5f5;
+}
+
 .flex-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #f5f5f5;
+  border: 2px solid #7b3ff2;
+}
+.btn--active {
+  background-color: #7b3ff2;
 }
 
 .logo {

@@ -1,9 +1,9 @@
 <template>
   <div class="lang">
     <Transition mode="out-in" name="lang">
-      <button class="lang__btn" @click="changeLocale('ru')" v-if="locale == 'kz'">Kaz</button>
-      <button class="lang__btn" @click="changeLocale('en')" v-else-if="locale == 'ru'">Ru</button>
-      <button class="lang__btn" @click="changeLocale('kz')" v-else-if="locale == 'en'">Eng</button>
+      <button class="lang__btn" @click="changeLocale('ru')" v-if="locale == 'kz'">KZ</button>
+      <button class="lang__btn" @click="changeLocale('en')" v-else-if="locale == 'ru'">RU</button>
+      <button class="lang__btn" @click="changeLocale('kz')" v-else-if="locale == 'en'">ENG</button>
     </Transition>
   </div>
 </template>
