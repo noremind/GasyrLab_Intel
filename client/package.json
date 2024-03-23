@@ -16,6 +16,7 @@
     "@vueuse/core": "^10.9.0",
     "gasyrlab_intel": "file:..",
     "gsap": "^3.12.5",
+    "gsap-trial": "^3.12.5",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-i18n": "^9.9.0",
