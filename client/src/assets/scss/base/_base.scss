@@ -32,8 +32,9 @@ body {
 }
 
 .dark svg path[fill] {
-  fill: abs.$theme-dark-color;
+  fill: abs.$theme-light-color;
 }
+
 
 .title {
   font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);

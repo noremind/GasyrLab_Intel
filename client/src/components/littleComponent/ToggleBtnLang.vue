@@ -15,6 +15,7 @@ const { locale } = useI18n({ useScope: 'global' })
 
 const changeLocale = (newLocale) => {
   locale.value = newLocale
+  localStorage.setItem('localLang', newLocale)
 }
 </script>
 

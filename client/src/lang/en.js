@@ -14,7 +14,11 @@ export default {
 					log_out: "Log out"
 				}
 			},
-			main: {},
+			main: {
+				scrollHorizontal: {
+					title: "Sponsors"
+				}
+			},
 			footer: {}
 		},
 		courses: {

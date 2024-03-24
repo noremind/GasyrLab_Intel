@@ -1,96 +1,113 @@
 <template>
-  <!-- This is a recreation of Unfold's (https://dribbble.com/unfold) parallax scene: https://cdn.dribbble.com/users/14268/screenshots/3275340/northface.gif -->
-  <div class="scrollDist" ref="scrollDist"></div>
-  <div class="main" ref="main">
-    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-      <mask id="m">
-        <g class="cloud1" ref="cloud1">
-          <rect fill="#fff" width="100%" height="801" y="799" />
-          <image
-            xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg"
-            width="1200"
-            height="800"
-          />
+  <div class="gsap-class">
+    <!-- This is a recreation of Unfold's (https://dribbble.com/unfold) parallax scene: https://cdn.dribbble.com/users/14268/screenshots/3275340/northface.gif -->
+    <div class="scrollDist" ref="scrollDist"></div>
+    <div class="main" ref="main">
+      <svg viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg">
+        <mask id="m">
+          <g class="cloud1" ref="cloud1">
+            <rect fill="#fff" width="100%" height="600" y="799" />
+            <image
+              xlink:href="@/assets/images/screenSaver/cloud1Mask.jpg"
+              width="100%"
+              height="800"
+            />
+          </g>
+        </mask>
+
+        <image
+          class="sky"
+          ref="sky"
+          xlink:href="@/assets/images/screenSaver/sky.jpg"
+          width="1200"
+          height="590"
+        />
+        <image
+          class="mountBg"
+          ref="mountBg"
+          xlink:href="@/assets/images/screenSaver/mountBg.webp"
+          width="1200"
+          height="800"
+        />
+        <image
+          class="mountMg"
+          ref="mountMg"
+          xlink:href="@/assets/images/screenSaver/mountMg.webp"
+          width="1200"
+          height="800"
+        />
+        <image
+          class="cloud2"
+          ref="cloud2"
+          xlink:href="@/assets/images/screenSaver/cloud2.webp"
+          width="1200"
+          height="800"
+        />
+        <image
+          class="mountFg"
+          ref="mountFg"
+          xlink:href="@/assets/images/screenSaver/mountFg.webp"
+          width="1200"
+          height="800"
+        />
+        <image
+          class="cloud1"
+          ref="cloud1"
+          xlink:href="@/assets/images/screenSaver/cloud1.png"
+          width="1200"
+          height="800"
+        />
+        <image
+          class="cloud3"
+          ref="cloud3"
+          xlink:href="@/assets/images/screenSaver/cloud3.png"
+          width="1200"
+          height="800"
+        />
+        <text fill="#fff" x="350" y="200">EXPLORE</text>
+        <polyline
+          class="arrow"
+          ref="arrow"
+          fill="#fff"
+          points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250"
+        />
+
+        <g mask="url(#m)">
+          <rect fill="#fff" width="100%" height="100%" />
+          <text x="350" y="200" fill="#162a43">FURTHER</text>
         </g>
-      </mask>
 
-      <image
-        class="sky"
-        ref="sky"
-        xlink:href="https://assets.codepen.io/721952/sky.jpg"
-        width="1200"
-        height="590"
-      />
-      <image
-        class="mountBg"
-        ref="mountBg"
-        xlink:href="https://assets.codepen.io/721952/mountBg.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="mountMg"
-        ref="mountMg"
-        xlink:href="https://assets.codepen.io/721952/mountMg.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="cloud2"
-        ref="cloud2"
-        xlink:href="https://assets.codepen.io/721952/cloud2.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="mountFg"
-        ref="mountFg"
-        xlink:href="https://assets.codepen.io/721952/mountFg.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="cloud1"
-        ref="cloud1"
-        xlink:href="https://assets.codepen.io/721952/cloud1.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="cloud3"
-        ref="cloud3"
-        xlink:href="https://assets.codepen.io/721952/cloud3.png"
-        width="1200"
-        height="800"
-      />
-      <text fill="#fff" x="350" y="200">EXPLORE</text>
-      <polyline
-        class="arrow"
-        ref="arrow"
+        <rect
+          id="arrowBtn"
+          ref="arrowBtn"
+          width="100"
+          height="100"
+          opacity="0"
+          x="550"
+          y="220"
+          style="cursor: pointer"
+        />
+      </svg>
+    </div>
+  </div>
+  <div></div>
+  <div class="waves">
+    <svg class="waves__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
         fill="#fff"
-        points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250"
-      />
-
-      <g mask="url(#m)">
-        <rect fill="#fff" width="100%" height="100%" />
-        <text x="350" y="200" fill="#162a43">FURTHER</text>
-      </g>
-
-      <rect
-        id="arrowBtn"
-        ref="arrowBtn"
-        width="100"
-        height="100"
-        opacity="0"
-        x="550"
-        y="220"
-        style="cursor: pointer"
-      />
+        fill-opacity="1"
+        d="M0,96L18.5,90.7C36.9,85,74,75,111,101.3C147.7,128,185,192,222,186.7C258.5,181,295,107,332,80C369.2,53,406,75,443,101.3C480,128,517,160,554,165.3C590.8,171,628,149,665,122.7C701.5,96,738,64,775,53.3C812.3,43,849,53,886,53.3C923.1,53,960,43,997,58.7C1033.8,75,1071,117,1108,154.7C1144.6,192,1182,224,1218,202.7C1255.4,181,1292,107,1329,85.3C1366.2,64,1403,96,1422,112L1440,128L1440,0L1421.5,0C1403.1,0,1366,0,1329,0C1292.3,0,1255,0,1218,0C1181.5,0,1145,0,1108,0C1070.8,0,1034,0,997,0C960,0,923,0,886,0C849.2,0,812,0,775,0C738.5,0,702,0,665,0C627.7,0,591,0,554,0C516.9,0,480,0,443,0C406.2,0,369,0,332,0C295.4,0,258,0,222,0C184.6,0,148,0,111,0C73.8,0,37,0,18,0L0,0Z"
+      ></path>
     </svg>
   </div>
+  <Header></Header>
+
+  <Sponsors></Sponsors>
 </template>
 
 <script setup>
+import Sponsors from '@/components/HorizontalScrollGsap.vue'
+import Header from '@/components/HeaderMain.vue'
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/minified/ScrollTrigger.min.js'
@@ -144,13 +161,22 @@ onMounted(() => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+.waves {
+  position: relative;
+  /* height: 180px; */
+  height: clamp(1.563rem, -1.96rem + 17.61vw, 11.25rem);
+
+  &__svg {
+    position: absolute;
+    top: 5px;
+  }
+}
 
 .main {
-  position: fixed;
+  position: relative;
   background: #fff;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   height: 100%;
   top: 0;
   left: 50%;
@@ -159,7 +185,9 @@ onMounted(() => {
 
 .scrollDist {
   width: 100%;
-  height: 200%;
+  height: 180%;
+  position: absolute;
+  z-index: -3;
 }
 
 .sky {
@@ -195,19 +223,5 @@ onMounted(() => {
 .mountFg {
   /* начальные стили для .mountFg */
   transform: translateY(-50px);
-}
-
-body,
-html {
-  width: 100%;
-  height: 100%;
-  background: #ddd;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 99px;
-  text-align: center;
-}
-
-div {
-  position: absolute;
 }
 </style>
