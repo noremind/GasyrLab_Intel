@@ -131,13 +131,13 @@ onMounted(() => {
     .fromTo('.' + mountMg.value.classList[0], { y: -30 }, { y: -250 }, 0)
     .fromTo('.' + mountFg.value.classList[0], { y: -50 }, { y: -600 }, 0)
 
-  $(arrowBtn.value).on('mouseenter', (e) => {
+  $(arrowBtn.value).on('mouseenter', () => {
     gsap.to(arrow.value, { y: 10, duration: 0.8, ease: 'back.inOut(3)', overwrite: 'auto' })
   })
-  $(arrowBtn.value).on('mouseleave', (e) => {
+  $(arrowBtn.value).on('mouseleave', () => {
     gsap.to(arrow.value, { y: 0, duration: 0.5, ease: 'power3.out', overwrite: 'auto' })
   })
-  $(arrowBtn.value).on('click', (e) => {
+  $(arrowBtn.value).on('click', () => {
     gsap.to(window, { scrollTo: innerHeight, duration: 1.5, ease: 'power1.inOut' })
   }) // scrollTo requires the ScrollTo plugin (not to be confused w/ ScrollTrigger)
 })
