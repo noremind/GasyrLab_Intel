@@ -27,6 +27,19 @@ export default {
 			},
 			footer: {}
 		},
+		login: {
+			title: 'Войти',
+			inputEmail: 'Имя',
+			inputPassword: 'Пароль',
+			signIn: 'Войти'
+		},
+		register: {
+			title: 'Создать аккаунт',
+			inputName: 'Имя',
+			inputEmail: 'Электронная почта',
+			inputPassword: 'Пароль',
+			signUp: 'Зарегистрироваться'
+		},
 		courses: {
 			header: {},
 			main: {

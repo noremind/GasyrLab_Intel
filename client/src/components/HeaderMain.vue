@@ -27,12 +27,13 @@
           </nav>
         </div>
 
-        <div v-if="isAuthUser" class="header__user header__user--hidden">
-          <button @click="toggleOpenDropdown" class="header__user-btn header__user-btn--hidden">
-            <img class="header__user-img" src="@/assets/images/icons/user1.png" alt="User icon" />
-          </button>
-
-          <LangBtn></LangBtn>
+        <div class="header__user header__user--hidden">
+          <div v-if="isAuthUser" class="flex-box">
+            <button @click="toggleOpenDropdown" class="header__user-btn header__user-btn--hidden">
+              <img class="header__user-img" src="@/assets/images/icons/user1.png" alt="User icon" />
+            </button>
+            <LangBtn></LangBtn>
+          </div>
 
           <TransitionGroup tag="div" name="dropdown">
             <div
@@ -41,7 +42,7 @@
             >
               <div class="flex-box">
                 <p>Имя пользователя</p>
-                <button @click="closeDropdown()">
+                <button class="btn btn--error" @click="closeDropdown()">
                   {{ t('page.main.header.dropdown.log_out') }}
                 </button>
               </div>
@@ -50,56 +51,70 @@
           </TransitionGroup>
 
           <div class="burger burger--hidden">
-            <Transition mode="out-in" name="burger">
-              <button class="burger__btn" @click="toggleBurgerMenu()" v-if="!isOpenBurgerMenu">
-                <img
-                  v-if="theme.isDark"
-                  class="burger__icon"
-                  src="@/assets/images/icons/burger-light-menu.svg"
-                  alt="Burger menu icon"
-                />
-                <img
-                  v-else
-                  class="burger__icon"
-                  src="@/assets/images/icons/burger-dark-menu.svg"
-                  alt="Burger menu icon"
-                />
-              </button>
-              <button class="burger__btn" @click="toggleBurgerMenu()" v-else-if="isOpenBurgerMenu">
-                <img
-                  v-if="theme.isDark"
-                  class="burger__icon"
-                  src="@/assets/images/icons/close-light-icon.svg"
-                  alt="Burger close icon"
-                />
-                <img
-                  v-else
-                  class="burger__icon"
-                  src="@/assets/images/icons/close-dark-icon.svg"
-                  alt="Burger close icon"
-                />
-              </button>
-            </Transition>
+            <div class="burger__wrapper">
+              <LangBtn v-if="!isAuthUser"></LangBtn>
+              <div>
+                <Transition mode="out-in" name="burger">
+                  <button class="burger__btn" @click="toggleBurgerMenu()" v-if="!isOpenBurgerMenu">
+                    <img
+                      v-if="theme.isDark"
+                      class="burger__icon"
+                      src="@/assets/images/icons/burger-light-menu.svg"
+                      alt="Burger menu icon"
+                    />
+                    <img
+                      v-else
+                      class="burger__icon"
+                      src="@/assets/images/icons/burger-dark-menu.svg"
+                      alt="Burger menu icon"
+                    />
+                  </button>
+                  <button
+                    class="burger__btn"
+                    @click="toggleBurgerMenu()"
+                    v-else-if="isOpenBurgerMenu"
+                  >
+                    <img
+                      v-if="theme.isDark"
+                      class="burger__icon"
+                      src="@/assets/images/icons/close-light-icon.svg"
+                      alt="Burger close icon"
+                    />
+                    <img
+                      v-else
+                      class="burger__icon"
+                      src="@/assets/images/icons/close-dark-icon.svg"
+                      alt="Burger close icon"
+                    />
+                  </button>
+                </Transition>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="flex-box" v-if="!isAuthUser">
+        <div v-if="!isAuthUser" class="flex-box flex-box--hidden">
           <LangBtn></LangBtn>
-          <router-link :to="{ name: 'login' }" class="btn">{{
-            t('page.main.header.login')
-          }}</router-link>
-          <router-link :to="{ name: 'register' }" class="btn">{{
-            t('page.main.header.register')
-          }}</router-link>
+          <router-link :to="{ name: 'login' }">
+            <button class="btn btn--primary">
+              {{ t('page.main.header.login') }}
+            </button>
+          </router-link>
+          <router-link :to="{ name: 'login' }">
+            <button class="btn btn--primary">
+              {{ t('page.main.header.register') }}
+            </button>
+          </router-link>
         </div>
       </div>
+
       <transition-group
         tag="div"
         name="mobile-dropdown"
         class="mobile-dropdown mobile-dropdown--hidden"
       >
         <ul v-if="isOpenBurgerMenu" class="mobile-dropdown__list">
-          <li class="mobile-dropdown__list-item">
+          <li v-if="isAuthUser" class="mobile-dropdown__list-item">
             <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.my_training') }}</a>
           </li>
           <li class="mobile-dropdown__list-item">
@@ -116,13 +131,23 @@
           <li class="mobile-dropdown__list-item">
             <ThemeBtn></ThemeBtn>
           </li>
-          <li class="mobile-dropdown__list-item">
+          <li v-if="isAuthUser" class="mobile-dropdown__list-item">
             <div class="flex-box">
               <p>Имя пользователя</p>
-              <button @click="closeBurgerMenu()">
+              <button class="btn btn--error" @click="closeBurgerMenu()">
                 {{ t('page.main.header.dropdown.log_out') }}
               </button>
             </div>
+          </li>
+          <li v-if="!isAuthUser" class="mobile-dropdown__list-item">
+            <router-link :to="{ name: 'login' }" class="btn">{{
+              t('page.main.header.login')
+            }}</router-link>
+          </li>
+          <li v-if="!isAuthUser" class="mobile-dropdown__list-item">
+            <router-link :to="{ name: 'register' }" class="btn">{{
+              t('page.main.header.register')
+            }}</router-link>
           </li>
         </ul>
       </transition-group>
@@ -162,7 +187,7 @@ function toggleBurgerMenu() {
 }
 
 onMounted(() => {
-  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : true
+  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : false
 })
 </script>
 
@@ -180,6 +205,10 @@ onMounted(() => {
   }
 
   &--hidden {
+    // @include abs.breakpoint-min-media('laptop-sm') {
+    //   display: none;
+    // }
+
     @include abs.breakpoint('tablet') {
       display: none;
     }
@@ -305,6 +334,12 @@ onMounted(() => {
 
 .burger {
   display: none;
+
+  &__wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
 
   &__icon {
     max-width: 30px;

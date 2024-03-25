@@ -27,6 +27,19 @@ export default {
 			},
 			footer: {}
 		},
+		login: {
+			title: 'Sign In',
+			inputEmail: 'Name',
+			inputPassword: 'Password',
+			signIn: 'Sign In'
+		},
+		register: {
+			title: 'Create Account',
+			inputName: 'Name',
+			inputEmail: 'Email',
+			inputPassword: 'Password',
+			signUp: 'Sign Up'
+		},
 		courses: {
 			header: {},
 			main: {

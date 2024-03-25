@@ -50,7 +50,18 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: clamp(0.25rem, 0.114rem + 0.68vw, 0.625rem);
+
+	&--hidden{
+		@include abs.breakpoint('tablet'){
+			display: none;
+		}
+	}
 }
+
+
+
+
+
 
 // .btn {
 //   padding: 12px 20px;

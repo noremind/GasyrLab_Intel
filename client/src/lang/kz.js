@@ -27,6 +27,19 @@ export default {
 			},
 			footer: {}
 		},
+		login: {
+			title: 'Кіру',
+			inputEmail: 'Аты',
+			inputPassword: 'Құпия сөз',
+			signIn: 'Кіру'
+		},
+		register: {
+			title: 'Тіркелу',
+			inputName: 'Аты',
+			inputEmail: 'Электронды пошта',
+			inputPassword: 'Құпия сөз',
+			signUp: 'Тіркелу'
+		},
 		courses: {
 			header: {},
 			main: {
