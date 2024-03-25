@@ -15,6 +15,14 @@
               xlink:href="@/assets/images/screenSaver/cloud1Mask.jpg"
               width="100%"
               height="800"
+              x="500"
+              y="-50"
+            />
+            <image
+              xlink:href="@/assets/images/screenSaver/cloud1Mask2.jpg"
+              width="100%"
+              height="800"
+              x="-500"
               y="-50"
             />
           </g>
@@ -23,24 +31,24 @@
         <image
           class="sky"
           ref="sky"
-          xlink:href="@/assets/images/screenSaver/bg-image.jpg"
+          xlink:href="@/assets/images/screenSaver/bg-color.jpg"
           width="100%"
           height="590"
         />
         <image
           class="mountBg"
           ref="mountBg"
-          xlink:href="@/assets/images/screenSaver/code2.png"
+          xlink:href="@/assets/images/screenSaver/code6.png"
           width="500"
           height="800"
         />
         <image
           class="mountMg"
           ref="mountMg"
-          xlink:href="@/assets/images/screenSaver/code1.png"
+          xlink:href="@/assets/images/screenSaver/code5.png"
           width="500"
           height="800"
-          y="300"
+          y="100"
         />
         <image
           class="cloud2"
@@ -48,6 +56,15 @@
           xlink:href="@/assets/images/screenSaver/cloud2.webp"
           width="1200"
           height="800"
+        />
+        <image
+          class="cloud4"
+          ref="cloud4"
+          xlink:href="@/assets/images/screenSaver/cloud4.png"
+          width="400px"
+          height="800"
+          x="800"
+          y="-80"
         />
         <image
           class="mountFg"
@@ -71,17 +88,37 @@
           width="1200"
           height="800"
         />
-        <text style="font-size: 60px" fill="#fff" x="450" y="150">GasyrLab</text>
-        <polyline
+
+        <image xlink:href="../assets/images/logo/Gasyr_logo.svg" x="430" y="95" width="70" />
+
+        <text font-size="60" font-weight="bold" fill="#fff" x="500" y="150">GasyrLab</text>
+        <!-- <polyline
           class="arrow"
           ref="arrow"
           fill="#fff"
           points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250"
-        />
+        /> -->
+        
+
+        <svg viewBox="0 0 100 100" width="60" x="570" y="-20">
+          <path
+            class="arrow"
+            ref="arrow"
+            d="
+              M 50,16
+              l 0,72
+              M 20,60
+              l 30,28
+              M 80,60
+              l -30,28"
+            stroke="#fff"
+            stroke-linecap="round"
+            stroke-width="10"
+          />
+        </svg>
 
         <g mask="url(#m)">
           <rect fill="#fff" width="100%" height="100%" />
-          <text x="350" y="200" fill="#162a43">FURTHER</text>
         </g>
 
         <rect
@@ -97,7 +134,6 @@
       </svg>
     </div>
   </div>
-  <div></div>
   <div class="waves">
     <svg class="waves__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
@@ -125,6 +161,7 @@ const sky = ref(null)
 const cloud1 = ref(null)
 const cloud2 = ref(null)
 const cloud3 = ref(null)
+const cloud4 = ref(null)
 const mountBg = ref(null)
 const mountMg = ref(null)
 const mountFg = ref(null)
@@ -146,6 +183,7 @@ onMounted(() => {
     .fromTo('.' + cloud1.value.classList[0], { y: 100 }, { y: -800 }, 0)
     .fromTo('.' + cloud2.value.classList[0], { y: -150 }, { y: -500 }, 0)
     .fromTo('.' + cloud3.value.classList[0], { y: -50 }, { y: -650 }, 0)
+    .fromTo('.' + cloud4.value.classList[0], { y: -50 }, { y: -650 }, 0)
     .fromTo('.' + mountBg.value.classList[0], { y: -10 }, { y: -100 }, 0)
     .fromTo('.' + mountMg.value.classList[0], { y: -30 }, { y: -250 }, 0)
     .fromTo('.' + mountFg.value.classList[0], { y: -50 }, { y: -600 }, 0)
@@ -162,10 +200,23 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/scss/abstracts' as abs;
+
+.gsap-class {
+  @include abs.breakpoint('tablet') {
+    display: none;
+  }
+}
+
 .waves {
   position: relative;
   height: clamp(1.25rem, -2.5rem + 18.75vw, 11.563rem);
+  transform: translateY(-10px);
+
+  @include abs.breakpoint('tablet') {
+    display: none;
+  }
 
   &__svg {
     position: absolute;
@@ -212,7 +263,6 @@ onMounted(() => {
 }
 
 .mountBg {
-  /* начальные стили для .mountBg */
   transform: translateX(900px);
 }
 

@@ -102,8 +102,10 @@ onMounted(() => {
   }
 
   const scrollImg = () => {
-    gsap.utils.toArray(gsapSectionImg.value).forEach((section, index) => {
-      const w = section.querySelector('.' + gsapWrapperImg.value.classList[0])
+    gsap.utils.toArray(gsapSectionImg.value)
+    .forEach((section, index) => {
+      const w = section.
+      querySelector('.' + gsapWrapperImg.value.classList[0])
       const [x, xEnd] =
         index % 2
           ? [(w.scrollWidth - section.offsetWidth) * -1, '100%']
@@ -162,8 +164,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .scroll-horizontal {
-  margin-top: 800px;
-  height: 1500px;
+  // margin-top: 800px;
+  // height: 1500px;
   &__wrapper {
     margin-top: clamp(1.875rem, -0.17rem + 10.23vw, 7.5rem);
   }
