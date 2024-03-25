@@ -27,7 +27,7 @@
 
         <div class="header__user header__user--hidden">
           <button @click="toggleOpenDropdown" class="header__user-btn header__user-btn--hidden">
-            <img class="header__user-img" src="@/assets/images/icons/user.png" alt="User icon" />
+            <img class="header__user-img" src="@/assets/images/icons/user1.png" alt="User icon" />
           </button>
 
           <LangBtn></LangBtn>
@@ -192,14 +192,14 @@ function toggleBurgerMenu() {
   &__user-dropdown {
     max-width: 250px;
     padding: 16px;
-    background-color: abs.$theme-dark-color;
-    color: abs.$theme-light-color;
+    background-color: #fff;
+    color: abs.$almost-black;
     border-radius: 8px;
     min-height: 150px;
     position: absolute;
     top: 60px;
     right: 0px;
-
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -212,8 +212,9 @@ function toggleBurgerMenu() {
   }
 
   .dark &__user-dropdown {
-    background-color: abs.$theme-light-color;
-    color: abs.$theme-dark-color;
+    background-color: abs.$almost-black;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: abs.$almost-white;
   }
 
   &__user-img {
@@ -230,18 +231,19 @@ function toggleBurgerMenu() {
     }
   }
   &__list {
-    background-color: abs.$theme-dark-color;
-    color: abs.$theme-light-color;
+    background-color: #fff;
+    color: abs.$almost-black;
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 16px;
     border-radius: 16px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 
   .dark &__list {
-    background-color: abs.$theme-light-color;
-    color: abs.$theme-dark-color;
+    background-color: abs.$almost-black;
+    color: #fff;
   }
 
   & a {
