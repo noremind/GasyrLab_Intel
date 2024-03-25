@@ -85,12 +85,12 @@
 
         <div class="flex-box" v-if="!isAuthUser">
           <LangBtn></LangBtn>
-          <router-link :to="{ name: 'login' }" class="btn">{{
-            t('page.main.header.login')
-          }}</router-link>
-          <router-link :to="{ name: 'register' }" class="btn">{{
-            t('page.main.header.register')
-          }}</router-link>
+          <router-link :to="{ name: 'login' }" class="btn">
+            <Button class="btn btn--outline">{{ t('page.main.header.login') }}</Button>
+          </router-link>
+          <router-link :to="{ name: 'register' }">
+            <Button class="btn btn--outline">{{ t('page.main.header.register') }}</Button>
+          </router-link>
         </div>
       </div>
       <transition-group
@@ -137,6 +137,7 @@ import { ref, onMounted } from 'vue'
 import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
 import ThemeBtn from '@/components/littleComponent/ToggleBtnTheme.vue'
 import { useThemeModeStore } from '@/stores/themeMode.js'
+import Button from '@/components/littleComponent/ButtonComponent.vue'
 
 const theme = useThemeModeStore()
 

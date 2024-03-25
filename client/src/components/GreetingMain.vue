@@ -5,7 +5,7 @@
         <div class="greeting__text">
           <h1>{{ t('page.main.main.greetingSection.title') }}</h1>
           <p>{{ t('page.main.main.greetingSection.subtitle') }}</p>
-          <Button isActive="true"></Button>
+          <Button class="btn btn--primary"></Button>
         </div>
 
         <div class="greeting__img">

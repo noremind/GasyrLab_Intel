@@ -2,14 +2,20 @@
   <div class="gsap-class">
     <div class="scrollDist" ref="scrollDist"></div>
     <div class="main" ref="main">
-      <svg viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1200 570" xmlns="http://www.w3.org/2000/svg">
         <mask id="m">
           <g class="cloud1" ref="cloud1">
             <rect fill="#fff" width="100%" height="600" y="799" />
             <image
+              xlink:href="@/assets/images/screenSaver/cloud1Mask2.jpg"
+              width="100%"
+              height="800"
+            />
+            <image
               xlink:href="@/assets/images/screenSaver/cloud1Mask.jpg"
               width="100%"
               height="800"
+              y="-50"
             />
           </g>
         </mask>
@@ -17,23 +23,24 @@
         <image
           class="sky"
           ref="sky"
-          xlink:href="@/assets/images/screenSaver/sky.jpg"
-          width="1200"
+          xlink:href="@/assets/images/screenSaver/bg-image.jpg"
+          width="100%"
           height="590"
         />
         <image
           class="mountBg"
           ref="mountBg"
-          xlink:href="@/assets/images/screenSaver/mountBg.webp"
-          width="1200"
+          xlink:href="@/assets/images/screenSaver/code2.png"
+          width="500"
           height="800"
         />
         <image
           class="mountMg"
           ref="mountMg"
-          xlink:href="@/assets/images/screenSaver/mountMg.webp"
-          width="1200"
+          xlink:href="@/assets/images/screenSaver/code1.png"
+          width="500"
           height="800"
+          y="300"
         />
         <image
           class="cloud2"
@@ -45,9 +52,10 @@
         <image
           class="mountFg"
           ref="mountFg"
-          xlink:href="@/assets/images/screenSaver/mountFg.webp"
-          width="1200"
+          xlink:href="@/assets/images/screenSaver/code3.png"
+          width="500"
           height="800"
+          y="100"
         />
         <image
           class="cloud1"
@@ -63,7 +71,7 @@
           width="1200"
           height="800"
         />
-        <text fill="#fff" x="350" y="200">EXPLORE</text>
+        <text style="font-size: 60px" fill="#fff" x="450" y="150">GasyrLab</text>
         <polyline
           class="arrow"
           ref="arrow"
@@ -99,14 +107,9 @@
       ></path>
     </svg>
   </div>
-  <Header></Header>
-
-  <Sponsors></Sponsors>
 </template>
 
 <script setup>
-import Sponsors from '@/components/HorizontalScrollGsap.vue'
-import Header from '@/components/HeaderMain.vue'
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/minified/ScrollTrigger.min.js'
@@ -205,21 +208,22 @@ onMounted(() => {
 
 .cloud3 {
   /* начальные стили для .cloud3 */
-  transform: translateY(-50px);
+  transform: translateY(50px);
 }
 
 .mountBg {
   /* начальные стили для .mountBg */
-  transform: translateY(-10px);
+  transform: translateX(900px);
 }
 
 .mountMg {
   /* начальные стили для .mountMg */
-  transform: translateY(-30px);
+  transform: translateX(430px);
 }
 
 .mountFg {
   /* начальные стили для .mountFg */
-  transform: translateY(-50px);
+
+  transform: translateY(-100px);
 }
 </style>
