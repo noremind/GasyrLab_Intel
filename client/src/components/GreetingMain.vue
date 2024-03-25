@@ -3,8 +3,8 @@
     <div class="container">
       <div class="greeting__wrapper">
         <div class="greeting__text">
-          <h1>{{ t('page.main.main.title') }}</h1>
-          <p>{{ t('page.main.main.subtitle') }}</p>
+          <h1>{{ t('page.main.main.greetingSection.title') }}</h1>
+          <p>{{ t('page.main.main.greetingSection.subtitle') }}</p>
           <Button isActive="true"></Button>
         </div>
 
@@ -33,7 +33,6 @@ const { t } = useI18n()
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-
 
     @include abs.breakpoint('tablet') {
       flex-direction: column;
