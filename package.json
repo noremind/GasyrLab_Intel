@@ -16,8 +16,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"concurrently": "^8.2.2",
-		"vue-i18n": "^9.9.0"
+		"concurrently": "^8.2.2"
 	},
 	"devDependencies": {
 		"sass": "^1.72.0"

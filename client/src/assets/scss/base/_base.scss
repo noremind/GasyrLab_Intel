@@ -51,13 +51,13 @@ body {
   gap: 10px;
 }
 
-.btn {
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: abs.$almost-white;
-  border: 2px solid abs.$accent-color;
-
-  &--active {
-    background-color: abs.$accent-color;
-  }
-}
+// .btn {
+//   padding: 12px 20px;
+//   border-radius: 10px;
+//   color: abs.$almost-white;
+//   border: 2px solid abs.$accent-color;
+//   &--active {
+//     box-shadow: rgb(123, 0, 255) 3px 3px 20px;
+//     background-color: abs.$accent-color;
+//   }
+// }
