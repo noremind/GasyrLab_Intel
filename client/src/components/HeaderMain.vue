@@ -163,7 +163,7 @@ function toggleBurgerMenu() {
 }
 
 onMounted(() => {
-  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : false
+  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : true
 })
 </script>
 
