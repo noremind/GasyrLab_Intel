@@ -2,12 +2,16 @@
   <section class="scroll-horizontal">
     <div class="container">
       <div class="scroll-horizontal__wrapper">
-        <h1 class="title scroll-horizontal__title">
+        <!-- <h1 class="title scroll-horizontal__title">
           {{ t('page.main.main.scrollHorizontal.title') }}
-        </h1>
+        </h1> -->
         <div class="demo-wrapper">
           <section class="section-gsap" ref="gsapSection">
-            <!-- <div class="wrapper-gsap text" ref="gsapWrapper">Школа програмирование Gasyr Lab</div> -->
+            <div class="wrapper-gsap wrapper-gsap__title" ref="gsapWrapper">
+              Спонсоры Спонсоры Спонсоры Спонсоры Спонсоры Спонсоры
+            </div>
+          </section>
+          <!-- <section class="section-gsap" ref="gsapSection">
             <ul class="wrapper-gsap" ref="gsapWrapper">
               <li>
                 <a href="#">
@@ -58,7 +62,7 @@
                 /></a>
               </li>
             </ul>
-          </section>
+          </section> -->
         </div>
       </div>
     </div>
@@ -91,7 +95,7 @@ onMounted(() => {
           x: xEnd,
           scrollTrigger: {
             trigger: section,
-            scrub: 0.8
+            scrub: 1
           }
         }
       )
@@ -115,6 +119,8 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .scroll-horizontal {
+  margin-top: 800px;
+  height: 1500px;
   &__wrapper {
     margin-top: clamp(1.875rem, -0.17rem + 10.23vw, 7.5rem);
   }
@@ -133,6 +139,12 @@ ul {
 
 .wrapper-gsap {
   display: flex;
+
+  &__title {
+    font-size: 55px;
+    font-weight: 900;
+    white-space: nowrap;
+  }
 
   &__logo {
     width: 100%;

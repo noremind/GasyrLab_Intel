@@ -4,7 +4,8 @@
 
 	&__list{
 		display: flex;
-		gap: clamp(0.625rem, -0.057rem + 3.41vw, 2.5rem);
+		gap: clamp(0.3rem, -0.5rem + 4vw, 2.5rem);
+		font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
 	}
 
 	&--hidden{

@@ -27,12 +27,13 @@
           </nav>
         </div>
 
-        <div class="header__user header__user--hidden">
+        <div v-if="isAuthUser" class="header__user header__user--hidden">
           <button @click="toggleOpenDropdown" class="header__user-btn header__user-btn--hidden">
             <img class="header__user-img" src="@/assets/images/icons/user.png" alt="User icon" />
           </button>
 
           <LangBtn></LangBtn>
+
           <TransitionGroup tag="div" name="dropdown">
             <div
               v-if="isOpenUserDropdown"
@@ -81,6 +82,16 @@
             </Transition>
           </div>
         </div>
+
+        <div class="flex-box" v-if="!isAuthUser">
+          <LangBtn></LangBtn>
+          <router-link :to="{ name: 'login' }" class="btn">{{
+            t('page.main.header.login')
+          }}</router-link>
+          <router-link :to="{ name: 'register' }" class="btn">{{
+            t('page.main.header.register')
+          }}</router-link>
+        </div>
       </div>
       <transition-group
         tag="div"
@@ -122,7 +133,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
 import ThemeBtn from '@/components/littleComponent/ToggleBtnTheme.vue'
 import { useThemeModeStore } from '@/stores/themeMode.js'
@@ -132,6 +143,7 @@ const theme = useThemeModeStore()
 const { t } = useI18n()
 const isOpenUserDropdown = ref(false)
 const isOpenBurgerMenu = ref(false)
+const isAuthUser = ref(false)
 
 function toggleOpenDropdown() {
   isOpenUserDropdown.value = !isOpenUserDropdown.value
@@ -148,6 +160,10 @@ function closeBurgerMenu() {
 function toggleBurgerMenu() {
   isOpenBurgerMenu.value = !isOpenBurgerMenu.value
 }
+
+onMounted(() => {
+  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : false
+})
 </script>
 
 <style lang="scss" scoped>
@@ -160,7 +176,7 @@ function toggleBurgerMenu() {
     align-items: center;
     gap: 10px;
     position: relative;
-    margin-top: 20px;
+    margin-top: clamp(0.938rem, 0.528rem + 2.05vw, 2.063rem);
   }
 
   &--hidden {

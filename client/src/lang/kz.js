@@ -12,7 +12,9 @@ export default {
 				about: "'Gasyr Lab",
 				dropdown: {
 					log_out: 'Шығу'
-				}
+				},
+				login: 'Кіру',
+				register: 'Тіркелу'
 			},
 			main: {
 				scrollHorizontal: {
