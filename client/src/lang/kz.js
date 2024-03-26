@@ -9,7 +9,7 @@ export default {
 				my_training: 'Менің оқуым',
 				all_courses: 'Барлық курстар',
 				contacts: 'Байланыстар',
-				about: "'Gasyr Lab",
+				about: "'Gasyr Lab' туралы",
 				dropdown: {
 					log_out: 'Шығу'
 				},
@@ -26,6 +26,19 @@ export default {
 				}
 			},
 			footer: {}
+		},
+		login: {
+			title: 'Кіру',
+			inputEmail: 'Аты',
+			inputPassword: 'Құпия сөз',
+			signIn: 'Кіру'
+		},
+		register: {
+			title: 'Тіркелу',
+			inputName: 'Аты',
+			inputEmail: 'Электронды пошта',
+			inputPassword: 'Құпия сөз',
+			signUp: 'Тіркелу'
 		},
 		courses: {
 			header: {},

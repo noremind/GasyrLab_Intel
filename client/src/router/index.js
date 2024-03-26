@@ -19,15 +19,24 @@ const router = createRouter({
 			component: () => import('@/views/AboutPage.vue')
 		},
 		{
-			path: '/login',
-			name: 'login',
-			component: () => import('@/views/LoginPage.vue')
+			path: '/auth',
+			name: 'auth',
+			redirect: '/auth/signIn',
+			component: () => import('@/views/AuthPage.vue'),
+			children: [
+				{
+					path: 'signIn',
+					name: 'login',
+					component: () => import('@/views/AuthPage.vue')
+				},
+				{
+					path: 'signUp',
+					name: 'register',
+					component: () => import('@/views/AuthPage.vue')
+				}
+			]
 		},
-		{
-			path: '/register',
-			name: 'register',
-			component: () => import('@/views/RegisterPage.vue')
-		}
+
 	]
 })
 
