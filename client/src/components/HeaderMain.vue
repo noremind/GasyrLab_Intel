@@ -9,7 +9,7 @@
 
           <nav class="nav nav--hidden">
             <ul class="nav__list">
-              <li class="nav__list-item">
+              <li v-if="isAuthUser" class="nav__list-item">
                 <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
               </li>
               <li class="nav__list-item">
@@ -35,7 +35,12 @@
             <LangBtn></LangBtn>
           </div>
 
-          <TransitionGroup tag="div" name="dropdown">
+          <TransitionGroup
+            ref="dropdownLaptop"
+            @click="outDropdownClickHidden($event)"
+            tag="div"
+            name="dropdown"
+          >
             <div
               v-if="isOpenUserDropdown"
               class="header__user-dropdown header__user-dropdown--hidden"
@@ -166,6 +171,15 @@ const { t } = useI18n()
 const isOpenUserDropdown = ref(false)
 const isOpenBurgerMenu = ref(false)
 const isAuthUser = ref(false)
+const dropdownLaptop = ref(null)
+const catchDropdown = ref(null)
+
+function outDropdownClickHidden(e) {
+  console.log(e.target, 1)
+  console.log(dropdownLaptop.value, 2)
+  // if (dropdownLaptop.value !== e.target) {
+  // }
+}
 
 function toggleOpenDropdown() {
   isOpenUserDropdown.value = !isOpenUserDropdown.value
@@ -184,7 +198,8 @@ function toggleBurgerMenu() {
 }
 
 onMounted(() => {
-  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : false
+  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : true
+  catchDropdown.value = dropdownLaptop.value
 })
 </script>
 

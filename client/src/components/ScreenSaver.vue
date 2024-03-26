@@ -5,7 +5,7 @@
       <svg viewBox="0 0 1200 570" xmlns="http://www.w3.org/2000/svg">
         <mask id="m">
           <g class="cloud1" ref="cloud1">
-            <rect fill="#fff" width="100%" height="600" y="799" />
+            <rect fill="#fff" width="100%" height="700" y="799" />
             <image
               xlink:href="@/assets/images/screenSaver/cloud1Mask2.jpg"
               width="100%"
@@ -56,6 +56,7 @@
           xlink:href="@/assets/images/screenSaver/cloud2.webp"
           width="1200"
           height="800"
+          y="150"
         />
         <image
           class="cloud4"
@@ -98,7 +99,6 @@
           fill="#fff"
           points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250"
         /> -->
-        
 
         <svg viewBox="0 0 100 100" width="60" x="570" y="-20">
           <path
@@ -169,6 +169,7 @@ const mountFg = ref(null)
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 onMounted(() => {
+  gsap.set('cloud1', { y: -150 })
   // gsap.set(scrollDist.value, { width: '100%', height: '200%' })
   gsap
     .timeline({
@@ -226,7 +227,7 @@ onMounted(() => {
 
 .main {
   position: relative;
-  background: #fff;
+  background: #7d7d7d;
   width: 100%;
   /* max-width: 1200px; */
   height: 100%;

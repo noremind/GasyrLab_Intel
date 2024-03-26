@@ -34,7 +34,7 @@ import { useRoute, useRouter } from 'vue-router'
 const containerDiv = ref(null)
 const route = useRoute()
 const router = useRouter()
-const authUser = useAuthUserStore()
+// const authUser = useAuthUserStore()
 
 // Sign In
 function transitionAddMove() {
@@ -53,6 +53,11 @@ function transitionRemoveMove() {
 
 const currentAuthPage = computed(() => {
   return route.name === 'login' ? 'login' : 'register'
+})
+
+window.addEventListener('popstate', function () {
+  window.location.href = '/' // Перенаправление на главную страницу
+  // router.push({ name: 'home' })
 })
 
 onMounted(() => {

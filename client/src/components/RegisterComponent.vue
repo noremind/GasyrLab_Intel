@@ -24,14 +24,14 @@
           autocomplete="current-password"
           v-model="authUser.registerPassword"
         />
-        <Button class="btn btn--ontline">{{ t('page.register.signUp') }}</Button>
+        <Button class="btn btn--outline">{{ t('page.register.signUp') }}</Button>
       </form>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Button from '@/components/littleComponent/ButtonComponent.vue'
 import { useAuthUserStore } from '@/stores/authUser.js'
