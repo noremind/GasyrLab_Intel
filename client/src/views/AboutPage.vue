@@ -1,9 +1,7 @@
 <template>
-  <Mountains></Mountains>
+  <div></div>
 </template>
 
-<script setup>
-import Mountains from '@/components/ScreenSaver.vue'
-</script>
+<script setup></script>
 
 <style lang="scss" scoped></style>

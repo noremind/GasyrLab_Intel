@@ -27,18 +27,24 @@ export default {
 			},
 			footer: {}
 		},
-		login: {
-			title: 'Sign In',
-			inputEmail: 'Name',
-			inputPassword: 'Password',
-			signIn: 'Sign In'
-		},
-		register: {
-			title: 'Create Account',
-			inputName: 'Name',
-			inputEmail: 'Email',
-			inputPassword: 'Password',
-			signUp: 'Sign Up'
+		auth: {
+			greetingSignIn: 'Welcome Back!',
+			greetingSignUp: 'Hello, Friend!',
+			textSignIn: "Enter your Personal details to use all of site features",
+			textSignUp: "Register with your Personal details to use all of site features",
+			login: {
+				title: 'Sign In',
+				inputEmail: 'Name',
+				inputPassword: 'Password',
+				signIn: 'Sign In'
+			},
+			register: {
+				title: 'Create Account',
+				inputName: 'Name',
+				inputEmail: 'Email',
+				inputPassword: 'Password',
+				signUp: 'Sign Up'
+			},
 		},
 		courses: {
 			header: {},

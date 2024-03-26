@@ -29,18 +29,13 @@
 
         <div class="header__user header__user--hidden">
           <div v-if="isAuthUser" class="flex-box">
-            <button @click="toggleOpenDropdown" class="header__user-btn header__user-btn--hidden">
+            <button @click="toggleOpenDropdown()" class="header__user-btn header__user-btn--hidden">
               <img class="header__user-img" src="@/assets/images/icons/user1.png" alt="User icon" />
             </button>
             <LangBtn></LangBtn>
           </div>
 
-          <TransitionGroup
-            ref="dropdownLaptop"
-            @click="outDropdownClickHidden($event)"
-            tag="div"
-            name="dropdown"
-          >
+          <TransitionGroup ref="dropdownLaptop" tag="div" name="dropdown">
             <div
               v-if="isOpenUserDropdown"
               class="header__user-dropdown header__user-dropdown--hidden"
@@ -110,6 +105,7 @@
       </div>
 
       <transition-group
+        ref="dropdownMobile"
         tag="div"
         name="mobile-dropdown"
         class="mobile-dropdown mobile-dropdown--hidden"
@@ -159,7 +155,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeMount } from 'vue'
 import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
 import ThemeBtn from '@/components/littleComponent/ToggleBtnTheme.vue'
 import { useThemeModeStore } from '@/stores/themeMode.js'
@@ -172,13 +168,25 @@ const isOpenUserDropdown = ref(false)
 const isOpenBurgerMenu = ref(false)
 const isAuthUser = ref(false)
 const dropdownLaptop = ref(null)
-const catchDropdown = ref(null)
+const dropdownMobile = ref(null)
 
-function outDropdownClickHidden(e) {
-  console.log(e.target, 1)
-  console.log(dropdownLaptop.value, 2)
-  // if (dropdownLaptop.value !== e.target) {
-  // }
+const handleClickCloseDropdown = (event) => {
+  if (
+    isOpenUserDropdown.value &&
+    !event.target.closest('.header__user-dropdown') &&
+    !event.target.closest('.header__user-btn')
+  ) {
+    closeDropdown()
+  }
+}
+
+const handleClickCloseMobileDropdown = (event) => {
+  if (
+    dropdownMobile.value &&
+    !event.target.closest('.mobile-dropdown') &&
+    !event.target.closest('.burger__btn')
+  )
+    closeBurgerMenu()
 }
 
 function toggleOpenDropdown() {
@@ -198,8 +206,14 @@ function toggleBurgerMenu() {
 }
 
 onMounted(() => {
-  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : true
-  catchDropdown.value = dropdownLaptop.value
+  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : false
+  document.addEventListener('click', handleClickCloseDropdown)
+  document.addEventListener('click', handleClickCloseMobileDropdown)
+})
+
+onBeforeMount(() => {
+  document.addEventListener('click', handleClickCloseDropdown)
+  document.addEventListener('click', handleClickCloseMobileDropdown)
 })
 </script>
 
@@ -213,7 +227,7 @@ onMounted(() => {
     align-items: center;
     gap: 10px;
     position: relative;
-    margin-top: clamp(0.938rem, 0.528rem + 2.05vw, 2.063rem);
+    margin-top: clamp(1.25rem, 0.682rem + 2.84vw, 2.813rem);
   }
 
   &--hidden {

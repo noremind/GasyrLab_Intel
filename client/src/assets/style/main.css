@@ -204,6 +204,9 @@ body {
   height: 480px;
   margin: auto auto;
 }
+.container-auth__title {
+  font-size: clamp(0.875rem, 0.602rem + 1.36vw, 1.625rem);
+}
 .container-auth__span {
   font-size: 12px;
 }
@@ -215,6 +218,7 @@ body {
   flex-direction: column;
   padding: 0 40px;
   height: 100%;
+  gap: 5px;
 }
 .container-auth__input {
   background-color: #eee;
@@ -297,7 +301,7 @@ body {
   overflow: hidden;
   transition: all 0.6s ease-in-out;
   border-radius: 150px 0 0 100px;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .container-auth.active .toggle-container {
@@ -330,6 +334,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 10px;
   padding: 0 30px;
   text-align: center;
   top: 0;

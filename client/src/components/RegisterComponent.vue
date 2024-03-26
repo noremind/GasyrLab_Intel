@@ -2,29 +2,29 @@
   <div class="container-auth">
     <div class="form-container sign-up">
       <form class="container-auth__form">
-        <h1 class="container-auth__title">{{ t('page.register.title') }}</h1>
+        <h1 class="container-auth__title">{{ t('page.auth.register.title') }}</h1>
         <input
           class="container-auth__input"
           type="text"
-          :placeholder="t('page.register.inputName')"
+          :placeholder="t('page.auth.register.inputName')"
           autocomplete="current-password"
           v-model="authUser.registerName"
         />
         <input
           class="container-auth__input"
           type="email"
-          :placeholder="t('page.register.inputEmail')"
+          :placeholder="t('page.auth.register.inputEmail')"
           autocomplete="current-password"
           v-model="authUser.registerEmail"
         />
         <input
           class="container-auth__input"
           type="password"
-          :placeholder="t('page.register.inputPassword')"
+          :placeholder="t('page.auth.register.inputPassword')"
           autocomplete="current-password"
           v-model="authUser.registerPassword"
         />
-        <Button class="btn btn--outline">{{ t('page.register.signUp') }}</Button>
+        <Button class="btn btn--outline">{{ t('page.auth.register.signUp') }}</Button>
       </form>
     </div>
   </div>

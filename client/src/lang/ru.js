@@ -27,18 +27,25 @@ export default {
 			},
 			footer: {}
 		},
-		login: {
-			title: 'Войти',
-			inputEmail: 'Имя',
-			inputPassword: 'Пароль',
-			signIn: 'Войти'
-		},
-		register: {
-			title: 'Создать аккаунт',
-			inputName: 'Имя',
-			inputEmail: 'Электронная почта',
-			inputPassword: 'Пароль',
-			signUp: 'Зарегистрироваться'
+		auth: {
+			greetingSignIn: 'Добро пожаловать обратно!',
+			greetingSignUp: 'Привет, друг!',
+			textSignIn: 'Введите свои личные данные, чтобы воспользоваться всеми функциями сайта',
+			textSignUp: 'Зарегистрируйтесь с помощью своих личных данных, чтобы воспользоваться всеми функциями сайта',
+
+			login: {
+				title: 'Войти',
+				inputEmail: 'Имя',
+				inputPassword: 'Пароль',
+				signIn: 'Войти'
+			},
+			register: {
+				title: 'Создать аккаунт',
+				inputName: 'Имя',
+				inputEmail: 'Электронная почта',
+				inputPassword: 'Пароль',
+				signUp: 'Зарегистрироваться'
+			},
 		},
 		courses: {
 			header: {},

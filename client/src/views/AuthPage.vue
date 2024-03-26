@@ -7,14 +7,25 @@
       <div class="toggle-container">
         <div class="toggle">
           <div v-if="currentAuthPage === 'register'" class="toggle-panel toggle-left">
-            <h1>Welcome Back!</h1>
-            <p>Enter your Personal details to use all of site features</p>
-            <Button class="hidden" @click="transitionRemoveMove()">Sign In</Button>
+            <div class="toggle__lang-in">
+              <LangBtn></LangBtn>
+            </div>
+            <h1>{{ t('page.auth.greetingSignIn') }}</h1>
+            <p>{{ t('page.auth.textSignIn') }}</p>
+            <Button class="btn hidden" @click="transitionRemoveMove()">{{
+              t('page.auth.login.signIn')
+            }}</Button>
           </div>
+
           <div v-else class="toggle-panel toggle-right">
-            <h1>Hello, Friend!</h1>
-            <p>Register with your Personal details to use all of site features</p>
-            <Button class="btn hidden" @click="transitionAddMove()">Sign Up</Button>
+            <div class="toggle__lang-up">
+              <LangBtn></LangBtn>
+            </div>
+            <h1>{{ t('page.auth.greetingSignUp') }}</h1>
+            <p>{{ t('page.auth.textSignUp') }}</p>
+            <Button class="btn hidden" @click="transitionAddMove()">{{
+              t('page.auth.register.signUp')
+            }}</Button>
           </div>
         </div>
       </div>
@@ -24,12 +35,16 @@
 
 <script setup>
 // import { RouterView } from 'vue-router'
+import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
 import { ref, onMounted, computed } from 'vue'
 import Login from '@/components/LoginComponent.vue'
 import Register from '@/components/RegisterComponent.vue'
 import Button from '@/components/littleComponent/ButtonComponent.vue'
 import { useAuthUserStore } from '@/stores/authUser.js'
 import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const containerDiv = ref(null)
 const route = useRoute()
@@ -67,4 +82,20 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.toggle {
+  &__lang-in {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 10;
+  }
+
+  &__lang-up {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 10;
+  }
+}
+</style>

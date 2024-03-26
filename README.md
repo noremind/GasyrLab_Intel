@@ -35,7 +35,7 @@ Our team is creating a website for the __"Gasyr Foundation School"__ that offers
 ## 📝 Table of Contents
 
 - :paperclip: [Our Team](#sparkles-our-team)
-- :paperclip: [Web site](#zap-web-site)
+- :paperclip: [Web site](#zap-link-to-web-site)
 - :paperclip: [Installation](#gear-installation)
 
 ## :sparkles: Our Team
@@ -44,13 +44,13 @@ Our team is creating a website for the __"Gasyr Foundation School"__ that offers
 | ---------------- | -------------- |
 | Dinmuhammed Muslimuly | Team-Leader :star:  |
 | Rahimzhanov Rustem   | Project Manager      |
-| Nartaiuly Issa    | Developer      |
-| Beisembay Norem | Developer      |
-| Shermakhan Omar        | Developer      |
+| Nartaiuly Issa    | Developer & UX/UI Designer     |
+| Beisembay Norem | Developer & UX/UI Designer     |
+| Shermakhan Omar        | Supporter      |
 
 <br>
 
-## :zap: Web site
+## :zap: Link to Web site
 ```sh
 https://gasyr-intel.vercel.app/
 ```

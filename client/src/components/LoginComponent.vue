@@ -2,20 +2,20 @@
   <main>
     <div class="form-container sign-in">
       <form class="container-auth__form">
-        <h1 class="container-auth__title">{{ t('page.login.title') }}</h1>
+        <h1 class="container-auth__title">{{ t('page.auth.login.title') }}</h1>
         <input
           class="container-auth__input"
           type="email"
-          :placeholder="t('page.login.inputEmail')"
+          :placeholder="t('page.auth.login.inputEmail')"
           autocomplete="current-password"
         />
         <input
           class="container-auth__input"
           type="password"
-          :placeholder="t('page.login.inputPassword')"
+          :placeholder="t('page.auth.login.inputPassword')"
           autocomplete="current-password"
         />
-        <Button class="btn btn--outline">{{ t('page.login.signIn') }}</Button>
+        <Button class="btn btn--outline">{{ t('page.auth.login.signIn') }}</Button>
       </form>
     </div>
   </main>

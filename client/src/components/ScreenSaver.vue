@@ -37,7 +37,7 @@
         <image
           class="sky"
           ref="sky"
-          xlink:href="@/assets/images/screenSaver/bg-color.jpg"
+          xlink:href="@/assets/images/screenSaver/bg-color.webp"
           width="100%"
           height="590"
         />

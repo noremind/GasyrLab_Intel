@@ -16,10 +16,8 @@ const { t } = useI18n()
 
 .btn {
   cursor: pointer;
-  padding: 10px 20px;
-  // min-width: 120px;
-  // min-height: 44px;
-  font-size: var(--size, 1rem);
+  padding: clamp(0.313rem, 0.199rem + 0.57vw, 0.625rem) clamp(0.625rem, 0.398rem + 1.14vw, 1.25rem);
+  font-size: clamp(0.813rem, 0.744rem + 0.34vw, 1rem);
   font-weight: 500;
   border: none;
   @include abs.breakpoint('mobile-lg') {
@@ -27,7 +25,7 @@ const { t } = useI18n()
   }
 
   &--primary {
-    padding: 10px 30px;
+    padding: clamp(0.5rem, 0.455rem + 0.23vw, 0.625rem) clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
     --clr-font-main: hsla(0 0% 20% / 100);
     --btn-bg-1: hsla(270 80% 69% / 1);
     --btn-bg-2: hsl(260, 87%, 60%);
