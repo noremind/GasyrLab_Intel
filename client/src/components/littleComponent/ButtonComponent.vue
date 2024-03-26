@@ -76,7 +76,7 @@ const { t } = useI18n()
   outline: none;
   box-shadow:
     0 0 0 3px var(--btn-bg-color),
-    0 0 0 6px var(--btn-bg-2);
+    0 0 0 2px var(--btn-bg-2);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -12,18 +12,24 @@
               height="800"
             />
             <image
+              xlink:href="@/assets/images/screenSaver/bg-white.jpg"
+              width="100%"
+              height="800"
+              y="300"
+            />
+            <image
               xlink:href="@/assets/images/screenSaver/cloud1Mask.jpg"
               width="100%"
               height="800"
               x="500"
-              y="-50"
+              y="-150"
             />
             <image
               xlink:href="@/assets/images/screenSaver/cloud1Mask2.jpg"
               width="100%"
               height="800"
               x="-500"
-              y="-50"
+              y="-150"
             />
           </g>
         </mask>
@@ -98,7 +104,6 @@
           fill="#fff"
           points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250"
         /> -->
-        
 
         <svg viewBox="0 0 100 100" width="60" x="570" y="-20">
           <path
@@ -119,6 +124,10 @@
 
         <g mask="url(#m)">
           <rect fill="#fff" width="100%" height="100%" />
+          <text font-size="45" font-weight="bold" x="190" y="350" fill="#7b3ff2">
+            "Главное - ваша идея и амбиции"
+          </text>
+          <text font-size="30" font-weight="bold" x="500" y="430" fill="#1d1d1d">- Якуб CEO</text>
         </g>
 
         <rect
@@ -135,11 +144,11 @@
     </div>
   </div>
   <div class="waves">
-    <svg class="waves__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg class="waves__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
       <path
         fill="#fff"
         fill-opacity="1"
-        d="M0,96L18.5,90.7C36.9,85,74,75,111,101.3C147.7,128,185,192,222,186.7C258.5,181,295,107,332,80C369.2,53,406,75,443,101.3C480,128,517,160,554,165.3C590.8,171,628,149,665,122.7C701.5,96,738,64,775,53.3C812.3,43,849,53,886,53.3C923.1,53,960,43,997,58.7C1033.8,75,1071,117,1108,154.7C1144.6,192,1182,224,1218,202.7C1255.4,181,1292,107,1329,85.3C1366.2,64,1403,96,1422,112L1440,128L1440,0L1421.5,0C1403.1,0,1366,0,1329,0C1292.3,0,1255,0,1218,0C1181.5,0,1145,0,1108,0C1070.8,0,1034,0,997,0C960,0,923,0,886,0C849.2,0,812,0,775,0C738.5,0,702,0,665,0C627.7,0,591,0,554,0C516.9,0,480,0,443,0C406.2,0,369,0,332,0C295.4,0,258,0,222,0C184.6,0,148,0,111,0C73.8,0,37,0,18,0L0,0Z"
+        d="M0,64L48,53.3C96,43,192,21,288,32C384,43,480,85,576,90.7C672,96,768,64,864,64C960,64,1056,96,1152,96C1248,96,1344,64,1392,48L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
       ></path>
     </svg>
   </div>
@@ -204,6 +213,7 @@ onMounted(() => {
 @use '@/assets/scss/abstracts' as abs;
 
 .gsap-class {
+  will-change: scroll-position;
   @include abs.breakpoint('tablet') {
     display: none;
   }
@@ -211,7 +221,7 @@ onMounted(() => {
 
 .waves {
   position: relative;
-  height: clamp(1.25rem, -2.5rem + 18.75vw, 11.563rem);
+  height: clamp(1.25rem, -2.083rem + 6.94vw, 3.125rem);
   transform: translateY(-10px);
 
   @include abs.breakpoint('tablet') {
