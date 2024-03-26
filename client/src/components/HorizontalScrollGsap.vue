@@ -90,7 +90,8 @@
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/minified/ScrollTrigger.min.js'
+// import { ScrollTrigger } from 'gsap/minified/ScrollTrigger.min.js'
+import { ScrollTrigger } from 'gsap-trial/ScrollTrigger.js'
 
 const { t } = useI18n()
 

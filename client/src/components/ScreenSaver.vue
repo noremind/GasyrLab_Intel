@@ -158,8 +158,11 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/minified/ScrollTrigger.min.js'
-import { ScrollToPlugin } from 'gsap/minified/ScrollToPlugin.min.js'
+// import { ScrollTrigger } from 'gsap/minified/ScrollTrigger.min.js'
+// import { ScrollToPlugin } from 'gsap/minified/ScrollToPlugin.min.js'
+
+import { ScrollToPlugin } from 'gsap-trial/ScrollToPlugin.js'
+import { ScrollTrigger } from 'gsap-trial/ScrollTrigger.js'
 
 import $ from 'zeptojs'
 
@@ -179,7 +182,7 @@ const mountFg = ref(null)
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 onMounted(() => {
-  gsap.set('cloud1', { y: -150 })
+  // gsap.set('cloud1', { y: -150 })
   // gsap.set(scrollDist.value, { width: '100%', height: '200%' })
   gsap
     .timeline({
@@ -200,7 +203,12 @@ onMounted(() => {
     .fromTo('.' + mountFg.value.classList[0], { y: -50 }, { y: -600 }, 0)
 
   $(arrowBtn.value).on('mouseenter', () => {
-    gsap.to(arrow.value, { y: 10, duration: 0.8, ease: 'back.inOut(3)', overwrite: 'auto' })
+    gsap.to(arrow.value, {
+      y: 10,
+      duration: 0.8,
+      ease: 'back.inOut(3)',
+      overwrite: 'auto'
+    })
   })
   $(arrowBtn.value).on('mouseleave', () => {
     gsap.to(arrow.value, { y: 0, duration: 0.5, ease: 'power3.out', overwrite: 'auto' })
