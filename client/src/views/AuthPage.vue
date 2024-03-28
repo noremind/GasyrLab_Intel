@@ -10,8 +10,8 @@
             <div class="toggle__lang-in">
               <LangBtn></LangBtn>
             </div>
-            <h1>{{ t('page.auth.greetingSignIn') }}</h1>
-            <p>{{ t('page.auth.textSignIn') }}</p>
+            <h1 class="toggle__title">{{ t('page.auth.greetingSignIn') }}</h1>
+            <p class="toggle__text">{{ t('page.auth.textSignIn') }}</p>
             <Button class="btn hidden" @click="transitionRemoveMove()">{{
               t('page.auth.login.signIn')
             }}</Button>
@@ -21,8 +21,8 @@
             <div class="toggle__lang-up">
               <LangBtn></LangBtn>
             </div>
-            <h1>{{ t('page.auth.greetingSignUp') }}</h1>
-            <p>{{ t('page.auth.textSignUp') }}</p>
+            <h1 class="toggle__title">{{ t('page.auth.greetingSignUp') }}</h1>
+            <p class="toggle__text">{{ t('page.auth.textSignUp') }}</p>
             <Button class="btn hidden" @click="transitionAddMove()">{{
               t('page.auth.register.signUp')
             }}</Button>

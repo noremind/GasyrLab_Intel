@@ -1,10 +1,10 @@
 @use '../abstracts' as abs;
 
 .XYcenter{
-	  display: flex;
-  justify-content: center; /* Центрирование по горизонтали */
-  align-items: center; /* Центрирование по вертикали */
-  height: 100vh; /* Полная высота экрана */
+	display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100vh; 
 }
 
 .container-auth {
@@ -20,13 +20,15 @@
   margin: auto auto;
 
 
+
+
 &__title{
 	font-size: clamp(0.875rem, 0.602rem + 1.36vw, 1.625rem);
 }
 
 
   &__span {
-    font-size: 12px;
+    font-size: clamp(0.563rem, 0.494rem + 0.34vw, 0.75rem);
   }
 
   &__form {
@@ -35,7 +37,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 clamp(0.625rem, -0.057rem + 3.41vw, 2.5rem);
     height: 100%;
 		gap: 5px;
   }
@@ -45,6 +47,7 @@
     border: none;
     margin: 8px 0;
     padding: 10px 15px;
+		// padding: clamp(0.313rem, 0.199rem + 0.57vw, 0.625rem) clamp(0.313rem, 0.085rem + 1.14vw, 0.938rem);
     font-size: 13px;
     border-radius: 8px;
     width: 100%;
@@ -72,6 +75,10 @@
 
 .container-auth.active .sign-in {
   transform: translateX(100%);
+
+	@include abs.breakpoint("tablet"){
+		transform: translateY(100%)
+	}
 }
 
 .sign-up {
@@ -101,20 +108,6 @@
   }
 }
 
-.social-icons {
-  margin: 20px 0;
-}
-
-.social-icons a {
-  border: 1px solid #ccc;
-  border-radius: 20%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 3px;
-  width: 40px;
-  height: 40px;
-}
 
 .toggle-container {
   position: absolute;
@@ -131,6 +124,10 @@
 .container-auth.active .toggle-container {
   transform: translateX(-100%);
   border-radius: 0 150px 100px 0;
+
+	@include abs.breakpoint("tablet"){
+			// transform: translateY(100%);
+	}
 }
 
 .toggle {
@@ -144,6 +141,14 @@
   width: 200%;
   transform: translateX(0);
   transition: all 0.6s ease-in-out;
+
+	&__text{
+		font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+	}
+
+	&__title{
+		font-size: clamp(0.813rem, 0.699rem + 0.57vw, 1.125rem);
+	}
 }
 
 .container-auth.active .toggle {
@@ -159,7 +164,7 @@
   justify-content: center;
   flex-direction: column;
 	gap: 10px;
-  padding: 0 30px;
+  padding: 0 clamp(0.625rem, 0.17rem + 2.27vw, 1.875rem);
   text-align: center;
   top: 0;
   transform: translateX(0);
@@ -172,6 +177,12 @@
 
 .container-auth .toggle-left {
   transform: translateX(0);
+
+	@include abs.breakpoint("mobile-lg"){
+		transform: translateX(-10%);
+	}
+
+	
 }
 
 .toggle-right {
@@ -181,4 +192,8 @@
 
 .container-auth.active .toggle-right {
   transform: translateX(200%);
+
+	@include abs.breakpoint("mobile-lg"){
+		transform: translateX(210%);
+	}
 }

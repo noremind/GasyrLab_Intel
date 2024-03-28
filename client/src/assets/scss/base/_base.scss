@@ -58,7 +58,11 @@ body {
 	}
 }
 
-
+.tablet-hidden{
+	@include abs.breakpoint('tablet'){
+		display: none;
+	}
+}
 
 
 

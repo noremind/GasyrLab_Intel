@@ -32,6 +32,7 @@
             <button @click="toggleOpenDropdown()" class="header__user-btn header__user-btn--hidden">
               <img class="header__user-img" src="@/assets/images/icons/user1.png" alt="User icon" />
             </button>
+            <ThemeBtn class="tablet-hidden"></ThemeBtn>
             <LangBtn></LangBtn>
           </div>
 
@@ -53,6 +54,7 @@
           <div class="burger burger--hidden">
             <div class="burger__wrapper">
               <LangBtn v-if="!isAuthUser"></LangBtn>
+              <ThemeBtn></ThemeBtn>
               <div>
                 <Transition mode="out-in" name="burger">
                   <button class="burger__btn" @click="toggleBurgerMenu()" v-if="!isOpenBurgerMenu">
@@ -94,6 +96,7 @@
         </div>
 
         <div v-if="!isAuthUser" class="flex-box flex-box--hidden">
+          <ThemeBtn></ThemeBtn>
           <LangBtn></LangBtn>
           <router-link :to="{ name: 'login' }" class="btn">
             <Button class="btn btn--outline">{{ t('page.main.header.login') }}</Button>
@@ -125,9 +128,9 @@
               t('page.main.header.about')
             }}</router-link>
           </li>
-          <li class="mobile-dropdown__list-item">
+          <!-- <li class="mobile-dropdown__list-item">
             <ThemeBtn></ThemeBtn>
-          </li>
+          </li> -->
           <li v-if="isAuthUser" class="mobile-dropdown__list-item">
             <div class="flex-box">
               <p>Имя пользователя</p>
