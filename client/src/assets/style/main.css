@@ -235,6 +235,9 @@ body {
   width: 100%;
   outline: none;
 }
+.container-auth__input--invalid {
+  border: 1px solid red;
+}
 
 .container-auth button.hidden {
   background-color: transparent;
