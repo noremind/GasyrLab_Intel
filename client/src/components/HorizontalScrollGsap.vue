@@ -182,7 +182,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .scroll-horizontal {
   // margin-top: 800px;
-  height: 1500px;
+  // height: 1500px;
   &__wrapper {
     margin-top: clamp(1.875rem, -0.17rem + 10.23vw, 7.5rem);
   }

@@ -31,15 +31,15 @@ body {
   color: abs.$theme-light-color;
 }
 
-.dark svg path[fill] {
-  fill: abs.$theme-light-color;
-}
-
+// .dark svg path[fill] {
+//   fill: abs.$theme-light-color;
+// }
 
 .title {
   font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
   color: abs.$almost-black;
-  font-weight: 500;
+  font-weight: 700;
+  margin-bottom: 50px;
   .dark & {
     color: abs.$almost-white;
   }
@@ -51,21 +51,18 @@ body {
   align-items: center;
   gap: clamp(0.25rem, 0.114rem + 0.68vw, 0.625rem);
 
-	&--hidden{
-		@include abs.breakpoint('tablet'){
-			display: none;
-		}
-	}
+  &--hidden {
+    @include abs.breakpoint('tablet') {
+      display: none;
+    }
+  }
 }
 
-.tablet-hidden{
-	@include abs.breakpoint('tablet'){
-		display: none;
-	}
+.tablet-hidden {
+  @include abs.breakpoint('tablet') {
+    display: none;
+  }
 }
-
-
-
 
 // .btn {
 //   padding: 12px 20px;

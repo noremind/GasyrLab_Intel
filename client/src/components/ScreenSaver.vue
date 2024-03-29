@@ -233,6 +233,7 @@ onMounted(() => {
   position: relative;
   height: clamp(1.25rem, -2.083rem + 6.94vw, 3.125rem);
   transform: translateY(-10px);
+  margin-bottom: 100px;
 
   @include abs.breakpoint('tablet') {
     display: none;

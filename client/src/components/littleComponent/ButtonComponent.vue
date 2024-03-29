@@ -63,6 +63,17 @@ const { t } = useI18n()
       background-color: abs.$accent-color;
       color: #fff;
     }
+
+    .dark & {
+      background-color: abs.$almost-black;
+      color: #fff;
+      border: 1px solid #fff;
+
+      &:hover {
+        background-color: abs.$accent-color;
+        color: #fff;
+      }
+    }
   }
 }
 

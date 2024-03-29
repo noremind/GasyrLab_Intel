@@ -230,7 +230,7 @@ onBeforeMount(() => {
     align-items: center;
     gap: 10px;
     position: relative;
-    margin-top: clamp(1.25rem, 0.682rem + 2.84vw, 2.813rem);
+    // margin-top: clamp(1.25rem, 0.682rem + 2.84vw, 2.813rem);
   }
 
   &--hidden {

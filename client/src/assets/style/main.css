@@ -140,14 +140,11 @@ body {
   color: #fff;
 }
 
-.dark svg path[fill] {
-  fill: #fff;
-}
-
 .title {
   font-size: clamp(1.25rem, 0.795rem + 2.27vw, 2.5rem);
   color: #212529;
-  font-weight: 500;
+  font-weight: 700;
+  margin-bottom: 50px;
 }
 .dark .title {
   color: #f5f5f5;

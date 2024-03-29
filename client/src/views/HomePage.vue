@@ -3,16 +3,17 @@
   <Intro></Intro>
   <Header></Header>
   <Greeting></Greeting>
+  <Courses></Courses>
   <Sponsors></Sponsors>
 </template>
 
 <script setup>
 // import IntroMain from '@/components/IntroMain.vue'
+import Intro from '@/components/ScreenSaver.vue'
 import Header from '@/components/HeaderMain.vue'
 import Greeting from '@/components/GreetingMain.vue'
-import Intro from '@/components/ScreenSaver.vue'
 import Sponsors from '@/components/HorizontalScrollGsap.vue'
+import Courses from '@/components/OurCourses.vue'
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
