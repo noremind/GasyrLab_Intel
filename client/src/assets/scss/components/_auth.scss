@@ -52,6 +52,10 @@
     border-radius: 8px;
     width: 100%;
     outline: none;
+
+		&--invalid{
+			border: 1px solid red;
+		}
   }
 }
 

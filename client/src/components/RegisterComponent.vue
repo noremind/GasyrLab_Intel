@@ -8,21 +8,17 @@
           type="text"
           :placeholder="t('page.auth.register.inputName')"
           autocomplete="current-password"
-          v-model="authUser.registerName"
         />
         <input
           class="container-auth__input"
           type="email"
           :placeholder="t('page.auth.register.inputEmail')"
-          autocomplete="current-password"
-          v-model="authUser.registerEmail"
         />
         <input
           class="container-auth__input"
           type="password"
           :placeholder="t('page.auth.register.inputPassword')"
           autocomplete="current-password"
-          v-model="authUser.registerPassword"
         />
         <Button class="btn btn--outline">{{ t('page.auth.register.signUp') }}</Button>
       </form>
@@ -31,16 +27,27 @@
 </template>
 
 <script setup>
-// import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Button from '@/components/littleComponent/ButtonComponent.vue'
-import { useAuthUserStore } from '@/stores/authUser.js'
+// import { useAuthUserStore } from '@/stores/authUser.js'
+import { useVuelidate } from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
 
-const authUser = useAuthUserStore()
+const registerName = ref('')
+const registerEmail = ref('')
+const registerPassword = ref('')
+
+const validations = {
+  registerName: '',
+  registerEmail: '',
+  registerPassword: ''
+}
 
 const { t } = useI18n()
 
-// const containerDiv = ref(null)
+const v$ = useVuelidate(validations)
+// const authUser = useAuthUserStore()
 </script>
 
 <style lang="scss" scoped></style>

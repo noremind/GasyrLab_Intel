@@ -54,7 +54,7 @@
           <div class="burger burger--hidden">
             <div class="burger__wrapper">
               <LangBtn v-if="!isAuthUser"></LangBtn>
-              <ThemeBtn></ThemeBtn>
+              <!-- <ThemeBtn></ThemeBtn> -->
               <div>
                 <Transition mode="out-in" name="burger">
                   <button class="burger__btn" @click="toggleBurgerMenu()" v-if="!isOpenBurgerMenu">
@@ -118,7 +118,10 @@
             <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.my_training') }}</a>
           </li>
           <li class="mobile-dropdown__list-item">
-            <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.all_courses') }}</a>
+            <div class="flex-box">
+              <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.all_courses') }}</a>
+              <ThemeBtn></ThemeBtn>
+            </div>
           </li>
           <li class="mobile-dropdown__list-item">
             <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.contacts') }}</a>
@@ -306,6 +309,10 @@ onBeforeMount(() => {
   &--hidden {
     @include abs.breakpoint('tablet') {
       display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      z-index: 10;
     }
   }
   &__list {
