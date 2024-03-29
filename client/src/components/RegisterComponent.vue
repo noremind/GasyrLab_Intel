@@ -8,20 +8,17 @@
           type="text"
           :placeholder="t('page.auth.register.inputName')"
           autocomplete="current-password"
-          v-model="authUser.registerName"
         />
         <input
           class="container-auth__input"
           type="email"
           :placeholder="t('page.auth.register.inputEmail')"
-          v-model="authUser.registerEmail"
         />
         <input
           class="container-auth__input"
           type="password"
           :placeholder="t('page.auth.register.inputPassword')"
           autocomplete="current-password"
-          v-model="authUser.registerPassword"
         />
         <Button class="btn btn--outline">{{ t('page.auth.register.signUp') }}</Button>
       </form>
