@@ -215,12 +215,12 @@ body {
 .container-auth__form {
   background-color: #fff;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 0 clamp(0.625rem, -0.057rem + 3.41vw, 2.5rem);
   height: 100%;
   gap: 5px;
+  position: relative;
 }
 .container-auth__input {
   background-color: #eee;
@@ -233,7 +233,12 @@ body {
   outline: none;
 }
 .container-auth__input--invalid {
-  border: 1px solid red;
+  border: 1px solid rgb(253, 62, 62);
+}
+
+.container-auth__error-message {
+  font-size: 13px;
+  text-align: left;
 }
 
 .container-auth button.hidden {
@@ -256,11 +261,6 @@ body {
 
 .container-auth.active .sign-in {
   transform: translateX(100%);
-}
-@media (max-width: 768px) {
-  .container-auth.active .sign-in {
-    transform: translateY(100%);
-  }
 }
 
 .sign-up {
@@ -303,6 +303,7 @@ body {
   transform: translateX(-100%);
   border-radius: 0 150px 100px 0;
 }
+
 .toggle {
   background-color: #512da8;
   height: 100%;
@@ -349,11 +350,6 @@ body {
 .container-auth .toggle-left {
   transform: translateX(0);
 }
-@media (max-width: 425px) {
-  .container-auth .toggle-left {
-    transform: translateX(-10%);
-  }
-}
 
 .toggle-right {
   right: 0;
@@ -362,11 +358,6 @@ body {
 
 .container-auth.active .toggle-right {
   transform: translateX(200%);
-}
-@media (max-width: 425px) {
-  .container-auth.active .toggle-right {
-    transform: translateX(210%);
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

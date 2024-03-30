@@ -37,14 +37,25 @@ export default {
 				title: 'Войти',
 				inputEmail: 'Имя',
 				inputPassword: 'Пароль',
-				signIn: 'Войти'
+				signIn: 'Войти',
+				errors: {
+					requiredField: 'Обязательное поле',
+					existingEmail: 'Введите существующий адрес электронной почты',
+					existingPassword: 'Введите правильный пароль',
+				}
+
 			},
 			register: {
 				title: 'Создать аккаунт',
 				inputName: 'Имя',
 				inputEmail: 'Электронная почта',
 				inputPassword: 'Пароль',
-				signUp: 'Зарегистрироваться'
+				signUp: 'Зарегистрироваться',
+				errors: {
+					requiredField: 'Обязательное поле',
+					minFieldLength: 'Минимум 6 символов',
+					correctEmail: 'Введите корректный адрес электронной почты'
+				}
 			},
 		},
 		courses: {

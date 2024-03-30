@@ -36,14 +36,25 @@ export default {
 				title: 'Sign In',
 				inputEmail: 'Name',
 				inputPassword: 'Password',
-				signIn: 'Sign In'
+				signIn: 'Sign In',
+				errors: {
+					requiredField: 'Required field',
+					existingEmail: 'Enter an existing email address',
+					existingPassword: 'Enter the correct password'
+				}
+
 			},
 			register: {
 				title: 'Create Account',
 				inputName: 'Name',
 				inputEmail: 'Email',
 				inputPassword: 'Password',
-				signUp: 'Sign Up'
+				signUp: 'Sign Up',
+				errors: {
+					requiredField: 'Required field',
+					minFieldLength: 'Minimum of 6 letters',
+					correctEmail: 'Enter the correct email'
+				},
 			},
 		},
 		courses: {
