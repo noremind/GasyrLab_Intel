@@ -37,14 +37,25 @@ export default {
 				title: 'Кіру',
 				inputEmail: 'Аты',
 				inputPassword: 'Құпия сөз',
-				signIn: 'Кіру'
+				signIn: 'Кіру',
+				errors: {
+					requiredField: 'Міндетті түсінікті қолдану',
+					existingEmail: 'Көпірлікті электрондық пошта мекенжайын енгізіңіз',
+					existingPassword: 'Дұрыс пароль енгізіңіз'
+				}
 			},
 			register: {
 				title: 'Тіркелу',
 				inputName: 'Аты',
 				inputEmail: 'Электронды пошта',
 				inputPassword: 'Құпия сөз',
-				signUp: 'Тіркелу'
+				signUp: 'Тіркелу',
+				errors: {
+					requiredField: 'Міндетті өріс',
+					minFieldLength: 'Ең аз 6 таңба',
+					correctEmail: 'Дұрыс электрондық пошта мекенжайын енгізіңіз'
+				}
+
 			},
 		},
 		courses: {

@@ -7,8 +7,9 @@
       <div class="toggle-container">
         <div class="toggle">
           <div v-if="currentAuthPage === 'register'" class="toggle-panel toggle-left">
+            <Button class="btn btn--outline back-btn">Назад</Button>
             <div class="toggle__lang-in">
-              <LangBtn></LangBtn>
+              <!-- <LangBtn></LangBtn> -->
             </div>
             <h1 class="toggle__title">{{ t('page.auth.greetingSignIn') }}</h1>
             <p class="toggle__text">{{ t('page.auth.textSignIn') }}</p>
