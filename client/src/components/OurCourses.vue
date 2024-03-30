@@ -26,6 +26,9 @@ import CardData from '@/CardData.js'
 .courses {
   &__wrapper {
     margin-top: 50px;
+    .title {
+      margin-bottom: 40px;
+    }
   }
 
   &__cards {
