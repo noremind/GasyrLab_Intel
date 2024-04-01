@@ -35,13 +35,12 @@ export default {
 
 			login: {
 				title: 'Войти',
-				inputEmail: 'Имя',
+				inputEmail: 'Эмейл',
 				inputPassword: 'Пароль',
 				signIn: 'Войти',
 				errors: {
 					requiredField: 'Обязательное поле',
-					existingEmail: 'Введите существующий адрес электронной почты',
-					existingPassword: 'Введите правильный пароль',
+					existingPasswordAndEmail: 'Введите правильный адрес электронной почты и пароль',
 				}
 
 			},

@@ -35,13 +35,12 @@ export default {
 
 			login: {
 				title: 'Кіру',
-				inputEmail: 'Аты',
+				inputEmail: 'Емейл',
 				inputPassword: 'Құпия сөз',
 				signIn: 'Кіру',
 				errors: {
 					requiredField: 'Міндетті түсінікті қолдану',
-					existingEmail: 'Көпірлікті электрондық пошта мекенжайын енгізіңіз',
-					existingPassword: 'Дұрыс пароль енгізіңіз'
+					existingPasswordAndEmail: 'Жазымызды емәйлі адресі мен паралі енгізіңіз'
 				}
 			},
 			register: {

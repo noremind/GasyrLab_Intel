@@ -1,7 +1,7 @@
 <template>
   <div class="form-container sign-in">
-    <ButtonCom class="btn btn--outline back-btn">Назад</ButtonCom>
-    <form class="container-auth__form">
+    <form @submit.prevent="submitForm()" class="container-auth__form">
+      <ButtonCom @click="authUser.goHomePage()" class="btn btn--outline back-btn">Назад</ButtonCom>
       <h1 class="container-auth__title">{{ t('page.auth.login.title') }}</h1>
       <input
         class="container-auth__input"
@@ -9,26 +9,18 @@
         :placeholder="t('page.auth.login.inputEmail')"
         autocomplete="current-email"
         v-model="v$.loginEmail.$model"
-        :class="v$.loginEmail.$error ? 'container-auth__input--invalid' : ' '"
       />
-      <p class="container-auth__error-message" v-if="v$.loginEmail.$dirty && isCorrectEmail()">
-        {{ t('page.auth.login.errors.existingEmail') }}
-      </p>
       <input
         class="container-auth__input"
         type="password"
         :placeholder="t('page.auth.login.inputPassword')"
         autocomplete="current-password"
         v-model="v$.loginPassword.$model"
-        :class="v$.loginPassword.$error ? 'container-auth__input--invalid' : ' '"
       />
-      <p
-        class="container-auth__error-message"
-        v-if="v$.loginPassword.$dirty && isCorrectPassword()"
-      >
-        {{ t('page.auth.login.errors.existingPassword') }}
-      </p>
-      <ButtonCom class="btn btn--outline">{{ t('page.auth.login.signIn') }}</ButtonCom>
+      <p v-if="errorMessage" class="container-auth__error-message">{{ errorMessage }}</p>
+      <ButtonCom @submit.prevent="submitForm()" type="submit" class="btn btn--outline">{{
+        t('page.auth.login.signIn')
+      }}</ButtonCom>
     </form>
   </div>
 </template>
@@ -38,30 +30,30 @@ import { useI18n } from 'vue-i18n'
 import ButtonCom from '@/components/littleComponent/ButtonComponent.vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
+import { useAuthUserStore } from '@/stores/authUser.js'
+import { useRouter } from 'vue-router'
 
 export default {
   components: {
     ButtonCom
   },
   setup() {
+    const authUser = useAuthUserStore()
     const { t } = useI18n()
-    function isCorrectEmail() {
-      return true
-    }
-    function isCorrectPassword() {
-      return true
-    }
+    const router = useRouter()
+
     return {
       v$: useVuelidate(),
       t,
-      isCorrectEmail,
-      isCorrectPassword
+      authUser,
+      router
     }
   },
   data() {
     return {
       loginEmail: '',
-      loginPassword: ''
+      loginPassword: '',
+      errorMessage: ''
     }
   },
   validations() {
@@ -69,17 +61,25 @@ export default {
       loginEmail: { required, email },
       loginPassword: { required, minLength: minLength(6) }
     }
+  },
+  methods: {
+    async submitForm() {
+      const isFormCorrect = await this.v$.$validate()
+      if (!isFormCorrect) return
+
+      const isAuth = this.authUser.loggedIn(this.loginEmail, this.loginPassword)
+
+      if (!isAuth) {
+        this.errorMessage = this.t('page.auth.login.errors.existingPasswordAndEmail')
+        return
+      }
+
+      this.loginEmail = ''
+      this.loginPassword = ''
+      this.errorMessage = ''
+
+      this.router.push({ name: 'home' })
+    }
   }
 }
 </script>
-
-<style lang="scss">
-.back-btn {
-  position: absolute;
-  top: 0;
-  left: clamp(0rem, -0.341rem + 1.7vw, 0.938rem);
-  z-index: 5;
-  max-width: 100px;
-  width: 100%;
-}
-</style>
