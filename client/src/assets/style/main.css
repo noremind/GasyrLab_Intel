@@ -209,6 +209,11 @@ body {
   height: 480px;
   margin: auto auto;
 }
+@media (max-width: ) {
+  .container-auth {
+    margin: 0;
+  }
+}
 .container-auth__title {
   font-size: clamp(0.875rem, 0.602rem + 1.36vw, 1.625rem);
 }
@@ -224,6 +229,7 @@ body {
   height: 100%;
   gap: 5px;
   position: relative;
+  width: 100%;
 }
 .container-auth__input {
   background-color: #eee;
@@ -267,7 +273,7 @@ body {
 }
 
 .sign-up {
-  left: 0;
+  left: 0%;
   width: 50%;
   opacity: 0;
   z-index: 1;
@@ -354,6 +360,13 @@ body {
   transform: translateX(0);
 }
 
+.back-btn {
+  position: absolute;
+  top: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
+  left: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
+  max-width: 100px;
+}
+
 .toggle-right {
   right: 0;
   transform: translateX(0);
@@ -361,6 +374,15 @@ body {
 
 .container-auth.active .toggle-right {
   transform: translateX(200%);
+}
+
+.breadcrumbs {
+  font-size: 13px;
+}
+.breadcrumbs__wrapper {
+  font-size: 13px;
+  margin-top: clamp(0.625rem, 0.17rem + 2.27vw, 1.875rem);
+  margin-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
 }
 
 /*# sourceMappingURL=main.css.map */

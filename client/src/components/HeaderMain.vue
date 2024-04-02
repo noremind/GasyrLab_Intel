@@ -9,7 +9,7 @@
 
           <nav class="nav nav--hidden">
             <ul class="nav__list">
-              <li v-if="isAuthUser" class="nav__list-item">
+              <li v-if="authUser.checkLocalAuthUser()" class="nav__list-item">
                 <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
               </li>
               <li class="nav__list-item">
@@ -28,7 +28,7 @@
         </div>
 
         <div class="header__user header__user--hidden">
-          <div v-if="isAuthUser" class="flex-box">
+          <div v-if="authUser.checkLocalAuthUser()" class="flex-box">
             <button @click="toggleOpenDropdown()" class="header__user-btn header__user-btn--hidden">
               <img class="header__user-img" src="@/assets/images/icons/user1.png" alt="User icon" />
             </button>
@@ -42,19 +42,18 @@
               class="header__user-dropdown header__user-dropdown--hidden"
             >
               <div class="flex-box">
-                <p>Имя пользователя</p>
+                <p>{{ authUser.getName() }}</p>
                 <button class="btn btn--error" @click="closeDropdown()">
                   {{ t('page.main.header.dropdown.log_out') }}
                 </button>
               </div>
-              <ThemeBtn></ThemeBtn>
+              <!-- <ThemeBtn></ThemeBtn> -->
             </div>
           </TransitionGroup>
 
           <div class="burger burger--hidden">
             <div class="burger__wrapper">
-              <LangBtn v-if="!isAuthUser"></LangBtn>
-              <!-- <ThemeBtn></ThemeBtn> -->
+              <LangBtn v-if="!authUser.checkLocalAuthUser()"></LangBtn>
               <div>
                 <Transition mode="out-in" name="burger">
                   <button class="burger__btn" @click="toggleBurgerMenu()" v-if="!isOpenBurgerMenu">
@@ -95,7 +94,7 @@
           </div>
         </div>
 
-        <div v-if="!isAuthUser" class="flex-box flex-box--hidden">
+        <div v-if="!authUser.checkLocalAuthUser()" class="flex-box flex-box--hidden">
           <ThemeBtn></ThemeBtn>
           <LangBtn></LangBtn>
           <router-link :to="{ name: 'login' }" class="btn">
@@ -114,7 +113,7 @@
         class="mobile-dropdown mobile-dropdown--hidden"
       >
         <ul v-if="isOpenBurgerMenu" class="mobile-dropdown__list">
-          <li v-if="isAuthUser" class="mobile-dropdown__list-item">
+          <li v-if="authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
             <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.my_training') }}</a>
           </li>
           <li class="mobile-dropdown__list-item">
@@ -134,20 +133,20 @@
           <!-- <li class="mobile-dropdown__list-item">
             <ThemeBtn></ThemeBtn>
           </li> -->
-          <li v-if="isAuthUser" class="mobile-dropdown__list-item">
+          <li v-if="authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
             <div class="flex-box">
-              <p>Имя пользователя</p>
-              <button class="btn btn--error" @click="closeBurgerMenu()">
+              <p>{{ authUser.getName() }}</p>
+              <button class="btn btn--error" @click="authUser.loggedOut()">
                 {{ t('page.main.header.dropdown.log_out') }}
               </button>
             </div>
           </li>
-          <li v-if="!isAuthUser" class="mobile-dropdown__list-item">
+          <li v-if="!authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
             <router-link :to="{ name: 'login' }" class="btn">{{
               t('page.main.header.login')
             }}</router-link>
           </li>
-          <li v-if="!isAuthUser" class="mobile-dropdown__list-item">
+          <li v-if="!authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
             <router-link :to="{ name: 'register' }" class="btn">{{
               t('page.main.header.register')
             }}</router-link>
@@ -166,15 +165,17 @@ import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
 import ThemeBtn from '@/components/littleComponent/ToggleBtnTheme.vue'
 import { useThemeModeStore } from '@/stores/themeMode.js'
 import Button from '@/components/littleComponent/ButtonComponent.vue'
+import { useAuthUserStore } from '@/stores/authUser'
 
 const theme = useThemeModeStore()
 
 const { t } = useI18n()
 const isOpenUserDropdown = ref(false)
 const isOpenBurgerMenu = ref(false)
-const isAuthUser = ref(false)
 const dropdownLaptop = ref(null)
 const dropdownMobile = ref(null)
+
+const authUser = useAuthUserStore()
 
 const handleClickCloseDropdown = (event) => {
   if (
@@ -201,6 +202,11 @@ function toggleOpenDropdown() {
 
 function closeDropdown() {
   isOpenUserDropdown.value = false
+
+  addEventListener('click', () => {
+    authUser.loggedOut()
+    window.location.reload()
+  })
 }
 
 function closeBurgerMenu() {
@@ -212,7 +218,8 @@ function toggleBurgerMenu() {
 }
 
 onMounted(() => {
-  isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.gerItem('isAuth') : false
+  authUser.checkLocalAuthUser()
+  // isAuthUser.value = localStorage.getItem('isAuth') ? localStorage.getItem('isAuth') : false
   document.addEventListener('click', handleClickCloseDropdown)
   document.addEventListener('click', handleClickCloseMobileDropdown)
 })

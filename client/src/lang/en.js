@@ -34,13 +34,12 @@ export default {
 			textSignUp: "Register with your Personal details to use all of site features",
 			login: {
 				title: 'Sign In',
-				inputEmail: 'Name',
+				inputEmail: 'Email',
 				inputPassword: 'Password',
 				signIn: 'Sign In',
 				errors: {
 					requiredField: 'Required field',
-					existingEmail: 'Enter an existing email address',
-					existingPassword: 'Enter the correct password'
+					existingPasswordAndEmail: 'Enter the correct email and password'
 				}
 
 			},

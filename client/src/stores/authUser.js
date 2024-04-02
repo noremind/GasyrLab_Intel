@@ -1,15 +1,62 @@
 import { defineStore } from "pinia";
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 export const useAuthUserStore = defineStore('auth', () => {
-	const toggleAuth = ref('login')
+	const isAuthUser = ref(localStorage.getItem('isAuth'))
 
-	const loginEmail = ref('')
-	const loginPassword = ref('')
+	const router = useRouter()
 
-	const registerName = ref('')
-	const registerEmail = ref('')
-	const registerPassword = ref('')
+
+
+
+	// Functions
+	function registrationUserCompleted(name, email, password) {
+		localStorage.setItem('isAuth', true)
+		localStorage.userData = JSON.stringify({
+			name,
+			email,
+			password,
+		})
+		let userData = JSON.parse(localStorage.userData)
+		console.log(userData)
+	}
+
+	function loggedOut() {
+		localStorage.setItem('isAuth', false)
+	}
+
+	function loggedIn(email, password) {
+		const userData = JSON.parse(localStorage.getItem('userData'))
+
+		if (userData.email === email && userData.password === password) {
+			localStorage.setItem('isAuth', true)
+			console.log('User success logged in')
+			router.push({ name: 'home' })
+			return true
+		}
+		return false
+	}
+
+
+	function checkLocalAuthUser() {
+		let tmp = JSON.parse(localStorage.getItem('isAuth'))
+		return tmp
+	}
+
+
+	function getName() {
+		let userName = JSON.parse(localStorage.userData)
+		return userName.name
+	}
+
+
+	function goHomePage() {
+		router.push({ name: 'home' })
+	}
+
+
+
 
 
 	function transitionRemoveMove(linkRef) {
@@ -20,16 +67,20 @@ export const useAuthUserStore = defineStore('auth', () => {
 		linkRef.value.classList.remove('active')
 	}
 
+	onMounted(() => {
+		checkLocalAuthUser()
+	})
 
 
 	return {
-		loginEmail,
-		loginPassword,
-		registerName,
-		registerEmail,
-		registerPassword,
+		isAuthUser,
 		transitionRemoveMove,
 		transitionAddMove,
-		toggleAuth
+		goHomePage,
+		loggedIn,
+		loggedOut,
+		getName,
+		registrationUserCompleted,
+		checkLocalAuthUser,
 	}
 })

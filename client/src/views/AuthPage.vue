@@ -6,8 +6,8 @@
 
       <div class="toggle-container">
         <div class="toggle">
+          <Button @click="authUser.goHomePage()" class="btn btn--outline back-btn">Назад</Button>
           <div v-if="currentAuthPage === 'register'" class="toggle-panel toggle-left">
-            <Button class="btn btn--outline back-btn">Назад</Button>
             <div class="toggle__lang-in">
               <!-- <LangBtn></LangBtn> -->
             </div>
@@ -50,7 +50,7 @@ const { t } = useI18n()
 const containerDiv = ref(null)
 const route = useRoute()
 const router = useRouter()
-// const authUser = useAuthUserStore()
+const authUser = useAuthUserStore()
 
 // Sign In
 function transitionAddMove() {
@@ -72,8 +72,7 @@ const currentAuthPage = computed(() => {
 })
 
 window.addEventListener('popstate', function () {
-  window.location.href = '/' // Перенаправление на главную страницу
-  // router.push({ name: 'home' })
+  window.location.href = '/'
 })
 
 onMounted(() => {
@@ -87,14 +86,14 @@ onMounted(() => {
 .toggle {
   &__lang-in {
     position: absolute;
-    top: 25px;
+    top: 15px;
     left: 25px;
     z-index: 10;
   }
 
   &__lang-up {
     position: absolute;
-    top: 25px;
+    top: 15px;
     right: 25px;
     z-index: 10;
   }

@@ -1,0 +1,9 @@
+.breadcrumbs{
+	font-size: 13px;
+
+	&__wrapper{
+		font-size: 13px;
+		margin-top: clamp(0.625rem, 0.17rem + 2.27vw, 1.875rem);
+		margin-bottom: clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+	}
+}

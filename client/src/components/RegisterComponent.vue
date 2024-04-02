@@ -2,7 +2,7 @@
   <div class="container-auth">
     <div class="form-container sign-up">
       <LangBtn class="lang-btn"></LangBtn>
-      <form class="container-auth__form">
+      <form @submit.prevent="submitForm()" class="container-auth__form">
         <h1 class="container-auth__title">{{ t('page.auth.register.title') }}</h1>
         <input
           class="container-auth__input"
@@ -23,7 +23,7 @@
           type="email"
           autocomplete="current-email"
           :placeholder="t('page.auth.register.inputEmail')"
-          v-model="v$.registerEmail.$model"
+          v-model.trim="v$.registerEmail.$model"
           :class="v$.registerEmail.$error ? 'container-auth__input--invalid' : ' '"
         />
         <p
@@ -43,7 +43,7 @@
           type="password"
           :placeholder="t('page.auth.register.inputPassword')"
           autocomplete="current-password"
-          v-model="v$.registerPassword.$model"
+          v-model.trim="v$.registerPassword.$model"
           :class="v$.registerPassword.$error ? 'container-auth__input--invalid' : ' '"
         />
         <p
@@ -72,8 +72,8 @@ import ButtonCom from '@/components/littleComponent/ButtonComponent.vue'
 import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
-// import { useAuthUserStore } from '@/stores/authUser.js'
-// const { t } = useI18n()
+import { useRouter } from 'vue-router'
+import { useAuthUserStore } from '@/stores/authUser.js'
 
 export default {
   components: {
@@ -82,13 +82,18 @@ export default {
   },
   setup() {
     const { t } = useI18n()
+    const authUser = useAuthUserStore()
+
     return {
       v$: useVuelidate(),
+      authUser,
       t
     }
   },
   data() {
     return {
+      // authUser: useAuthUserStore(),
+      router: useRouter(),
       registerName: '',
       registerEmail: '',
       registerPassword: ''
@@ -100,15 +105,34 @@ export default {
       registerEmail: { required, email },
       registerPassword: { required, minLength: minLength(6) }
     }
+  },
+  methods: {
+    async submitForm() {
+      const isFormCorrect = await this.v$.$validate()
+      if (!isFormCorrect) return
+
+      this.authUser.registrationUserCompleted(
+        this.registerName,
+        this.registerEmail,
+        this.registerPassword
+      )
+
+      this.registerEmail = ''
+      this.registerName = ''
+      this.registerPassword = ''
+
+      this.router.push({ name: 'home' })
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .lang-btn {
+  float: right;
   position: relative;
-  right: 0;
-  bottom: 0;
-  justify-self: end;
+  z-index: 10;
+  top: clamp(0.625rem, 0.511rem + 0.57vw, 0.938rem);
+  right: clamp(0.625rem, 0.17rem + 2.27vw, 1.875rem);
 }
 </style>
