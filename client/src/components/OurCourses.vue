@@ -45,9 +45,7 @@ import CardData from '@/CardData.js'
 
     .courses__svg {
       transform: translateX(30px);
-      margin-bottom: -5px;
-      // transform: translateY(5px);
-      // transform: translateX(50px);
+      margin-bottom: -4px;
     }
   }
 }

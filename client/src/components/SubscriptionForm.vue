@@ -82,6 +82,7 @@
               stroke-dasharray="2.24 2.24"
             />
             <path
+              class="svg-line"
               d="M44 154L44 58.6723C43.9996 57.0154 44.4257 55.3861 45.2375 53.9407C46.0493 52.4954 47.2196 51.2826 48.636 50.4186C50.0525 49.5546 51.6676 49.0684 53.3264 49.0067C54.9852 48.945 56.6322 49.3098 58.1091 50.0662L176.034 110.522C179.979 112.549 184.376 113.538 188.811 113.396C193.245 113.253 197.57 111.983 201.376 109.707L232 91.4308"
               stroke="#212529"
               stroke-miterlimit="10"
@@ -138,7 +139,6 @@ import Button from '../components/littleComponent/ButtonComponent.vue'
 @use '@/assets/scss/abstracts' as abs;
 
 .subscription {
-  height: 1000px;
   &__wrapper {
     background: linear-gradient(71deg, rgb(218, 203, 251), rgba(243, 225, 255, 1) 96%);
     padding: 40px;
@@ -172,6 +172,11 @@ import Button from '../components/littleComponent/ButtonComponent.vue'
       @include abs.breakpoint('tablet') {
         display: none;
       }
+      .dark & {
+        .svg-line {
+          stroke: #b2b2b2;
+        }
+      }
     }
 
     h2 {
@@ -188,6 +193,7 @@ import Button from '../components/littleComponent/ButtonComponent.vue'
     text-align: center;
     span {
       text-decoration: underline;
+      cursor: pointer;
     }
   }
 }
