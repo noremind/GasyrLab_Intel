@@ -4,7 +4,7 @@
     <p>{{ props.card.description }}</p>
     <div class="card__action">
       <button>
-        Перейти
+        {{ t('global.btn.move') }}
         <div class="arrow-wrapper">
           <div class="arrow"></div>
         </div>
@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const props = defineProps({
   card: {
     type: Object,

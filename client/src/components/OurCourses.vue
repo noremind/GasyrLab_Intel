@@ -2,7 +2,7 @@
   <div class="courses">
     <div class="container">
       <div class="courses__wrapper">
-        <h2 class="title">Направления и Курсы</h2>
+        <h2 class="title">{{ t('page.main.main.ourCourses.title') }}</h2>
         <div class="courses__cards">
           <Card v-for="(card, index) in CardData" :key="index" :card="card">
             <template #image>
@@ -18,6 +18,9 @@
 <script setup>
 import Card from '@/components/CourseCard.vue'
 import CardData from '@/CardData.js'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 </script>
 
 <style lang="scss" scoped>

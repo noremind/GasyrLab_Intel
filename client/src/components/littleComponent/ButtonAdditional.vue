@@ -22,7 +22,8 @@ const { t } = useI18n()
   --arrow-stroke: 2px;
   box-sizing: border-box;
   font-size: 15px;
-  border: 0;
+  border: 1px solid red;
+  width: 70px;
   border-radius: 20px;
   color: var(--secondary-color);
   display: flex;

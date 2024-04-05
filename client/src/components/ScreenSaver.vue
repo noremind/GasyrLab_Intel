@@ -126,9 +126,9 @@
         <g mask="url(#m)">
           <rect fill="#fff" width="100%" height="100%" />
           <text font-size="45" font-weight="bold" x="190" y="350" fill="#7b3ff2">
-            "Главное - ваша идея и амбиции"
+            {{ t('page.main.intro.title') }}
           </text>
-          <text font-size="30" font-weight="bold" x="500" y="430" fill="#1d1d1d">- Якуб CEO</text>
+          <text font-size="30" font-weight="bold" x="500" y="430" fill="#1d1d1d">- {{ t('page.main.intro.name') }} CEO</text>
         </g>
 
         <rect
@@ -160,11 +160,13 @@ import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 // import { ScrollTrigger } from 'gsap/minified/ScrollTrigger.min.js'
 // import { ScrollToPlugin } from 'gsap/minified/ScrollToPlugin.min.js'
-
+import { useI18n } from 'vue-i18n'
 import { ScrollToPlugin } from 'gsap-trial/ScrollToPlugin.js'
 import { ScrollTrigger } from 'gsap-trial/ScrollTrigger.js'
 
 import $ from 'zeptojs'
+
+const { t } = useI18n()
 
 const main = ref(null)
 const scrollDist = ref(null)
