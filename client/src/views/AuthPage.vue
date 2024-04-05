@@ -6,7 +6,9 @@
 
       <div class="toggle-container">
         <div class="toggle">
-          <Button @click="authUser.goHomePage()" class="btn btn--outline back-btn">Назад</Button>
+          <Button @click="authUser.goHomePage()" class="btn btn--outline back-btn">{{
+            t('global.btn.back')
+          }}</Button>
           <div v-if="currentAuthPage === 'register'" class="toggle-panel toggle-left">
             <div class="toggle__lang-in">
               <!-- <LangBtn></LangBtn> -->

@@ -113,9 +113,11 @@ onMounted(() => {
         { x },
         {
           x: xEnd,
+          ease: 'power1.inOut', // добавить тип ускорения
           scrollTrigger: {
             trigger: section,
-            scrub: 15
+            scrub: 1, // уменьшить значение scrub
+            lagSmoothing: true // добавить сглаживание
           }
         }
       )
@@ -132,9 +134,11 @@ onMounted(() => {
         { x: xEnd },
         {
           x: x,
+          ease: 'power1.inOut', // добавить тип ускорения
           scrollTrigger: {
             trigger: section,
-            scrub: 15
+            scrub: 1, // уменьшить значение scrub
+            lagSmoothing: true // добавить сглаживание
           }
         }
       )

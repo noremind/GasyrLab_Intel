@@ -1,7 +1,7 @@
 <template>
   <div class="form-container sign-in">
     <form @submit.prevent="submitForm()" class="container-auth__form">
-      <ButtonAdd @click="authUser.goHomePage()" class="btn btn--left">{{ t('global.btn.back') }}</ButtonAdd>
+      <ButtonCom @click="authUser.goHomePage()" class="btn btn--outline back-btn">Назад</ButtonCom>
       <h1 class="container-auth__title">{{ t('page.auth.login.title') }}</h1>
       <input
         class="container-auth__input"
