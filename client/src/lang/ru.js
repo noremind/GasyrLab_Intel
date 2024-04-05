@@ -68,7 +68,9 @@ export default {
 	},
 	global: {
 		btn: {
-			default: 'Подробнее'
+			default: 'Подробнее',
+			goOver: 'Перейти',
+			back: 'Назад'
 		}
 	}
 }

@@ -365,6 +365,7 @@ body {
   top: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
   left: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
   max-width: 100px;
+  z-index: 10;
 }
 
 .toggle-right {

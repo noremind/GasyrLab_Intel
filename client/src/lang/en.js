@@ -67,7 +67,9 @@ export default {
 	},
 	global: {
 		btn: {
-			default: 'Learn More'
+			default: 'Learn More',
+			goOver: 'Proceed',
+			back: 'Back'
 		}
 	}
 }

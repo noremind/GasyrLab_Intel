@@ -68,7 +68,9 @@ export default {
 	},
 	global: {
 		btn: {
-			default: 'Толығырақ'
+			default: 'Толығырақ',
+			goOver: 'Өту',
+			back: 'Артқа'
 		}
 	}
 }

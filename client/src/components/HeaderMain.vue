@@ -43,7 +43,7 @@
             >
               <div class="flex-box">
                 <p>{{ authUser.getName() }}</p>
-                <button class="btn btn--error" @click="closeDropdown()">
+                <button class="btn btn--error" @click="loggedOutUser()">
                   {{ t('page.main.header.dropdown.log_out') }}
                 </button>
               </div>
@@ -136,7 +136,7 @@
           <li v-if="authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
             <div class="flex-box">
               <p>{{ authUser.getName() }}</p>
-              <button class="btn btn--error" @click="authUser.loggedOut()">
+              <button class="btn btn--error" @click="loggedOutUser()">
                 {{ t('page.main.header.dropdown.log_out') }}
               </button>
             </div>
@@ -200,13 +200,13 @@ function toggleOpenDropdown() {
   isOpenUserDropdown.value = !isOpenUserDropdown.value
 }
 
+function loggedOutUser() {
+  authUser.loggedOut()
+  window.location.reload()
+}
+
 function closeDropdown() {
   isOpenUserDropdown.value = false
-
-  addEventListener('click', () => {
-    authUser.loggedOut()
-    window.location.reload()
-  })
 }
 
 function closeBurgerMenu() {
