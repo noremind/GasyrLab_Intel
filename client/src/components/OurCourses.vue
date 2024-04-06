@@ -26,16 +26,12 @@
 <script setup>
 import Card from '@/components/CourseCard.vue'
 import CardData from '@/CardData.js'
-<<<<<<< HEAD
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import CryptoJS from 'crypto-js'
 const router = useRouter()
-=======
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
 
-</script>
->>>>>>> 4eaf7e0606b869731eac9d5f16eb7c9b3dc29ed1
+const { t } = useI18n()
 
 function goToCourse(title, card) {
   const secretKey = 'gasyrLab' // Секретный ключ для шифрования
