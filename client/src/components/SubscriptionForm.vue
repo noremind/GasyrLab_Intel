@@ -143,6 +143,7 @@ import Button from '../components/littleComponent/ButtonComponent.vue'
     background: linear-gradient(71deg, rgb(218, 203, 251), rgba(243, 225, 255, 1) 96%);
     padding: 40px;
     border-radius: 30px;
+    margin-bottom: 30px;
 
     .dark & {
       background: linear-gradient(71deg, rgb(34, 1, 106), rgb(57, 24, 81) 96%);

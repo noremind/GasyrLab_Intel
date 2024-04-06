@@ -1,9 +1,9 @@
 export default [
-  {
-    title: 'Python',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, cupiditate.',
-    link: '#!',
-    image: `
+	{
+		title: 'Python',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, cupiditate.',
+		link: '#!',
+		image: `
       <svg
         width="150"
         height="70"
@@ -51,12 +51,12 @@ export default [
         </defs>
       </svg>
     `
-  },
-  {
-    title: 'Java',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, cupiditate.',
-    link: '#!',
-    image: `
+	},
+	{
+		title: 'Java',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, cupiditate.',
+		link: '#!',
+		image: `
       <svg width="150" height="71" viewBox="0 0 150 71" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M48.0987 87.1588L115.231 126.687C115.912 127.087 116.688 127.301 117.478 127.306C118.269 127.312 119.047 127.108 119.733 126.717C120.42 126.325 120.991 125.759 121.389 125.076C121.787 124.393 121.998 123.617 122 122.826V47.0513C122 45.7561 121.657 44.484 121.006 43.3641C120.356 42.2443 119.42 41.3167 118.295 40.6755L49.7651 1.50991C49.1787 1.17373 48.5141 0.997876 47.8381 1.00002C47.1621 1.00216 46.4986 1.18223 45.9143 1.52212C45.33 1.862 44.8455 2.34972 44.5095 2.93625C44.1734 3.52278 43.9977 4.18744 44 4.86341L44.2898 80.5346C44.2985 81.8736 44.6539 83.1877 45.3215 84.3485C45.989 85.5094 46.9458 86.4776 48.0987 87.1588Z" fill="white" stroke="#212529" stroke-width="0.5" stroke-miterlimit="10" stroke-linecap="round"/>
         <path d="M115.173 51.1829C116.202 50.63 116.35 48.9036 115.502 47.3268C114.655 45.75 113.134 44.9199 112.105 45.4728C111.076 46.0257 110.929 47.7521 111.776 49.3289C112.624 50.9057 114.144 51.7358 115.173 51.1829Z" fill="#BFA5F3" stroke="#212529" stroke-width="0.5" stroke-miterlimit="10" stroke-linecap="round"/>
@@ -67,12 +67,12 @@ export default [
         <path d="M59.4072 59.0466L96.7722 81.3843" stroke="#212529" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
       </svg>
     `
-  },
-  {
-    title: 'C++',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, cupiditate.',
-    link: '#!',
-    image: `
+	},
+	{
+		title: 'C++',
+		description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, cupiditate.',
+		link: '#!',
+		image: `
       <svg width="150" height="70" viewBox="0 0 150 70" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_659_629)">
         <path d="M150 7.67822L107.734 32.1858" stroke="#989DA8" stroke-width="0.5" stroke-miterlimit="10" stroke-linecap="round" stroke-dasharray="2 2"/>
@@ -100,5 +100,5 @@ export default [
         </defs>
       </svg>
     `
-  }
+	}
 ]
