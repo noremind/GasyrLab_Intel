@@ -1,192 +1,190 @@
 <template>
-  <template>
-    <div v-if="cardData">
-      <Header></Header>
+  <div v-if="cardData">
+    <Header></Header>
 
-      <div class="container">
-        <!-- <div class="breadcrumbs">
+    <div class="container">
+      <!-- <div class="breadcrumbs">
       <div class="breadcrumbs__wrapper">
         <router-link :to="{ name: 'home' }">Главная</router-link> /
         <span>Title courses</span>
       </div>
     </div> -->
-      </div>
-      <section class="intro-course">
-        <div class="container">
-          <div class="intro-course__header">
-            <div class="flex-box intro-course__box">
-              <p class="intro-course__header-text">Онлайн</p>
-              <p class="intro-course__header-text">Старт: 6 мая</p>
-            </div>
-            <div class="flex-box intro-course__wrapper">
-              <div class="intro-course__text-side">
-                <h1 class="intro-course__title">
-                  Стань
-                  <span class="intro-course__decor">Junior {{ cardData.title }} разработчиком</span
-                  >с 0 за 6 месяцев
-                </h1>
-                <p class="intro-course__desc">
-                  Python просто выучить, даже если вы никогда не программировали. Во время обучения
-                  вам будет помогать эксперт-куратор. Вы разработаете 3 проекта для портфолио, а
-                  Центр карьеры поможет найти работу Python-разработчиком.
-                </p>
-                <Button class="btn btn--outline intro-course__btn">Записаться на курс</Button>
-              </div>
-              <img
-                class="intro-course__img"
-                src="@/assets/images/courses/python/python.png"
-                alt="Python course"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="about-prof">
-        <div class="container">
-          <div class="about-prof__wrapper">
-            <h1 class="title about-prof__title">О профессии</h1>
-
-            <p class="about-prof__desc">
-              Python — идеальный язык для новичка. Код на Python легко писать и читать, язык
-              стабильно занимает высокие места в рейтингах популярности, а «питонисты» востребованы
-              почти во всех сферах IT — программировании, анализе данных, системном
-              администрировании и тестировании. YouTube, Intel, Pixar, NASA, VK, Яндекс — вот лишь
-              немногие из известных компаний, которые используют Python в своих продуктах.
-            </p>
-
-            <div class="flex-box about-prof__box">
-              <div class="about-prof__footer">
-                <h2 class="about-prof__footer-title">6 месяцев</h2>
-                <p class="description about-prof__footer-desc">
-                  интенсивных занятий и практики на курсе достаточно, чтобы найти первую работу
-                </p>
-              </div>
-              <div class="about-prof__footer">
-                <h2 class="about-prof__footer-title">400 000 тенге</h2>
-                <p class="description about-prof__footer-desc">средняя зарплата специалиста</p>
-              </div>
-            </div>
-          </div>
-          <section class="required">
-            <div class="container">
-              <div class="required__wrapper">
-                <h2 class="required__title">Курс разработан согласно требованиям работодателей</h2>
-
-                <p class="description required__desc">
-                  Мы проводим исследования рынка, опрашиваем крупные компании насчет требований для
-                  начинающих специалистов, сверяемся с вакансиями и мнением экспертов. Исходя из
-                  этого, добавляем на курс только самое нужное.
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="content-list">
-        <div class="container">
-          <div class="content-list__wrapper">
-            <div class="content-list__box">
-              <h2 class="content-list__title">Содержание курсов</h2>
-              <div class="content-list__box-inner">
-                <p>
-                  Вас ждёт 3 блока по программированию на Python с разным уровнем сложности и
-                  дополнительные курсы.
-                </p>
-                <div class="flex-box">
-                  <p><span class="content-list__decor">6</span> месяцев обучения</p>
-                  <p><span class="content-list__decor">3</span> итоговых проекта</p>
-                </div>
-              </div>
-            </div>
-            <div class="course-info">
-              <div class="course-info__wrapper">
-                <Accordion
-                  v-for="accordion in accordions.accordionData"
-                  :key="accordion.id"
-                  :accordion="accordion"
-                ></Accordion>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="help-center">
-        <div class="container">
-          <div class="help-center__wrapper">
-            <h1 class="title">Помощь с трудоустройством</h1>
-            <SwiperCard></SwiperCard>
-          </div>
-        </div>
-      </section>
-
-      <SubscriptionForm></SubscriptionForm>
-
-      <section class="choose-tarif">
-        <div class="container">
-          <h2 class="title">Выберите свой тариф</h2>
-          <div class="choose-tarif__wrapper">
-            <div class="choose-tarif__box">
-              <h3 class="choose-tarif__title">Standard</h3>
-              <p class="choose-tarif__desc">Интенсивное обучение в группе студентов</p>
-              <!-- <div class="flex-box">
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-            </div> -->
-              <ul class="choose-tarif__list">
-                <li class="choose-tarif__item">4 проекта в портфолио</li>
-                <li class="choose-tarif__item">Карьерный трек</li>
-                <li class="choose-tarif__item">Гарантия трудоустройства</li>
-                <li class="choose-tarif__item">Бессрочный доступ к учебным материалам</li>
-                <li class="choose-tarif__item">Комплексная подготовка</li>
-                <li class="choose-tarif__item">Профориентация</li>
-              </ul>
-              <Button class="btn btn--outline">Оставить заявку</Button>
-            </div>
-            <div class="choose-tarif__box">
-              <h3 class="choose-tarif__title">Ultimate</h3>
-              <p class="choose-tarif__desc">Индивидуальное обучение с персональным наставником</p>
-              <!-- <div class="flex-box">
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-            </div> -->
-
-              <ul class="choose-tarif__list">
-                <li class="choose-tarif__item">4 проекта в портфолио</li>
-                <li class="choose-tarif__item">Карьерный трек</li>
-                <li class="choose-tarif__item">Гарантия трудоустройства</li>
-                <li class="choose-tarif__item">Бессрочный доступ к учебным материалам</li>
-                <li class="choose-tarif__item">Комплексная подготовка</li>
-                <li class="choose-tarif__item">Профориентация</li>
-                <li class="choose-tarif__item">Персональное расписание</li>
-                <li class="choose-tarif__item">Индивидуальная траектория обучения</li>
-                <li class="choose-tarif__item">80 часов персональных консультаций с наставником</li>
-              </ul>
-              <Button class="btn btn--outline">Оставить заявку</Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer></Footer>
     </div>
+    <section class="intro-course">
+      <div class="container">
+        <div class="intro-course__header">
+          <div class="flex-box intro-course__box">
+            <p class="intro-course__header-text">Онлайн</p>
+            <p class="intro-course__header-text">Старт: 6 мая</p>
+          </div>
+          <div class="flex-box intro-course__wrapper">
+            <div class="intro-course__text-side">
+              <h1 class="intro-course__title">
+                Стань
+                <span class="intro-course__decor">Junior {{ cardData.title }} разработчиком</span>с
+                0 за 6 месяцев
+              </h1>
+              <p class="intro-course__desc">
+                Python просто выучить, даже если вы никогда не программировали. Во время обучения
+                вам будет помогать эксперт-куратор. Вы разработаете 3 проекта для портфолио, а Центр
+                карьеры поможет найти работу Python-разработчиком.
+              </p>
+              <Button class="btn btn--outline intro-course__btn">Записаться на курс</Button>
+            </div>
+            <img
+              class="intro-course__img"
+              src="@/assets/images/courses/python/python.png"
+              alt="Python course"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div v-else>Ошибка!</div>
-  </template>
+    <section class="about-prof">
+      <div class="container">
+        <div class="about-prof__wrapper">
+          <h1 class="title about-prof__title">О профессии</h1>
+
+          <p class="about-prof__desc">
+            Python — идеальный язык для новичка. Код на Python легко писать и читать, язык стабильно
+            занимает высокие места в рейтингах популярности, а «питонисты» востребованы почти во
+            всех сферах IT — программировании, анализе данных, системном администрировании и
+            тестировании. YouTube, Intel, Pixar, NASA, VK, Яндекс — вот лишь немногие из известных
+            компаний, которые используют Python в своих продуктах.
+          </p>
+
+          <div class="flex-box about-prof__box">
+            <div class="about-prof__footer">
+              <h2 class="about-prof__footer-title">6 месяцев</h2>
+              <p class="description about-prof__footer-desc">
+                интенсивных занятий и практики на курсе достаточно, чтобы найти первую работу
+              </p>
+            </div>
+            <div class="about-prof__footer">
+              <h2 class="about-prof__footer-title">400 000 тенге</h2>
+              <p class="description about-prof__footer-desc">средняя зарплата специалиста</p>
+            </div>
+          </div>
+        </div>
+        <section class="required">
+          <div class="container">
+            <div class="required__wrapper">
+              <h2 class="required__title">Курс разработан согласно требованиям работодателей</h2>
+
+              <p class="description required__desc">
+                Мы проводим исследования рынка, опрашиваем крупные компании насчет требований для
+                начинающих специалистов, сверяемся с вакансиями и мнением экспертов. Исходя из
+                этого, добавляем на курс только самое нужное.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="content-list">
+      <div class="container">
+        <div class="content-list__wrapper">
+          <div class="content-list__box">
+            <h2 class="content-list__title">Содержание курсов</h2>
+            <div class="content-list__box-inner">
+              <p>
+                Вас ждёт 3 блока по программированию на Python с разным уровнем сложности и
+                дополнительные курсы.
+              </p>
+              <div class="flex-box">
+                <p><span class="content-list__decor">6</span> месяцев обучения</p>
+                <p><span class="content-list__decor">3</span> итоговых проекта</p>
+              </div>
+            </div>
+          </div>
+          <div class="course-info">
+            <div class="course-info__wrapper">
+              <Accordion
+                v-for="accordion in accordions.accordionData"
+                :key="accordion.id"
+                :accordion="accordion"
+              ></Accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-center">
+      <div class="container">
+        <div class="help-center__wrapper">
+          <h1 class="title">Помощь с трудоустройством</h1>
+          <SwiperCard></SwiperCard>
+        </div>
+      </div>
+    </section>
+
+    <SubscriptionForm></SubscriptionForm>
+
+    <section class="choose-tarif">
+      <div class="container">
+        <h2 class="title">Выберите свой тариф</h2>
+        <div class="choose-tarif__wrapper">
+          <div class="choose-tarif__box">
+            <h3 class="choose-tarif__title">Standard</h3>
+            <p class="choose-tarif__desc">Интенсивное обучение в группе студентов</p>
+            <!-- <div class="flex-box">
+              <div>
+                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
+                <h3 class="choose-tarif__price">6 300</h3>
+              </div>
+              <div>
+                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
+                <h3 class="choose-tarif__price">6 300</h3>
+              </div>
+            </div> -->
+            <ul class="choose-tarif__list">
+              <li class="choose-tarif__item">4 проекта в портфолио</li>
+              <li class="choose-tarif__item">Карьерный трек</li>
+              <li class="choose-tarif__item">Гарантия трудоустройства</li>
+              <li class="choose-tarif__item">Бессрочный доступ к учебным материалам</li>
+              <li class="choose-tarif__item">Комплексная подготовка</li>
+              <li class="choose-tarif__item">Профориентация</li>
+            </ul>
+            <Button class="btn btn--outline">Оставить заявку</Button>
+          </div>
+          <div class="choose-tarif__box">
+            <h3 class="choose-tarif__title">Ultimate</h3>
+            <p class="choose-tarif__desc">Индивидуальное обучение с персональным наставником</p>
+            <!-- <div class="flex-box">
+              <div>
+                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
+                <h3 class="choose-tarif__price">6 300</h3>
+              </div>
+              <div>
+                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
+                <h3 class="choose-tarif__price">6 300</h3>
+              </div>
+            </div> -->
+
+            <ul class="choose-tarif__list">
+              <li class="choose-tarif__item">4 проекта в портфолио</li>
+              <li class="choose-tarif__item">Карьерный трек</li>
+              <li class="choose-tarif__item">Гарантия трудоустройства</li>
+              <li class="choose-tarif__item">Бессрочный доступ к учебным материалам</li>
+              <li class="choose-tarif__item">Комплексная подготовка</li>
+              <li class="choose-tarif__item">Профориентация</li>
+              <li class="choose-tarif__item">Персональное расписание</li>
+              <li class="choose-tarif__item">Индивидуальная траектория обучения</li>
+              <li class="choose-tarif__item">80 часов персональных консультаций с наставником</li>
+            </ul>
+            <Button class="btn btn--outline">Оставить заявку</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer></Footer>
+  </div>
+
+  <div v-else>Ошибка!</div>
 </template>
 
 <script setup>
