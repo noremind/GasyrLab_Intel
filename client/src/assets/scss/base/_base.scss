@@ -1,5 +1,9 @@
 @use '../abstracts' as abs;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url('@/assets/images/theme/light-bg.svg');
   font-family: abs.$main-font;

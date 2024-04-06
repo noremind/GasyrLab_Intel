@@ -13,6 +13,7 @@ export default {
         my_training: 'Менің оқуым',
         all_courses: 'Барлық курстар',
         contacts: 'Байланыстар',
+        team: 'Команда',
         about: "'Gasyr Lab' туралы",
         dropdown: {
           log_out: 'Шығу'

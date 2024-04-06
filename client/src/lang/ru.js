@@ -13,6 +13,7 @@ export default {
         my_training: 'Моё обучение',
         all_courses: 'Все курсы',
         contacts: 'Контакты',
+        team: 'Команда',
         about: "О 'Gasyr Lab'",
         dropdown: {
           log_out: 'Выйти'

@@ -107,11 +107,11 @@
         </div>
         <div class="subscription__inputs">
           <div class="form">
-            <input class="input" placeholder="Имя" required="" type="text" />
+            <input class="input" :placeholder="t('page.main.main.subscription.inputName')" required="" type="text" />
             <span class="input-border"></span>
           </div>
           <div class="form">
-            <input class="input" placeholder="Фамилия" required="" type="text" />
+            <input class="input" :placeholder="t('page.main.main.subscription.inputSurname')" required="" type="text" />
             <span class="input-border"></span>
           </div>
           <div class="form">

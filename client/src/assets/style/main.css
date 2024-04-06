@@ -110,6 +110,10 @@ legend {
   display: block;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("@/assets/images/theme/light-bg.svg");
   font-family: Montserrat, sans-serif;
@@ -181,6 +185,23 @@ body {
   gap: clamp(0.3rem, -0.5rem + 4vw, 2.5rem);
   font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
 }
+.nav__list a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+.nav__list a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #7b3ff2;
+  transition: width 0.3s;
+}
+.nav__list a:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
 .nav--hidden {
   display: block;
 }
@@ -230,6 +251,9 @@ body {
   gap: 5px;
   position: relative;
   width: 100%;
+}
+.container-auth__form .btn--transform {
+  transform: translate(-20px, -110px);
 }
 .container-auth__input {
   background-color: #eee;
@@ -324,6 +348,9 @@ body {
   width: 200%;
   transform: translateX(0);
   transition: all 0.6s ease-in-out;
+}
+.toggle .btn--transform {
+  transform: translate(20px, 20px);
 }
 .toggle__text {
   font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);

@@ -1,5 +1,5 @@
 <template>
-  <div class="courses">
+  <div class="courses" id="courses">
     <div class="container">
       <div class="courses__wrapper">
         <h2 class="title">{{ t('page.main.main.ourCourses.title') }}</h2>

@@ -22,7 +22,6 @@ const { t } = useI18n()
   --arrow-stroke: 2px;
   box-sizing: border-box;
   font-size: 15px;
-  border: 1px solid red;
   width: 70px;
   border-radius: 20px;
   color: var(--secondary-color);
@@ -32,10 +31,16 @@ const { t } = useI18n()
   gap: 0.6em;
   font-weight: 500;
 
-  &--left .arrow{
-    transform: rotate(180deg)
-    // display: none;
+  // &--left .arrow {
+  //   // transform: rotate(180deg)
+  //   // display: none;
+  // }
+
+  &--white {
+    color: #fff;
   }
+
+
 }
 
 .btn .arrow-wrapper {
@@ -51,6 +56,7 @@ const { t } = useI18n()
   height: var(--arrow-stroke);
   position: relative;
   transition: 0.2s;
+  transform: rotate(180deg);
 }
 
 .btn .arrow::before {
@@ -68,7 +74,7 @@ const { t } = useI18n()
 }
 
 .btn:hover {
-  background-color: var(--hover-color);
+  background-color: transparent;
 }
 
 .btn:hover .arrow {
