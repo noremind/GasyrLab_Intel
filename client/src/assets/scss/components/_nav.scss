@@ -1,20 +1,39 @@
 @use '../abstracts' as abs;
 
-.nav{
+.nav {
+  &__list {
+    display: flex;
+    gap: clamp(0.3rem, -0.5rem + 4vw, 2.5rem);
+    font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
 
-	&__list{
-		display: flex;
-		gap: clamp(0.3rem, -0.5rem + 4vw, 2.5rem);
-		font-size: clamp(0.75rem, 0.306rem + 0.93vw, 1rem);
-	}
+    a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
 
-	&--hidden{
-		display: block;
-	}
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: abs.$accent-color;
+        transition: width 0.3s;
+      }
 
-	@include abs.breakpoint('tablet'){
-		&--hidden{
-			display: none;
-		}
-	}
+      &:hover::after {
+        width: 100%;
+        transition: width 0.3s;
+      }
+    }
+  }
+
+  &--hidden {
+    display: block;
+  }
+
+  @include abs.breakpoint('tablet') {
+    &--hidden {
+      display: none;
+    }
+  }
 }

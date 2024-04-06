@@ -4,10 +4,9 @@
       <div class="subscription__wrapper">
         <div class="subscription__content">
           <div class="subscription__content-text">
-            <h2 class="title">Поможем с выбором</h2>
+            <h2 class="title">{{ t('page.main.main.subscription.title') }}</h2>
             <p class="description">
-              Если у вас есть вопросы о формате или вы не знаете, что выбрать, оставьте свой номер —
-              мы позвоним и ответим на все вопросы
+              {{ t('page.main.main.subscription.desc') }}
             </p>
           </div>
           <svg
@@ -108,23 +107,21 @@
         </div>
         <div class="subscription__inputs">
           <div class="form">
-            <input class="input" placeholder="Имя" required="" type="text" />
+            <input class="input" :placeholder="t('page.main.main.subscription.inputName')" required="" type="text" />
             <span class="input-border"></span>
           </div>
           <div class="form">
-            <input class="input" placeholder="Фамилия" required="" type="text" />
+            <input class="input" :placeholder="t('page.main.main.subscription.inputSurname')" required="" type="text" />
             <span class="input-border"></span>
           </div>
           <div class="form">
             <input class="input" placeholder="Email" required="" type="text" />
             <span class="input-border"></span>
           </div>
-          <Button class="btn btn--primary">Подписаться</Button>
+          <Button class="btn btn--primary">{{ t('global.btn.subscribe') }}</Button>
         </div>
         <p class="subscription__rules">
-          Отправляя форму, вы принимаете
-          <span>«Соглашение об обработке персональных данных»</span> и условия
-          <span>«Оферты»</span>, а также соглашаетесь с <span>«Условиями использования»</span>
+          {{ t('page.main.main.subscription.rules') }}
         </p>
       </div>
     </div>
@@ -132,6 +129,9 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 import Button from '../components/littleComponent/ButtonComponent.vue'
 </script>
 

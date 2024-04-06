@@ -6,9 +6,9 @@
 
       <div class="toggle-container">
         <div class="toggle">
-          <Button @click="authUser.goHomePage()" class="btn btn--outline back-btn">{{
+          <ButtonAdd @click="authUser.goHomePage()" class="btn btn--white btn--transform">{{
             t('global.btn.back')
-          }}</Button>
+          }}</ButtonAdd>
           <div v-if="currentAuthPage === 'register'" class="toggle-panel toggle-left">
             <div class="toggle__lang-in">
               <!-- <LangBtn></LangBtn> -->
@@ -43,6 +43,7 @@ import { ref, onMounted, computed } from 'vue'
 import Login from '@/components/LoginComponent.vue'
 import Register from '@/components/RegisterComponent.vue'
 import Button from '@/components/littleComponent/ButtonComponent.vue'
+import ButtonAdd from '@/components/littleComponent/ButtonAdditional.vue'
 import { useAuthUserStore } from '@/stores/authUser.js'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
@@ -86,6 +87,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .toggle {
+
   &__lang-in {
     position: absolute;
     top: 15px;

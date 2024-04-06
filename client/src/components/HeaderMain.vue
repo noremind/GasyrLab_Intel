@@ -13,15 +13,18 @@
                 <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
               </li>
               <li class="nav__list-item">
-                <a href="#" class="nav__link">{{ t('page.main.header.all_courses') }}</a>
+                <a href="#courses" class="nav__link">{{ t('page.main.header.all_courses') }}</a>
               </li>
               <li class="nav__list-item">
-                <a href="#" class="nav__link">{{ t('page.main.header.contacts') }}</a>
+                <a href="#team" class="nav__link">{{ t('page.main.header.team') }}</a>
               </li>
               <li class="nav__list-item">
                 <router-link :to="{ name: 'about' }" class="mobile-dropdown__link">{{
                   t('page.main.header.about')
                 }}</router-link>
+              </li>
+              <li class="nav__list-item">
+                <a href="#contacts" class="nav__link">{{ t('page.main.header.contacts') }}</a>
               </li>
             </ul>
           </nav>

@@ -3,7 +3,16 @@
     <h3>{{ props.card.title }}</h3>
     <p>{{ props.card.description }}</p>
     <div class="card__action">
+<<<<<<< HEAD
       <slot name="button"></slot>
+=======
+      <button>
+        {{ t('global.btn.move') }}
+        <div class="arrow-wrapper">
+          <div class="arrow"></div>
+        </div>
+      </button>
+>>>>>>> 4eaf7e0606b869731eac9d5f16eb7c9b3dc29ed1
 
       <slot name="image"></slot>
     </div>
@@ -11,6 +20,8 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const props = defineProps({
   card: {
     type: Object,

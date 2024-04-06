@@ -1,8 +1,8 @@
 <template>
-  <div class="courses">
+  <div class="courses" id="courses">
     <div class="container">
       <div class="courses__wrapper">
-        <h2 class="title">Направления и Курсы</h2>
+        <h2 class="title">{{ t('page.main.main.ourCourses.title') }}</h2>
         <div class="courses__cards">
           <Card v-for="(card, index) in CardData" :key="index" :card="card">
             <template #image>
@@ -26,9 +26,16 @@
 <script setup>
 import Card from '@/components/CourseCard.vue'
 import CardData from '@/CardData.js'
+<<<<<<< HEAD
 import { useRouter } from 'vue-router'
 import CryptoJS from 'crypto-js'
 const router = useRouter()
+=======
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
+</script>
+>>>>>>> 4eaf7e0606b869731eac9d5f16eb7c9b3dc29ed1
 
 function goToCourse(title, card) {
   const secretKey = 'gasyrLab' // Секретный ключ для шифрования

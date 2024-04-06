@@ -1,33 +1,41 @@
 <template>
-  <div class="footer">
+  <div class="footer" id="contacts">
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__content">
           <div class="footer__newsletter">
-            <h3>Подпишитесь на нашу рассылку чтобы быть в курсе обо всем!</h3>
+            <h3>{{ t('page.main.footer.newsletter.title') }}</h3>
             <div class="footer__newsletter-items">
               <div class="textInputWrapper">
                 <input placeholder="Email" type="text" class="textInput" />
               </div>
-              <Button class="btn btn--primary">Подписаться</Button>
+              <Button class="btn btn--primary">{{ t('global.btn.subscribe') }}</Button>
             </div>
             <p>
-              Будьте в курсе всех событий в нашей области и не упустите ни одной важной детали.
-              Присоединяйтесь к нашей рассылке прямо сейчас и оставайтесь в центре происходящего!
+              {{ t('page.main.footer.newsletter.desc') }}
             </p>
           </div>
           <div class="footer__links">
             <div class="footer__links-items">
-              <h4>О нас</h4>
+              <h4>{{ t('page.main.footer.list.aboutUs.title') }}</h4>
               <ul>
-                <li><a href="#!">Школа</a></li>
-                <li><a href="#!">Курсы</a></li>
-                <li><a href="#!">Java</a></li>
-                <li><a href="#!">Python</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.school') }}</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.java') }}</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.cpp') }}</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.python') }}</a></li>
               </ul>
             </div>
             <div class="footer__links-items">
-              <h4>Контакты</h4>
+              <h4>{{ t('page.main.footer.list.help.title') }}</h4>
+              <ul>
+                <li><a href="#!">{{ t('page.main.footer.list.help.ref') }}</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.help.community') }}</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.help.support') }}</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.help.faq') }}</a></li>
+              </ul>
+            </div>
+            <div class="footer__links-items">
+              <h4>{{ t('page.main.footer.list.contacts.title') }}</h4>
               <ul>
                 <li><a href="#!">+7 700 066 68 28</a></li>
                 <li><a href="#!">admin@gasyr.com</a></li>
@@ -37,10 +45,10 @@
                       width="20px"
                       src="../assets/images/icons/location.svg"
                       alt="location"
-                    />Жандосова, 36</a
+                    />{{ t('page.main.footer.list.contacts.address') }}</a
                   >
                 </li>
-                <li><a href="#!">Информация</a></li>
+                <li><a href="#!">{{ t('page.main.footer.list.contacts.info') }}</a></li>
               </ul>
             </div>
           </div>
@@ -77,6 +85,9 @@
 
 <script setup>
 import Button from './littleComponent/ButtonComponent.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
@@ -101,7 +112,7 @@ import Button from './littleComponent/ButtonComponent.vue'
     border-bottom: 1px solid #c6c6c6;
     padding-bottom: 70px;
 
-    @include abs.breakpoint('tablet') {
+    @include abs.breakpoint('laptop-sm') {
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -142,6 +153,12 @@ import Button from './littleComponent/ButtonComponent.vue'
     align-items: center;
     gap: clamp(3.125rem, 1.989rem + 5.68vw, 6.25rem);
 
+    @include abs.breakpoint('laptop-sm') {
+      // flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
     &-items {
       text-align: center;
       h4 {
