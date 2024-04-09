@@ -8,8 +8,12 @@
 
     a {
       display: inline-block;
-      color: #fff;
+      color: abs.$almost-black;
       text-decoration: none;
+
+      .dark &{
+        color: abs.$almost-white;
+      }
 
       &::after {
         content: '';

@@ -30,18 +30,26 @@ const { t } = useI18n()
   align-items: center;
   gap: 0.6em;
   font-weight: 500;
-
-  // &--left .arrow {
-  //   // transform: rotate(180deg)
-  //   // display: none;
-  // }
-
-  &--white {
-    color: #fff;
-  }
-
-
 }
+
+.btn.btn--white {
+  color: white; /* Изменяем цвет фона кнопки на белый */
+}
+
+.btn.btn--white .arrow,
+.btn.btn--white:hover .arrow {
+  background: #fff; /* Изменяем цвет стрелки на белый */
+}
+
+
+.btn.btn--white .arrow {
+  background: transparent; /* Изменяем цвет стрелки на белый */
+}
+
+.btn.btn--white .arrow:before {
+  border-color: #fff; /* Возвращаем цвет рамки стрелки на основной */
+}
+
 
 .btn .arrow-wrapper {
   display: flex;

@@ -58,7 +58,7 @@
         >
           {{ t('page.auth.register.errors.requiredField') }}
         </p>
-        <ButtonCom type="submit" class="btn btn--outline">{{
+        <ButtonCom type="submit" class="btn btn--primary">{{
           t('page.auth.register.signUp')
         }}</ButtonCom>
       </form>

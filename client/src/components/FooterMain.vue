@@ -19,36 +19,52 @@
             <div class="footer__links-items">
               <h4>{{ t('page.main.footer.list.aboutUs.title') }}</h4>
               <ul>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.school') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.java') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.cpp') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.python') }}</a></li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.school') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.java') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.cpp') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.python') }}</a>
+                </li>
               </ul>
             </div>
             <div class="footer__links-items">
               <h4>{{ t('page.main.footer.list.help.title') }}</h4>
               <ul>
-                <li><a href="#!">{{ t('page.main.footer.list.help.ref') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.help.community') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.help.support') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.help.faq') }}</a></li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.ref') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.community') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.support') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.faq') }}</a>
+                </li>
               </ul>
             </div>
             <div class="footer__links-items">
               <h4>{{ t('page.main.footer.list.contacts.title') }}</h4>
               <ul>
                 <li><a href="#!">+7 700 066 68 28</a></li>
-                <li><a href="#!">admin@gasyr.com</a></li>
+                <li><a href="mailto:admin@gasyr.com">admin@gasyr.com</a></li>
                 <li>
-                  <a href="#!"
-                    ><img
-                      width="20px"
-                      src="../assets/images/icons/location.svg"
-                      alt="location"
-                    />{{ t('page.main.footer.list.contacts.address') }}</a
+                  <a target="_blank" href="https://go.2gis.com/5n782"
+                    ><img width="20px" src="../assets/images/icons/location.svg" alt="location" />{{
+                      t('page.main.footer.list.contacts.address')
+                    }}</a
                   >
                 </li>
-                <li><a href="#!">{{ t('page.main.footer.list.contacts.info') }}</a></li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.contacts.info') }}</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -61,17 +77,25 @@
           <div class="footer__socials">
             <ul class="social">
               <li class="social-item">
-                <a class="social-link" href="/">
+                <a
+                  class="social-link"
+                  target="_blank"
+                  href="https://api.whatsapp.com/send/?phone=77000666828&text&type=phone_number&app_absent=0"
+                >
                   <img src="../assets/images/icons/whatsapp.svg" alt="wp" />
                 </a>
               </li>
               <li class="social-item">
-                <a class="social-link" href="/">
+                <a
+                  class="social-link"
+                  target="_blank"
+                  href="https://www.tiktok.com/@gasyrlab?_t=8lIaCDscbaf&_r=1"
+                >
                   <img src="../assets/images/icons/tiktok.svg" alt="tiktok" />
                 </a>
               </li>
               <li class="social-item">
-                <a class="social-link" href="/">
+                <a class="social-link" target="_blank" href="https://www.instagram.com/gasyrlab/">
                   <img src="../assets/images/icons/instagram.svg" alt="insta" />
                 </a>
               </li>

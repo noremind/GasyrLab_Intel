@@ -187,8 +187,11 @@ body {
 }
 .nav__list a {
   display: inline-block;
-  color: #fff;
+  color: #212529;
   text-decoration: none;
+}
+.dark .nav__list a {
+  color: #f5f5f5;
 }
 .nav__list a::after {
   content: "";
@@ -253,7 +256,9 @@ body {
   width: 100%;
 }
 .container-auth__form .btn--transform {
-  transform: translate(-20px, -110px);
+  transform: translateY(-120px);
+  position: relative;
+  z-index: 15;
 }
 .container-auth__input {
   background-color: #eee;
@@ -351,6 +356,8 @@ body {
 }
 .toggle .btn--transform {
   transform: translate(20px, 20px);
+  position: relative;
+  z-index: 15;
 }
 .toggle__text {
   font-size: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
@@ -385,14 +392,6 @@ body {
 
 .container-auth .toggle-left {
   transform: translateX(0);
-}
-
-.back-btn {
-  position: absolute;
-  top: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
-  left: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
-  max-width: 100px;
-  z-index: 10;
 }
 
 .toggle-right {

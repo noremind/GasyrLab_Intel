@@ -1,12 +1,14 @@
 <template>
-  <Intro></Intro>
+  <!-- <Intro></Intro> -->
   <Header></Header>
-  <Greeting></Greeting>
+  <!-- <aboutCEO></aboutCEO> -->
+  <!-- <Greeting></Greeting> -->
   <Courses></Courses>
-  <Sponsors></Sponsors>
-  <Subscription></Subscription>
-  <Waves></Waves>
-  <Footer></Footer>
+  <OurTeam></OurTeam>
+  <!-- <Sponsors></Sponsors> -->
+  <!-- <Subscription></Subscription> -->
+  <!-- <Waves></Waves> -->
+  <!-- <Footer></Footer> -->
 </template>
 
 <script setup>
@@ -15,6 +17,8 @@ import Header from '@/components/HeaderMain.vue'
 import Greeting from '@/components/GreetingMain.vue'
 import Sponsors from '@/components/HorizontalScrollGsap.vue'
 import Courses from '@/components/OurCourses.vue'
+import aboutCEO from '@/components/AboutCEO.vue'
+import OurTeam from '@/components/OurTeam.vue'
 import Subscription from '@/components/SubscriptionForm.vue'
 import Waves from '@/components/WavesAnimation.vue'
 import Footer from '@/components/FooterMain.vue'

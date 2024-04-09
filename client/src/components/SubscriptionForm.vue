@@ -191,10 +191,7 @@ import Button from '../components/littleComponent/ButtonComponent.vue'
     font-size: 13px;
     margin-top: 20px;
     text-align: center;
-    span {
-      text-decoration: underline;
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 }
 .form {

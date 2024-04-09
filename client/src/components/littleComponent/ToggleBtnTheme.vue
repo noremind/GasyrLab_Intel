@@ -18,6 +18,7 @@ const theme = useThemeModeStore()
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
+          cursor="pointer"
           viewBox="0 0 24 24"
           aria-hidden="true"
           @click="theme.isToggle()"
@@ -37,6 +38,7 @@ const theme = useThemeModeStore()
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
+          cursor="pointer"
           viewBox="0 0 24 24"
           aria-hidden="true"
           @click="theme.isToggle()"
@@ -57,11 +59,17 @@ const theme = useThemeModeStore()
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/scss/abstracts/' as abs;
 .theme {
   position: relative;
 
   &__svg {
     width: 25px;
+    transition: 0.2s all ease;
+
+    &:hover {
+      color: abs.$accent-color;
+    }
   }
 }
 

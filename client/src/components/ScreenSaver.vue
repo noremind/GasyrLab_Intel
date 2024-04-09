@@ -206,7 +206,7 @@ onMounted(() => {
 
   $(arrowBtn.value).on('mouseenter', () => {
     gsap.to(arrow.value, {
-      y: 10,
+      y: 20,
       duration: 0.8,
       ease: 'back.inOut(3)',
       overwrite: 'auto'
@@ -216,7 +216,7 @@ onMounted(() => {
     gsap.to(arrow.value, { y: 0, duration: 0.5, ease: 'power3.out', overwrite: 'auto' })
   })
   $(arrowBtn.value).on('click', () => {
-    gsap.to(window, { scrollTo: innerHeight, duration: 1.5, ease: 'power1.inOut' })
+    gsap.to(window, { scrollTo: innerHeight, duration: 0, ease: 'power1.inOut' })
   }) // scrollTo requires the ScrollTo plugin (not to be confused w/ ScrollTrigger)
 })
 </script>

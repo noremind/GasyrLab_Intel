@@ -15,7 +15,7 @@
             </div>
             <h1 class="toggle__title">{{ t('page.auth.greetingSignIn') }}</h1>
             <p class="toggle__text">{{ t('page.auth.textSignIn') }}</p>
-            <Button class="btn hidden" @click="transitionRemoveMove()">{{
+            <Button class="btn btn--underline " @click="transitionRemoveMove()">{{
               t('page.auth.login.signIn')
             }}</Button>
           </div>
@@ -26,7 +26,7 @@
             </div>
             <h1 class="toggle__title">{{ t('page.auth.greetingSignUp') }}</h1>
             <p class="toggle__text">{{ t('page.auth.textSignUp') }}</p>
-            <Button class="btn hidden" @click="transitionAddMove()">{{
+            <Button class="btn btn--underline" @click="transitionAddMove()">{{
               t('page.auth.register.signUp')
             }}</Button>
           </div>

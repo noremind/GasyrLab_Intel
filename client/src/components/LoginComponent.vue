@@ -18,7 +18,7 @@
         v-model="v$.loginPassword.$model"
       />
       <p v-if="errorMessage" class="container-auth__error-message">{{ errorMessage }}</p>
-      <ButtonCom @submit.prevent="submitForm()" type="submit" class="btn btn--outline">{{
+      <ButtonCom @submit.prevent="submitForm()" type="submit" class="btn btn--primary">{{
         t('page.auth.login.signIn')
       }}</ButtonCom>
     </form>

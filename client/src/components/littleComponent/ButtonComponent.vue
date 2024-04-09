@@ -75,6 +75,10 @@ const { t } = useI18n()
       }
     }
   }
+
+  &--underline{
+    text-decoration: underline;
+  }
 }
 
 .btn:hover {

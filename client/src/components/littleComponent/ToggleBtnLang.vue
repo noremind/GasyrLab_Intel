@@ -20,10 +20,15 @@ const changeLocale = (newLocale) => {
 </script>
 
 <style scoped lang="scss">
-// .lang {
-//   position: absolute;
-//   top: 50px;
-// }
+@use '@/assets/scss/abstracts/' as abs;
+
+.lang__btn {
+  transition: 0.2s all ease;
+
+  &:hover {
+    color: abs.$accent-color;
+  }
+}
 
 .lang-enter-active,
 .lang-leave-active {

@@ -43,8 +43,10 @@
     position: relative;
     width: 100%;
 
-    .btn--transform{
-      transform: translate(-20px, -110px);
+    .btn--transform {
+      transform: translateY(-120px);
+      position: relative;
+      z-index: 15;
     }
   }
 
@@ -150,6 +152,8 @@
 
   .btn--transform {
     transform: translate(20px, 20px);
+    position: relative;
+    z-index: 15;
   }
 
   &__text {
@@ -187,14 +191,6 @@
 
 .container-auth .toggle-left {
   transform: translateX(0);
-}
-
-.back-btn {
-  position: absolute;
-  top: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
-  left: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
-  max-width: 100px;
-  z-index: 10;
 }
 
 .toggle-right {
