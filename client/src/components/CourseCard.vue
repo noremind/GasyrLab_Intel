@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
+// import { useI18n } from 'vue-i18n'
 // const { t } = useI18n()
 const props = defineProps({
   card: {
@@ -19,13 +19,15 @@ const props = defineProps({
     default: null
   }
 })
+
+console.log(props.card)
 </script>
 
 <style lang="scss" scoped>
 @use '@/assets/scss/abstracts' as abs;
 
 .card {
-  width: 100%;
+  max-width: 400px;
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 15px;

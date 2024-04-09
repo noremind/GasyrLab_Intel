@@ -13,18 +13,26 @@
                 <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
               </li>
               <li class="nav__list-item">
-                <a href="#courses" class="nav__link">{{ t('page.main.header.all_courses') }}</a>
+                <a @click="goHashTag(router, $event.target, 'courses')" class="nav__link">{{
+                  t('page.main.header.all_courses')
+                }}</a>
               </li>
               <li class="nav__list-item">
-                <a href="#team" class="nav__link">{{ t('page.main.header.team') }}</a>
+                <a @click="goHashTag(router, $event.target, 'team')" class="nav__link">{{
+                  t('page.main.header.team')
+                }}</a>
               </li>
               <li class="nav__list-item">
-                <router-link :to="{ name: 'about' }" class="mobile-dropdown__link">{{
-                  t('page.main.header.about')
-                }}</router-link>
+                <a
+                  @click="goHashTag(router, $event.target, 'about')"
+                  class="mobile-dropdown__link"
+                  >{{ t('page.main.header.about') }}</a
+                >
               </li>
               <li class="nav__list-item">
-                <a href="#contacts" class="nav__link">{{ t('page.main.header.contacts') }}</a>
+                <a @click="goHashTag(router, $event.target, 'contacts')" class="nav__link">{{
+                  t('page.main.header.contacts')
+                }}</a>
               </li>
             </ul>
           </nav>
@@ -50,7 +58,6 @@
                   {{ t('page.main.header.dropdown.log_out') }}
                 </button>
               </div>
-              <!-- <ThemeBtn></ThemeBtn> -->
             </div>
           </TransitionGroup>
 
@@ -121,21 +128,26 @@
           </li>
           <li class="mobile-dropdown__list-item">
             <div class="flex-box">
-              <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.all_courses') }}</a>
+              <a
+                @click="goHashTag(router, $event.target, 'courses')"
+                class="mobile-dropdown__link"
+                >{{ t('page.main.header.all_courses') }}</a
+              >
               <ThemeBtn></ThemeBtn>
             </div>
           </li>
           <li class="mobile-dropdown__list-item">
-            <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.contacts') }}</a>
+            <a
+              @click="goHashTag(router, $event.target, 'contacts')"
+              class="mobile-dropdown__link"
+              >{{ t('page.main.header.contacts') }}</a
+            >
           </li>
           <li class="mobile-dropdown__list-item">
             <router-link :to="{ name: 'about' }" class="mobile-dropdown__link">{{
               t('page.main.header.about')
             }}</router-link>
           </li>
-          <!-- <li class="mobile-dropdown__list-item">
-            <ThemeBtn></ThemeBtn>
-          </li> -->
           <li v-if="authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
             <div class="flex-box">
               <p>{{ authUser.getName() }}</p>
@@ -161,7 +173,7 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { ref, onMounted, onBeforeMount } from 'vue'
 import LangBtn from '@/components/littleComponent/ToggleBtnLang.vue'
@@ -169,14 +181,18 @@ import ThemeBtn from '@/components/littleComponent/ToggleBtnTheme.vue'
 import { useThemeModeStore } from '@/stores/themeMode.js'
 import Button from '@/components/littleComponent/ButtonComponent.vue'
 import { useAuthUserStore } from '@/stores/authUser'
+import { goHashTag } from '@/stores/routerGo.js'
 
 const theme = useThemeModeStore()
 
 const { t } = useI18n()
+const router = useRouter()
 const isOpenUserDropdown = ref(false)
 const isOpenBurgerMenu = ref(false)
 const dropdownLaptop = ref(null)
 const dropdownMobile = ref(null)
+
+const hashTagLink = ref(null)
 
 const authUser = useAuthUserStore()
 
@@ -243,6 +259,7 @@ onBeforeMount(() => {
     align-items: center;
     gap: 10px;
     position: relative;
+    margin-top: clamp(0.313rem, -0.142rem + 2.27vw, 1.563rem);
     // margin-top: clamp(1.25rem, 0.682rem + 2.84vw, 2.813rem);
   }
 

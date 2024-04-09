@@ -2,39 +2,34 @@
   <div v-if="cardData">
     <Header></Header>
 
-    <div class="container">
-      <!-- <div class="breadcrumbs">
-      <div class="breadcrumbs__wrapper">
-        <router-link :to="{ name: 'home' }">Главная</router-link> /
-        <span>Title courses</span>
-      </div>
-    </div> -->
-    </div>
     <section class="intro-course">
       <div class="container">
         <div class="intro-course__header">
           <div class="flex-box intro-course__box">
-            <p class="intro-course__header-text">Онлайн</p>
-            <p class="intro-course__header-text">Старт: 6 мая</p>
+            <p
+              v-for="(circleItem, index) in cardData.headerCircle"
+              :key="index"
+              class="intro-course__header-text"
+            >
+              {{ circleItem }}
+            </p>
           </div>
           <div class="flex-box intro-course__wrapper">
             <div class="intro-course__text-side">
               <h1 class="intro-course__title">
                 Стань
                 <span class="intro-course__decor">Junior {{ cardData.title }} разработчиком</span>с
-                0 за 6 месяцев
+                0 за {{ cardData.fullMounth }} месяцев
               </h1>
               <p class="intro-course__desc">
-                Python просто выучить, даже если вы никогда не программировали. Во время обучения
-                вам будет помогать эксперт-куратор. Вы разработаете 3 проекта для портфолио, а Центр
-                карьеры поможет найти работу Python-разработчиком.
+                {{ cardData.description }}
               </p>
-              <Button class="btn btn--outline intro-course__btn">Записаться на курс</Button>
+              <a href="#tarifs" class="btn btn--outline intro-course__btn">Записаться на курс</a>
             </div>
             <img
               class="intro-course__img"
               src="@/assets/images/courses/python/python.png"
-              alt="Python course"
+              :alt="cardData.title + 'course'"
             />
           </div>
         </div>
@@ -47,22 +42,18 @@
           <h1 class="title about-prof__title">О профессии</h1>
 
           <p class="about-prof__desc">
-            Python — идеальный язык для новичка. Код на Python легко писать и читать, язык стабильно
-            занимает высокие места в рейтингах популярности, а «питонисты» востребованы почти во
-            всех сферах IT — программировании, анализе данных, системном администрировании и
-            тестировании. YouTube, Intel, Pixar, NASA, VK, Яндекс — вот лишь немногие из известных
-            компаний, которые используют Python в своих продуктах.
+            {{ cardData.aboutProfession.description }}
           </p>
 
           <div class="flex-box about-prof__box">
             <div class="about-prof__footer">
-              <h2 class="about-prof__footer-title">6 месяцев</h2>
+              <h2 class="about-prof__footer-title">{{ cardData.fullMounth }} месяцев</h2>
               <p class="description about-prof__footer-desc">
                 интенсивных занятий и практики на курсе достаточно, чтобы найти первую работу
               </p>
             </div>
             <div class="about-prof__footer">
-              <h2 class="about-prof__footer-title">400 000 тенге</h2>
+              <h2 class="about-prof__footer-title">{{ cardData.aboutProfession.salary }} тенге</h2>
               <p class="description about-prof__footer-desc">средняя зарплата специалиста</p>
             </div>
           </div>
@@ -95,14 +86,19 @@
               </p>
               <div class="flex-box">
                 <p><span class="content-list__decor">6</span> месяцев обучения</p>
-                <p><span class="content-list__decor">3</span> итоговых проекта</p>
+                <p>
+                  <span class="content-list__decor">{{
+                    cardData.conversationCourse.allProjects
+                  }}</span>
+                  итоговых проекта
+                </p>
               </div>
             </div>
           </div>
           <div class="course-info">
             <div class="course-info__wrapper">
               <Accordion
-                v-for="accordion in accordions.accordionData"
+                v-for="accordion in cardData.conversationCourse.accordionData"
                 :key="accordion.id"
                 :accordion="accordion"
               ></Accordion>
@@ -123,60 +119,44 @@
 
     <SubscriptionForm></SubscriptionForm>
 
-    <section class="choose-tarif">
+    <section class="choose-tarif" id="tarifs">
       <div class="container">
         <h2 class="title">Выберите свой тариф</h2>
         <div class="choose-tarif__wrapper">
           <div class="choose-tarif__box">
             <h3 class="choose-tarif__title">Standard</h3>
             <p class="choose-tarif__desc">Интенсивное обучение в группе студентов</p>
-            <!-- <div class="flex-box">
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-            </div> -->
             <ul class="choose-tarif__list">
-              <li class="choose-tarif__item">4 проекта в портфолио</li>
-              <li class="choose-tarif__item">Карьерный трек</li>
-              <li class="choose-tarif__item">Гарантия трудоустройства</li>
-              <li class="choose-tarif__item">Бессрочный доступ к учебным материалам</li>
-              <li class="choose-tarif__item">Комплексная подготовка</li>
-              <li class="choose-tarif__item">Профориентация</li>
+              <li
+                v-for="(listData, index) in cardData.tarifs.standart.listData"
+                :key="index"
+                class="choose-tarif__item"
+              >
+                {{ listData }}
+              </li>
             </ul>
-            <Button class="btn btn--outline">Оставить заявку</Button>
+            <Button class="btn btn--outline" @click="openModal('Standart')">Оставить заявку</Button>
           </div>
+
           <div class="choose-tarif__box">
             <h3 class="choose-tarif__title">Ultimate</h3>
             <p class="choose-tarif__desc">Индивидуальное обучение с персональным наставником</p>
-            <!-- <div class="flex-box">
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-              <div>
-                <p class="choose-tarif__mounth">В рассрочку на 24 месяца</p>
-                <h3 class="choose-tarif__price">6 300</h3>
-              </div>
-            </div> -->
-
             <ul class="choose-tarif__list">
-              <li class="choose-tarif__item">4 проекта в портфолио</li>
-              <li class="choose-tarif__item">Карьерный трек</li>
-              <li class="choose-tarif__item">Гарантия трудоустройства</li>
-              <li class="choose-tarif__item">Бессрочный доступ к учебным материалам</li>
-              <li class="choose-tarif__item">Комплексная подготовка</li>
-              <li class="choose-tarif__item">Профориентация</li>
-              <li class="choose-tarif__item">Персональное расписание</li>
-              <li class="choose-tarif__item">Индивидуальная траектория обучения</li>
-              <li class="choose-tarif__item">80 часов персональных консультаций с наставником</li>
+              <li
+                v-for="(listData, index) in cardData.tarifs.ultimate.listData"
+                :key="index"
+                class="choose-tarif__item"
+              >
+                {{ listData }}
+              </li>
             </ul>
-            <Button class="btn btn--outline">Оставить заявку</Button>
+            <Button class="btn btn--outline" @click="openModal('Ultimate')">Оставить заявку</Button>
           </div>
+          <teleport to="body">
+            <transition name="modal-tarif">
+              <Modal v-if="isModal" @close-modal="closeModal()" :title="currentTarif"></Modal>
+            </transition>
+          </teleport>
         </div>
       </div>
     </section>
@@ -194,6 +174,7 @@ import Accordion from '@/components/AccordionComponent.vue'
 import SwiperCard from '@/components/CardSwiper.vue'
 import SubscriptionForm from '@/components/SubscriptionForm.vue'
 import Footer from '@/components/FooterMain.vue'
+import Modal from '@/components/ModalSubscribe.vue'
 
 import { ref, onMounted } from 'vue'
 import { useAccordionStore } from '@/stores/accordionData.js'
@@ -202,6 +183,19 @@ import CryptoJS from 'crypto-js'
 const route = useRoute()
 
 const accordions = useAccordionStore()
+
+const isModal = ref(false)
+const currentTarif = ref('')
+
+function closeModal(tarif) {
+  isModal.value = false
+  currentTarif.value = tarif
+}
+
+function openModal(tarif) {
+  isModal.value = true
+  currentTarif.value = tarif
+}
 
 const cardData = ref(null)
 onMounted(() => {
@@ -212,15 +206,33 @@ onMounted(() => {
   if (encryptedCard) {
     const decryptedCard = CryptoJS.AES.decrypt(encryptedCard, secretKey).toString(CryptoJS.enc.Utf8)
     cardData.value = JSON.parse(decryptedCard)
-    // console.log(cardData.value.title)
+    console.log(cardData.value.title)
   } else {
-    console.log('Карточка не найдена')
+    console.log('Курс не найдена')
   }
 })
 </script>
 
 <style lang="scss" scoped>
 @use '@/assets/scss/abstracts' as abs;
+
+.modal-tarif-enter-active {
+  animation: bounce-in 0.5s;
+}
+.modal-tarif-leave-active {
+  animation: bounce-in 0.2s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .intro-course {
   margin-top: 30px;

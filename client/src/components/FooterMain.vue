@@ -19,19 +19,35 @@
             <div class="footer__links-items">
               <h4>{{ t('page.main.footer.list.aboutUs.title') }}</h4>
               <ul>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.school') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.java') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.cpp') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.aboutUs.python') }}</a></li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.school') }}</a>
+                </li>
+                <li>
+                  <router-view to="">{{ t('page.main.footer.list.aboutUs.java') }}</router-view>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.dataAnalytics') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.python') }}</a>
+                </li>
               </ul>
             </div>
             <div class="footer__links-items">
               <h4>{{ t('page.main.footer.list.help.title') }}</h4>
               <ul>
-                <li><a href="#!">{{ t('page.main.footer.list.help.ref') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.help.community') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.help.support') }}</a></li>
-                <li><a href="#!">{{ t('page.main.footer.list.help.faq') }}</a></li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.ref') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.community') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.support') }}</a>
+                </li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.help.faq') }}</a>
+                </li>
               </ul>
             </div>
             <div class="footer__links-items">
@@ -41,14 +57,14 @@
                 <li><a href="#!">admin@gasyr.com</a></li>
                 <li>
                   <a href="#!"
-                    ><img
-                      width="20px"
-                      src="../assets/images/icons/location.svg"
-                      alt="location"
-                    />{{ t('page.main.footer.list.contacts.address') }}</a
+                    ><img width="20px" src="../assets/images/icons/location.svg" alt="location" />{{
+                      t('page.main.footer.list.contacts.address')
+                    }}</a
                   >
                 </li>
-                <li><a href="#!">{{ t('page.main.footer.list.contacts.info') }}</a></li>
+                <li>
+                  <a href="#!">{{ t('page.main.footer.list.contacts.info') }}</a>
+                </li>
               </ul>
             </div>
           </div>
