@@ -3,7 +3,7 @@
     <h3>{{ props.card.title }}</h3>
     <p>{{ props.card.description }}</p>
     <div class="card__action">
-      <slot name="button"> </slot>
+      <slot name="button"></slot>
 
       <slot name="image"></slot>
     </div>
@@ -11,21 +11,22 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+// import { useI18n } from 'vue-i18n'
+// const { t } = useI18n()
 const props = defineProps({
   card: {
     type: Object,
     default: null
   }
 })
+
 </script>
 
 <style lang="scss" scoped>
 @use '@/assets/scss/abstracts' as abs;
 
 .card {
-  width: 100%;
+  max-width: 400px;
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 15px;

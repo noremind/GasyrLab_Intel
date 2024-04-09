@@ -9,13 +9,33 @@
 </template>
 
 <script setup>
+import { usehashLangStores } from '@/stores/hashLang'
+import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-
 const { locale } = useI18n({ useScope: 'global' })
+const hashLang = usehashLangStores()
+const route = useRoute()
+const router = useRouter()
+const { tm } = useI18n()
 
 const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
+
+  if (route.name === 'course') {
+    const tmp = tm('page.main.main.ourCourses.courses')
+
+    const localeTmp = localStorage.getItem('idCurrentCourse')
+
+    for (let i = 0; i < tmp.length; i++) {
+      if (tmp[i].detail.id === +localeTmp) {
+        hashLang.goToCourse(router, tmp[i].detail.title, tmp[i].detail)
+      }
+    }
+  }
+  setTimeout(() => {
+    window.location.reload()
+  }, 100)
 }
 </script>
 
