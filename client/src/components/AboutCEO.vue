@@ -4,7 +4,7 @@
       <div class="aboutCEO__wrapper">
         <div class="aboutCEO__hero">
           <div class="ceo">
-            <img class="hero" src="../assets/images/people/ceo.PNG" alt="ceo" />
+            <img class="hero" src="../assets/images/people/ceo.png" alt="ceo" />
           </div>
         </div>
         <div class="aboutCEO__content">
