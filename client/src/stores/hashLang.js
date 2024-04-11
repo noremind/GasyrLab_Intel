@@ -12,6 +12,6 @@ export const usehashLangStores = defineStore('hashLang', () => {
       query: { card: encryptedCard }
     })
   }
-  
+
   return { goToCourse }
 })
