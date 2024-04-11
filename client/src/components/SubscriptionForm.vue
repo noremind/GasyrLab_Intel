@@ -140,6 +140,7 @@ import Button from '../components/littleComponent/ButtonComponent.vue'
 
 .subscription {
   &__wrapper {
+  margin-top: 100px;
     background: linear-gradient(71deg, rgb(218, 203, 251), rgba(243, 225, 255, 1) 96%);
     padding: 40px;
     border-radius: 30px;

@@ -26,10 +26,10 @@
                   <router-view to="">{{ t('page.main.footer.list.aboutUs.java') }}</router-view>
                 </li>
                 <li>
-                  <a href="#!">{{ t('page.main.footer.list.aboutUs.dataAnalytics') }}</a>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.python') }}</a>
                 </li>
                 <li>
-                  <a href="#!">{{ t('page.main.footer.list.aboutUs.python') }}</a>
+                  <a href="#!">{{ t('page.main.footer.list.aboutUs.dataAnalytics') }}</a>
                 </li>
               </ul>
             </div>

@@ -177,12 +177,10 @@ import Footer from '@/components/FooterMain.vue'
 import Modal from '@/components/ModalSubscribe.vue'
 
 import { ref, onMounted } from 'vue'
-import { useAccordionStore } from '@/stores/accordionData.js'
 import { useRoute } from 'vue-router'
 import CryptoJS from 'crypto-js'
 const route = useRoute()
 
-const accordions = useAccordionStore()
 
 const isModal = ref(false)
 const currentTarif = ref('')
