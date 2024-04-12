@@ -43,7 +43,7 @@
                   target="_blank"
                   href="https://www.tiktok.com/@gasyrlab?_t=8lIaCDscbaf&_r=1"
                 >
-                  <img src="../assets/images/icons/tiktok.svg" alt="tiktok" />
+                  <img src="../assets/images/icons/Telegram.png" alt="telegram" />
                 </a>
               </li>
               <li class="social-item">
@@ -238,15 +238,15 @@
     }
 
     .social .social-item:nth-child(2):hover a {
-      background: #555555;
+      background: #339dff;
     }
 
     .social .social-item:nth-child(2):hover a::before {
-      background: #2d2d2d;
+      background: #0084ff;
     }
 
     .social .social-item:nth-child(2):hover a::after {
-      background: #2d2d2d;
+      background: #0084ff;
     }
 
     .social .social-item:nth-child(3) a {

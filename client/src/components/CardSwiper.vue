@@ -1,6 +1,6 @@
 <template>
   <swiper :slidesPerView="3" :breakpoints="breakpoints" :spaceBetween="30" class="mySwiper">
-    <swiper-slide v-for="data in swiperData" :key="data.id">
+    <swiper-slide v-for="data in benefitsData" :key="data.id">
       <div class="card-swiper" :style="{ 'background-color': data.bgColor }">
         <p class="card-swiper__number">{{ data.id }}</p>
         <div class="card-swiper__first-side">
@@ -19,6 +19,7 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import swiperData from '@/stores/swiperData.js'
+import {ref} from 'vue'
 import 'swiper/scss'
 
 export default {
@@ -26,7 +27,14 @@ export default {
     Swiper,
     SwiperSlide
   },
-  setup() {
+  props: {
+    benefits: {
+      type: Array,
+      default: () => []
+    }
+  },
+  setup(props) {
+    const benefitsData = ref(props.benefits)
     const breakpoints = {
       1024: {
         slidesPerView: 3.3,
@@ -47,7 +55,8 @@ export default {
     swiperData
     return {
       breakpoints,
-      swiperData
+      swiperData,
+      benefitsData
     }
   }
 }

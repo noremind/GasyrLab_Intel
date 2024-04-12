@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <h3>{{ props.card.title }}</h3>
-    <p>{{ props.card.description }}</p>
+    <p>{{ props.card.cardDescription }}</p>
     <div class="card__action">
       <slot name="button"></slot>
 

@@ -22,20 +22,11 @@ const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
 
-  if (route.name === 'course') {
-    const tmp = tm('page.main.main.ourCourses.courses')
 
-    const localeTmp = localStorage.getItem('idCurrentCourse')
 
-    for (let i = 0; i < tmp.length; i++) {
-      if (tmp[i].detail.id === +localeTmp) {
-        hashLang.goToCourse(router, tmp[i].detail.title, tmp[i].detail)
-      }
-    }
-  }
-  setTimeout(() => {
-    window.location.reload()
-  }, 100)
+
+  window.location.reload()
+
 }
 </script>
 
