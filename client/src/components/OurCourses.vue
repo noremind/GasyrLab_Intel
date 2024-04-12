@@ -4,13 +4,13 @@
       <div class="courses__wrapper">
         <h2 class="title">{{ tm('page.main.main.ourCourses.title') }}</h2>
         <div class="courses__cards">
-          <Card v-for="(card, index) in coursesT" :key="index" :card="card.preview">
+          <Card v-for="(card, index) in coursesT" :key="index" :card="card">
             <template #image>
               <!-- <div class="courses__svg" v-html="card.preview.image"></div> -->
-              <img :src="card.preview.image" :alt="card.preview.title" />
+              <img :src="card.previewImage" :alt="card.title" />
             </template>
             <template #button>
-              <button @click="hashLang.goToCourse(router, card.preview.title, card.detail)">
+              <button @click="goToCourse(card)">
                 {{ tm('global.btn.move') }}
                 <div class="arrow-wrapper">
                   <div class="arrow"></div>
@@ -29,15 +29,16 @@ import Card from '@/components/CourseCard.vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
-import { usehashLangStores } from '@/stores/hashLang'
-// import CardData from '@/CardData.js'
-// import CryptoJS from 'crypto-js'
+
 const router = useRouter()
-const hashLang = usehashLangStores()
+
 const { tm } = useI18n()
 
 const coursesT = ref(tm('page.main.main.ourCourses.courses'))
 
+function goToCourse(card) {
+  router.push({ name: 'course', params: { courseId: card.id } })
+}
 
 </script>
 <style lang="scss" scoped>

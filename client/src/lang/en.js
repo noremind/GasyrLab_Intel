@@ -1,6 +1,7 @@
 import pythonSvg from '@/assets/images/courses/preview/python.svg'
 import javaSvg from '@/assets/images/courses/preview/java.svg'
 import dataAnalyticsSvg from '@/assets/images/courses/preview/dataAnalytics.svg'
+import pythonLogo from '@/assets/images/courses/python.png'
 
 export default {
 	theme: {
@@ -40,25 +41,35 @@ export default {
 						{
 							id: 1,
 							title: 'Python Developer',
-							cardDescription: `Our course consists of 30 lessons/ 5 parts. There are 4 projects in your portfolio before the end of the course. Duration: ${this.duration} weeks. `,
-							titleDescription: '',
+							cardDescription: `Our course consists of 30 lessons/ 5 parts. There are 4 projects in your portfolio before the end of the course. Duration: {this.duration} weeks. `,
+							titleDescription() {
+								return `Python is easy to learn, even if you have never programmed. An expert tutor will assist you during your training. You will develop ${this.fullProjects} portfolio projects, and the Career Center will help you find a job as a Python developer.`
+							},
 							duration: 28,
-							circleItem: ['Online', 'Start: 6 may'],
+							previewImage: pythonSvg,
+							circleItem: ['Online', 'Start: 6 may'],
 							fullProjects: 3,
+							courseImage: pythonLogo,
+							beingScratch() {
+								return `from 0 to ${this.duration} weeks`
+							},
 							aboutProfession: {
 								title: 'About Profession',
-								description: 'Python is a great language for beginners. Python code is easy to write and read, the language consistently ranks high in popularity ratings, and "Pythonists" are in demand in almost all areas of IT-Programming, Data Analysis, System Management and testing. YouTube, Intel, Pixar, NASA, VK, Yandex are just a few of the well - known companies that use Python in their products.',
+								description:
+									'Python is a great language for beginners. Python code is easy to write and read, the language consistently ranks high in popularity ratings, and "Pythonists" are in demand in almost all areas of IT-Programming, Data Analysis, System Management and testing. YouTube, Intel, Pixar, NASA, VK, Yandex are just a few of the well - known companies that use Python in their products.',
 								salary: '400 000 тенге',
 								avarageSalary: 'the average salary of a specialist',
-								durationDescription: 'intensive classes and practice on the course are enough to find your first job'
+								durationDescription:
+									'intensive classes and practice on the course are enough to find your first job'
 							},
 							requiredEmployee: {
 								title: 'The course is designed according to the requirements of employers',
-								description: 'We conduct market research, interview large companies about the requirements for novice specialists, check vacancies and expert opinions. Based on this, we add only the most necessary things to the course.'
+								description:
+									'We conduct market research, interview large companies about the requirements for novice specialists, check vacancies and expert opinions. Based on this, we add only the most necessary things to the course.'
 							},
 							contentsCourse: {
-								title: "Содержание курсов",
-								description: `You will find ${this.fullProjects} blocks on Python programming with different levels of difficulty and additional courses.`,
+								title: 'Course content',
+								description: `You will find {this.fullProjects} blocks on Python programming with different levels of difficulty and additional courses.`,
 								list: [
 									{
 										id: 1,
@@ -133,7 +144,7 @@ export default {
 								]
 							},
 							helpCenter: {
-								title: 'Помощь с трудоустройством',
+								title: 'Help with employment',
 								benefits: [
 									{
 										id: 1,
@@ -158,7 +169,7 @@ export default {
 										bgColor: '#FEBCB4',
 										title: 'Making a portfolio',
 										description: 'We will help you to present your projects effectively'
-									},
+									}
 								]
 							},
 							rate: {
@@ -185,7 +196,7 @@ export default {
 											},
 											{
 												title: 'Профориентация'
-											},
+											}
 										]
 									},
 									{
@@ -218,9 +229,9 @@ export default {
 											},
 											{
 												title: '80 часов персональных консультаций с наставником'
-											},
+											}
 										]
-									},
+									}
 								]
 							},
 							modalWindow: {
@@ -234,7 +245,7 @@ export default {
 									tel: 'Phone number'
 								}
 							}
-						},
+						}
 					]
 				},
 				subscription: {
@@ -310,7 +321,9 @@ export default {
 			default: 'Learn More',
 			subscribe: 'Subscribe',
 			move: 'Move to',
-			back: 'Back'
+			back: 'Back',
+			bookCourse: 'Booking course',
+			demand: 'Apply request'
 		}
 	}
 }
