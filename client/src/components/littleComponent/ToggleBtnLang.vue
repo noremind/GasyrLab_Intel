@@ -9,19 +9,12 @@
 </template>
 
 <script setup>
-import { usehashLangStores } from '@/stores/hashLang'
-import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n({ useScope: 'global' })
-const hashLang = usehashLangStores()
-const route = useRoute()
-const router = useRouter()
-const { tm } = useI18n()
 
 const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
-
   // window.location.reload()
 }
 </script>

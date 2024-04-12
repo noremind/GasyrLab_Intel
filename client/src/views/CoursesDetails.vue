@@ -1,5 +1,5 @@
 <template>
-  <div v-if="cardData">
+  <div v-if="cardData" :key="count">
     <Header></Header>
 
     <section class="intro-course">
@@ -160,7 +160,7 @@ import Modal from '@/components/ModalSubscribe.vue'
 import Waves from '@/components/WavesAnimation.vue'
 import { useI18n } from 'vue-i18n'
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 
@@ -177,6 +177,8 @@ function openModal(tarif) {
   isModal.value = true
   currentTarif.value = tarif
 }
+
+const count = inject('count')
 
 onMounted(() => {
   const tmp = tm('page.main.main.ourCourses.courses')
