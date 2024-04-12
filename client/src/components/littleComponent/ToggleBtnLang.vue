@@ -22,11 +22,7 @@ const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
 
-
-
-
-  window.location.reload()
-
+  // window.location.reload()
 }
 </script>
 
