@@ -1,152 +1,161 @@
 <template>
-  <div v-if="cardData" :key="count">
-    <Header></Header>
+  <div :key="counter.count">
+    <div v-if="cardData">
+      <Header></Header>
 
-    <section class="intro-course">
-      <div class="container">
-        <div class="intro-course__header">
-          <div class="flex-box intro-course__box">
-            <p
-              v-for="(circleItem, index) in cardData.circleItem"
-              :key="index"
-              class="intro-course__header-text"
-            >
-              {{ circleItem }}
-            </p>
-          </div>
-          <div class="flex-box intro-course__wrapper">
-            <div class="intro-course__text-side">
-              <h1 class="intro-course__title">
-                <span class="intro-course__decor">Junior {{ cardData.title }}</span
-                >{{ cardData.beingScratch() }}
-              </h1>
-              <p class="intro-course__desc">
-                {{ cardData.titleDescription() }}
-              </p>
-              <a href="#tarifs" class="btn btn--outline intro-course__btn">{{
-                tm('global.btn.bookCourse')
-              }}</a>
-            </div>
-            <img
-              class="intro-course__img"
-              :src="cardData.courseImage"
-              :alt="cardData.title + 'course'"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-prof">
-      <div class="container">
-        <div class="about-prof__wrapper">
-          <h1 class="title about-prof__title">{{ cardData.aboutProfession.title }}</h1>
-
-          <p class="about-prof__desc">
-            {{ cardData.aboutProfession.description }}
-          </p>
-
-          <div class="flex-box about-prof__box">
-            <div class="about-prof__footer">
-              <h2 class="about-prof__footer-title">{{ cardData.duration }} недель</h2>
-              <p class="description about-prof__footer-desc">
-                {{ cardData.aboutProfession.durationDescription }}
+      <section class="intro-course">
+        <div class="container">
+          <div class="intro-course__header">
+            <div class="flex-box intro-course__box">
+              <p
+                v-for="(circleItem, index) in cardData.circleItem"
+                :key="index"
+                class="intro-course__header-text"
+              >
+                {{ circleItem }}
               </p>
             </div>
-            <div class="about-prof__footer">
-              <h2 class="about-prof__footer-title">{{ cardData.aboutProfession.salary }} тенге</h2>
-              <p class="description about-prof__footer-desc">
-                {{ cardData.aboutProfession.avarageSalary }}
-              </p>
-            </div>
-          </div>
-        </div>
-        <section class="required">
-          <div class="container">
-            <div class="required__wrapper">
-              <h2 class="required__title">{{ cardData.requiredEmployee.title }}</h2>
-
-              <p class="description required__desc">
-                {{ cardData.requiredEmployee.description }}
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <section class="content-list">
-      <div class="container">
-        <div class="content-list__wrapper">
-          <div class="content-list__box">
-            <h2 class="content-list__title">{{ cardData.contentsCourse.title }}</h2>
-            <div class="content-list__box-inner">
-              <p>{{ cardData.contentsCourse.description }}</p>
-              <div class="flex-box">
-                <p>
-                  <span class="content-list__decor">{{ cardData.duration }}</span> месяцев обучения
+            <div class="flex-box intro-course__wrapper">
+              <div class="intro-course__text-side">
+                <h1 class="intro-course__title">
+                  <span class="intro-course__decor">Junior {{ cardData.title }}</span
+                  >{{ cardData.beingScratch() }}
+                </h1>
+                <p class="intro-course__desc">
+                  {{ cardData.titleDescription() }}
                 </p>
-                <p>
-                  <span class="content-list__decor">{{ cardData.fullProjects }}</span>
-                  итоговых проекта
+                <a href="#tarifs" class="btn btn--outline intro-course__btn">{{
+                  tm('global.btn.bookCourse')
+                }}</a>
+              </div>
+              <img
+                class="intro-course__img"
+                :src="cardData.courseImage"
+                :alt="cardData.title + 'course'"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-prof">
+        <div class="container">
+          <div class="about-prof__wrapper">
+            <h1 class="title about-prof__title">{{ cardData.aboutProfession.title }}</h1>
+
+            <p class="about-prof__desc">
+              {{ cardData.aboutProfession.description }}
+            </p>
+
+            <div class="flex-box about-prof__box">
+              <div class="about-prof__footer">
+                <h2 class="about-prof__footer-title">{{ cardData.duration }} недель</h2>
+                <p class="description about-prof__footer-desc">
+                  {{ cardData.aboutProfession.durationDescription }}
+                </p>
+              </div>
+              <div class="about-prof__footer">
+                <h2 class="about-prof__footer-title">
+                  {{ cardData.aboutProfession.salary }} тенге
+                </h2>
+                <p class="description about-prof__footer-desc">
+                  {{ cardData.aboutProfession.avarageSalary }}
                 </p>
               </div>
             </div>
           </div>
-          <div class="course-info">
-            <div class="course-info__wrapper">
-              <Accordion
-                v-for="accordion in cardData.contentsCourse.list"
-                :key="accordion.id"
-                :accordion="accordion"
-              ></Accordion>
+          <section class="required">
+            <div class="container">
+              <div class="required__wrapper">
+                <h2 class="required__title">{{ cardData.requiredEmployee.title }}</h2>
+
+                <p class="description required__desc">
+                  {{ cardData.requiredEmployee.description }}
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="content-list">
+        <div class="container">
+          <div class="content-list__wrapper">
+            <div class="content-list__box">
+              <h2 class="content-list__title">{{ cardData.contentsCourse.title }}</h2>
+              <div class="content-list__box-inner">
+                <p>{{ cardData.contentsCourse.description }}</p>
+                <div class="flex-box">
+                  <p>
+                    <span class="content-list__decor">{{ cardData.duration }}</span> месяцев
+                    обучения
+                  </p>
+                  <p>
+                    <span class="content-list__decor">{{ cardData.fullProjects }}</span>
+                    итоговых проекта
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="course-info">
+              <div class="course-info__wrapper">
+                <Accordion
+                  v-for="accordion in cardData.contentsCourse.list"
+                  :key="accordion.id"
+                  :accordion="accordion"
+                ></Accordion>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="help-center">
-      <div class="container">
-        <div class="help-center__wrapper">
-          <h1 class="title">{{ cardData.helpCenter.title }}</h1>
-          <SwiperCard :benefits="cardData.helpCenter.benefits"></SwiperCard>
-        </div>
-      </div>
-    </section>
-
-    <SubscriptionForm></SubscriptionForm>
-
-    <section class="choose-tarif" id="tarifs">
-      <div class="container">
-        <h2 class="title">{{ cardData.rate.title }}</h2>
-        <div class="choose-tarif__wrapper">
-          <div class="choose-tarif__box" v-for="(tarif, index) in cardData.rate.paket" :key="index">
-            <h3 class="choose-tarif__title">{{ tarif.title }}</h3>
-            <p class="choose-tarif__desc">{{ tarif.description }}</p>
-            <ul class="choose-tarif__list">
-              <li v-for="(listData, index) in tarif.list" :key="index" class="choose-tarif__item">
-                {{ listData.title }}
-              </li>
-            </ul>
-            <Button class="btn btn--outline" @click="openModal(tarif.title)">{{
-              tm('global.btn.demand')
-            }}</Button>
+      <section class="help-center">
+        <div class="container">
+          <div class="help-center__wrapper">
+            <h1 class="title">{{ cardData.helpCenter.title }}</h1>
+            <SwiperCard :benefits="cardData.helpCenter.benefits"></SwiperCard>
           </div>
-
-          <teleport to="body">
-            <transition name="modal-tarif">
-              <Modal v-if="isModal" @close-modal="closeModal()" :title="currentTarif"></Modal>
-            </transition>
-          </teleport>
         </div>
-      </div>
-    </section>
-    <Waves></Waves>
-    <Footer></Footer>
-  </div>
+      </section>
 
-  <div v-else>Ошибка!</div>
+      <SubscriptionForm></SubscriptionForm>
+
+      <section class="choose-tarif" id="tarifs">
+        <div class="container">
+          <h2 class="title">{{ cardData.rate.title }}</h2>
+          <div class="choose-tarif__wrapper">
+            <div
+              class="choose-tarif__box"
+              v-for="(tarif, index) in cardData.rate.paket"
+              :key="index"
+            >
+              <h3 class="choose-tarif__title">{{ tarif.title }}</h3>
+              <p class="choose-tarif__desc">{{ tarif.description }}</p>
+              <ul class="choose-tarif__list">
+                <li v-for="(listData, index) in tarif.list" :key="index" class="choose-tarif__item">
+                  {{ listData.title }}
+                </li>
+              </ul>
+              <Button class="btn btn--outline" @click="openModal(tarif.title)">{{
+                tm('global.btn.demand')
+              }}</Button>
+            </div>
+
+            <teleport to="body">
+              <transition name="modal-tarif">
+                <Modal v-if="isModal" @close-modal="closeModal()" :title="currentTarif"></Modal>
+              </transition>
+            </teleport>
+          </div>
+        </div>
+      </section>
+      <Waves></Waves>
+      <Footer></Footer>
+    </div>
+
+    <div v-else>Ошибка!</div>
+  </div>
 </template>
 
 <script setup>
@@ -158,16 +167,22 @@ import SwiperCard from '@/components/CardSwiper.vue'
 import Footer from '@/components/FooterMain.vue'
 import Modal from '@/components/ModalSubscribe.vue'
 import Waves from '@/components/WavesAnimation.vue'
+import { useCounterStore } from '@/composables/counter.js'
 import { useI18n } from 'vue-i18n'
-
-import { ref, onMounted, inject } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-const route = useRoute()
 
+const route = useRoute()
+const counter = useCounterStore()
 const cardData = ref(null)
 const isModal = ref(false)
 const currentTarif = ref('')
 const { tm } = useI18n()
+watch(
+  () => counter.count,
+  () => refreshLang()
+)
+
 function closeModal(tarif) {
   isModal.value = false
   currentTarif.value = tarif
@@ -177,12 +192,12 @@ function openModal(tarif) {
   isModal.value = true
   currentTarif.value = tarif
 }
-
-const count = inject('count')
-
-onMounted(() => {
+function refreshLang() {
   const tmp = tm('page.main.main.ourCourses.courses')
   cardData.value = tmp.find((item) => item.id === +route.params.courseId)
+}
+onMounted(() => {
+  refreshLang()
 })
 </script>
 

@@ -10,11 +10,13 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { useCounterStore } from '@/composables/counter.js'
 const { locale } = useI18n({ useScope: 'global' })
-
+const counter = useCounterStore()
 const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
+  counter.incrementCount()
   // window.location.reload()
 }
 </script>
