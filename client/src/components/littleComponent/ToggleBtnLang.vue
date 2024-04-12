@@ -9,24 +9,15 @@
 </template>
 
 <script setup>
-import { usehashLangStores } from '@/stores/hashLang'
-import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useCounterStore } from '@/composables/counter.js'
 const { locale } = useI18n({ useScope: 'global' })
-const hashLang = usehashLangStores()
-const route = useRoute()
-const router = useRouter()
-const { tm } = useI18n()
-
+const counter = useCounterStore()
 const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
-
-
-
-
-  window.location.reload()
-
+  counter.incrementCount()
+  // window.location.reload()
 }
 </script>
 
