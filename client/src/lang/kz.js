@@ -44,7 +44,7 @@ export default {
 							titleDescription() {
 								return `Python үйрену оңай, тіпті сіз ешқашан бағдарламаламасаңыз да. Тренинг барысында сізге тәжірибелі тәлімгер көмектеседі. Сіз ${this.fullProjects} портфолио жобасын әзірлейсіз, ал Мансап орталығы сізге Python әзірлеушісі ретінде жұмыс табуға көмектеседі.`
 							},
-							cardDescription: `Біздің курсы 30 дерс/ 5 бөлімден тұрғыз. Курс аяқталған ертеңде сенің портфолиода 4 проект болады. Мәлімет: {this.duration} апта. `,
+							cardDescription() { return `Біздің курсы ${this.contentsCourse.allListChapters()} дерс/ ${this.contentsCourse.list.length} бөлімден тұрғыз. Курс аяқталған ертеңде сенің портфолиода ${this.fullProjects} проект болады. Мәлімет: ${this.duration} апта. ` },
 							duration: 28,
 							fullProjects: 3,
 							previewImage: pythonSvg,
@@ -70,6 +70,11 @@ export default {
 							contentsCourse: {
 								title: 'Курс қасымдары',
 								description: `Сіз {this.fullProjects} блоктарды табынасыз Python программировау үшін өз дерігерінен қолдану және қосымша курстар.`,
+								allListChapters() {
+									let sum = 0
+									this.list.forEach(item => sum += item.accordionList.length)
+									return sum
+								},
 								list: [
 									{
 										id: 1,
@@ -317,15 +322,15 @@ export default {
 				}
 			}
 		},
-		global: {
-			btn: {
-				default: 'Толығырақ',
-				subscribe: 'Тіркелу',
-				move: 'Өту',
-				back: 'Артқа',
-				bookCourse: 'Курсқа жазылу',
-				demand: 'Өтініш қалдыру'
-			}
+	},
+	global: {
+		btn: {
+			default: 'Толығырақ',
+			subscribe: 'Тіркелу',
+			move: 'Өту',
+			back: 'Артқа',
+			bookCourse: 'Курсқа жазылу',
+			demand: 'Өтініш қалдыру'
 		}
 	}
 }

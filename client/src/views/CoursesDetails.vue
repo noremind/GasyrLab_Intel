@@ -24,9 +24,11 @@
                 <p class="intro-course__desc">
                   {{ cardData.titleDescription() }}
                 </p>
-                <a href="#tarifs" class="btn btn--outline intro-course__btn">{{
-                  tm('global.btn.bookCourse')
-                }}</a>
+                <a href="#tarifs">
+                  <Button href="#tarifs" class="btn btn--outline intro-course__btn">{{
+                    tm('global.btn.bookCourse')
+                  }}</Button>
+                </a>
               </div>
               <img
                 class="intro-course__img"
@@ -56,7 +58,7 @@
               </div>
               <div class="about-prof__footer">
                 <h2 class="about-prof__footer-title">
-                  {{ cardData.aboutProfession.salary }} тенге
+                  {{ cardData.aboutProfession.salary }}
                 </h2>
                 <p class="description about-prof__footer-desc">
                   {{ cardData.aboutProfession.avarageSalary }}
@@ -144,7 +146,12 @@
 
             <teleport to="body">
               <transition name="modal-tarif">
-                <Modal v-if="isModal" @close-modal="closeModal()" :title="currentTarif"></Modal>
+                <Modal
+                  v-if="isModal"
+                  @close-modal="closeModal()"
+                  :data="cardData.modalWindow"
+                  :title="currentTarif"
+                ></Modal>
               </transition>
             </teleport>
           </div>

@@ -43,7 +43,7 @@ export default {
 							titleDescription() {
 								return `Python просто выучить, даже если вы никогда не программировали. Во время обучения вам будет помогать эксперт-куратор. Вы разработаете ${this.fullProjects} проекта для портфолио, а Центр карьеры поможет найти работу Python-разработчиком.`
 							},
-							cardDescription: `Наш курс состоит из 30 уроков/ 5 частей. В вашем портфолио будет 4 проекта до конца курса. Длительность: {this.duration} недель. `,
+							cardDescription() { return `Наш курс состоит из ${this.contentsCourse.allListChapters()} уроков/ ${this.contentsCourse.list.length} частей. В вашем портфолио будет ${this.fullProjects} проекта до конца курса. Длительность: ${this.duration} недель. ` },
 
 							duration: 28,
 							fullProjects: 3,
@@ -70,6 +70,11 @@ export default {
 							contentsCourse: {
 								title: 'Содержание курсов',
 								description: `Вы найдете {this.fullProjects} блоков по программированию на Python с разным уровнем сложности и дополнительные курсы.`,
+								allListChapters() {
+									let sum = 0
+									this.list.forEach(item => sum += item.accordionList.length)
+									return sum
+								},
 								list: [
 									{
 										id: 1,

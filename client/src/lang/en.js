@@ -41,7 +41,7 @@ export default {
 						{
 							id: 1,
 							title: 'Python Developer',
-							cardDescription: `Our course consists of 30 lessons/ 5 parts. There are 4 projects in your portfolio before the end of the course. Duration: {this.duration} weeks. `,
+							cardDescription() { return `Our course consists of ${this.contentsCourse.allListChapters()} lessons/ ${this.contentsCourse.list.length} parts. There are ${this.fullProjects} projects in your portfolio before the end of the course. Duration: ${this.duration} weeks. ` },
 							titleDescription() {
 								return `Python is easy to learn, even if you have never programmed. An expert tutor will assist you during your training. You will develop ${this.fullProjects} portfolio projects, and the Career Center will help you find a job as a Python developer.`
 							},
@@ -70,6 +70,11 @@ export default {
 							contentsCourse: {
 								title: 'Course content',
 								description: `You will find {this.fullProjects} blocks on Python programming with different levels of difficulty and additional courses.`,
+								allListChapters() {
+									let sum = 0
+									this.list.forEach(item => sum += item.accordionList.length)
+									return sum
+								},
 								list: [
 									{
 										id: 1,
@@ -200,7 +205,7 @@ export default {
 										]
 									},
 									{
-										title: 'Stadart',
+										title: 'Ultimate',
 										description: 'Intensive study in a group of students',
 										list: [
 											{

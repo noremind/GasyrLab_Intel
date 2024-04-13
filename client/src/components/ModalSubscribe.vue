@@ -2,7 +2,7 @@
   <section class="modal" @click.self="closeModal()">
     <div class="modal__box">
       <div class="flex-box">
-        <h2 class="modal__title">Тариф «{{ props.title }}»</h2>
+        <h2 class="modal__title">{{ data.title }} «{{ props.title }}»</h2>
         <img
           @click="closeModal()"
           class="modal__close-icon--active"
@@ -11,26 +11,33 @@
           width="32px"
         />
       </div>
-      <p class="modal__desc">Оставьте заявку, и наш менеджер свяжется с вами</p>
+      <p class="modal__desc">{{ data.subtitle }}</p>
       <form class="modal__form">
-        <input type="text" class="modal__input" placeholder="Ваше имя" />
-        <input type="email" class="modal__input" placeholder="Эл почта" />
-        <input type="text" class="modal__input" placeholder="Номер телефона" />
+        <input type="text" class="modal__input" :placeholder="data.input.name" />
+        <input type="email" class="modal__input" :placeholder="data.input.email" />
+        <input type="text" class="modal__input" :placeholder="data.input.tel" />
 
-        <Button class="btn btn--primary">Записаться</Button>
+        <Button class="btn btn--primary"> {{ t('global.btn.subscribe') }}</Button>
       </form>
-      <p class="modal__desc">Вы можете <b>оплатить программу</b> и приступать к обучению</p>
+      <p class="modal__desc">{{ data.description }}</p>
     </div>
   </section>
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
 import Button from '@/components/littleComponent/ButtonComponent.vue'
+
+const { t } = useI18n()
 
 const props = defineProps({
   title: {
     type: String,
     default: ''
+  },
+  data: {
+    type: Object,
+    default: () => {}
   }
 })
 

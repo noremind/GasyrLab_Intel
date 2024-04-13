@@ -11,13 +11,20 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { useCounterStore } from '@/composables/counter.js'
+import { useRoute } from 'vue-router'
 const { locale } = useI18n({ useScope: 'global' })
 const counter = useCounterStore()
+const route = useRoute()
+
 const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
-  counter.incrementCount()
-  // window.location.reload()
+
+  if (route.path === 'course') {
+    counter.incrementCount()
+  } else {
+    window.location.reload()
+  }
 }
 </script>
 
