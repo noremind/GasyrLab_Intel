@@ -20,10 +20,10 @@ const changeLocale = (newLocale) => {
   locale.value = newLocale
   localStorage.setItem('localLang', newLocale)
 
-  if (route.path === 'course') {
-    counter.incrementCount()
-  } else {
+  if (route.name === 'home') {
     window.location.reload()
+  } else {
+    counter.incrementCount()
   }
 }
 </script>
