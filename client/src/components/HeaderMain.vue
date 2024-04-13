@@ -18,16 +18,16 @@
                 }}</a>
               </li>
               <li class="nav__list-item">
-                <a @click="goHashTag(router, $event.target, 'team')" class="nav__link">{{
-                  t('page.main.header.team')
-                }}</a>
-              </li>
-              <li class="nav__list-item">
                 <a
                   @click="goHashTag(router, $event.target, 'about')"
                   class="mobile-dropdown__link"
                   >{{ t('page.main.header.about') }}</a
                 >
+              </li>
+              <li class="nav__list-item">
+                <a @click="goHashTag(router, $event.target, 'team')" class="nav__link">{{
+                  t('page.main.header.team')
+                }}</a>
               </li>
               <li class="nav__list-item">
                 <a @click="goHashTag(router, $event.target, 'contacts')" class="nav__link">{{
@@ -254,7 +254,7 @@ onBeforeMount(() => {
 
 .header {
   &__wrapper {
-  margin-top: 40px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;

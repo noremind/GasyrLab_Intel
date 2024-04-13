@@ -1,5 +1,5 @@
 <template>
-  <div class="subscription">
+  <div class="subscription" id="help">
     <div class="container">
       <div class="subscription__wrapper">
         <div class="subscription__content">

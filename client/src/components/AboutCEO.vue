@@ -1,10 +1,10 @@
 <template>
-  <div class="aboutCEO">
+  <div class="aboutCEO" id="about">
     <div class="container">
       <div class="aboutCEO__wrapper">
         <div class="aboutCEO__hero">
           <div class="ceo">
-            <img class="hero" src="../assets/images/people/ceo.png" alt="ceo" />
+            <img class="hero" src="../assets/images/people/ceoPost.jpg" alt="ceo" />
           </div>
         </div>
         <div class="aboutCEO__content">
@@ -32,23 +32,23 @@
                 <a
                   class="social-link"
                   target="_blank"
-                  href="https://api.whatsapp.com/send/?phone=77000666828&text&type=phone_number&app_absent=0"
+                  href="https://m.facebook.com/people/%D0%AF%D0%BA%D1%83%D0%B1-%D0%A5%D0%B0%D0%BB%D1%8B%D0%BA%D0%B1%D0%B5%D1%80%D0%B4%D0%B8%D0%B5%D0%B2/100070413668765/"
                 >
-                  <img src="../assets/images/icons/whatsapp.svg" alt="wp" />
+                  <img src="../assets/images/icons/facebook.svg" alt="wp" />
+                </a>
+              </li>
+              <li class="social-item">
+                <a class="social-link" target="_blank" href="https://www.instagram.com/jakubfity?igsh=d2R5YzMzZmJnbTl3">
+                  <img src="../assets/images/icons/instagram.svg" alt="insta" />
                 </a>
               </li>
               <li class="social-item">
                 <a
                   class="social-link"
                   target="_blank"
-                  href="https://www.tiktok.com/@gasyrlab?_t=8lIaCDscbaf&_r=1"
+                  href="https://t.me/jakubfity"
                 >
                   <img src="../assets/images/icons/Telegram.png" alt="telegram" />
-                </a>
-              </li>
-              <li class="social-item">
-                <a class="social-link" target="_blank" href="https://www.instagram.com/gasyrlab/">
-                  <img src="../assets/images/icons/instagram.svg" alt="insta" />
                 </a>
               </li>
             </ul>
@@ -69,6 +69,7 @@
     justify-content: space-between;
     align-items: center;
     gap: clamp(1.25rem, 0.568rem + 3.41vw, 3.125rem);
+    margin-top: 70px;
 
     @include abs.breakpoint('tablet') {
       flex-direction: column;
@@ -87,6 +88,7 @@
 
       .hero {
         min-width: 300px;
+        border-radius: 15px;
       }
     }
   }
@@ -218,50 +220,50 @@
     }
 
     .social .social-item:nth-child(1) a {
-      color: #2ab540;
+      color: #00529e;
     }
 
     .social .social-item:nth-child(1):hover a {
-      background: #2ab540;
+      background: #00529e;
     }
 
     .social .social-item:nth-child(1):hover a::before {
-      background: #2e943d;
+      background: #003566;
     }
 
     .social .social-item:nth-child(1):hover a::after {
-      background: #2e943d;
+      background: #003566;
     }
 
     .social .social-item:nth-child(2) a {
       color: #2d2d2d;
     }
 
-    .social .social-item:nth-child(2):hover a {
+    .social .social-item:nth-child(3):hover a {
       background: #339dff;
     }
 
-    .social .social-item:nth-child(2):hover a::before {
-      background: #0084ff;
-    }
-
-    .social .social-item:nth-child(2):hover a::after {
-      background: #0084ff;
-    }
-
-    .social .social-item:nth-child(3) a {
-      color: #dd4b39;
-    }
-
-    .social .social-item:nth-child(3):hover a {
-      background: #dd4b39;
-    }
-
     .social .social-item:nth-child(3):hover a::before {
-      background: #a2392b;
+      background: #0084ff;
     }
 
     .social .social-item:nth-child(3):hover a::after {
+      background: #0084ff;
+    }
+
+    .social .social-item:nth-child(2) a {
+      color: #dd4b39;
+    }
+
+    .social .social-item:nth-child(2):hover a {
+      background: #dd4b39;
+    }
+
+    .social .social-item:nth-child(2):hover a::before {
+      background: #a2392b;
+    }
+
+    .social .social-item:nth-child(2):hover a::after {
       background: #a2392b;
     }
 

@@ -5,7 +5,9 @@
         <div class="greeting__text">
           <h1>{{ t('page.main.main.greetingSection.title') }}</h1>
           <p>{{ t('page.main.main.greetingSection.subtitle') }}</p>
-          <Button class="btn btn--primary"></Button>
+          <a @click="goHashTag(router, $event.currentTarget, 'courses')">
+            <Button class="btn btn--primary"></Button>
+          </a>
         </div>
 
         <div class="greeting__img">
@@ -19,6 +21,10 @@
 <script setup>
 import Button from '@/components/littleComponent/ButtonComponent.vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+import { goHashTag } from '@/stores/routerGo.js'
+
+const router = useRouter()
 
 const { t } = useI18n()
 </script>
