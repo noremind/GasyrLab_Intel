@@ -14,6 +14,11 @@ const router = createRouter({
       component: () => import('@/views/AboutPage.vue')
     },
     {
+      path: '/training',
+      name: 'training',
+      component: () => import('@/views/MyTraining.vue')
+    },
+    {
       path: '/auth',
       name: 'auth',
       redirect: '/auth/signIn',

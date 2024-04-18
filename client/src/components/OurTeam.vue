@@ -35,8 +35,7 @@
 </template>
 
 <script setup>
-// import Card from '../components/CardTeam.vue';
-import Card from '@/components/TeamCard.vue'
+// import Card from '@/components/TeamCard.vue'
 </script>
 
 <style lang="scss" scoped>

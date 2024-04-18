@@ -9,9 +9,11 @@
 
           <nav class="nav nav--hidden">
             <ul class="nav__list">
-              <li v-if="authUser.checkLocalAuthUser()" class="nav__list-item">
-                <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
-              </li>
+              <router-link :to="{ name: 'training' }">
+                <li v-if="authUser.checkLocalAuthUser()" class="nav__list-item">
+                  <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
+                </li>
+              </router-link>
               <li class="nav__list-item">
                 <a @click="goHashTag(router, $event.target, 'courses')" class="nav__link">{{
                   t('page.main.header.all_courses')
@@ -20,7 +22,7 @@
               <li class="nav__list-item">
                 <a
                   @click="goHashTag(router, $event.target, 'about')"
-                  class="mobile-dropdown__link"
+                  class="nav__link mobile-dropdown__link"
                   >{{ t('page.main.header.about') }}</a
                 >
               </li>
@@ -123,9 +125,11 @@
         class="mobile-dropdown mobile-dropdown--hidden"
       >
         <ul v-if="isOpenBurgerMenu" class="mobile-dropdown__list">
-          <li v-if="authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
-            <a href="#" class="mobile-dropdown__link">{{ t('page.main.header.my_training') }}</a>
-          </li>
+          <router-link :to="{ name: 'training' }">
+            <li v-if="authUser.checkLocalAuthUser()" class="nav__list-item">
+              <a href="#" class="nav__link">{{ t('page.main.header.my_training') }}</a>
+            </li>
+          </router-link>
           <li class="mobile-dropdown__list-item">
             <div class="flex-box">
               <a
@@ -137,16 +141,21 @@
             </div>
           </li>
           <li class="mobile-dropdown__list-item">
+            <a @click="goHashTag(router, $event.target, 'about')" class="mobile-dropdown__link">{{
+              t('page.main.header.about')
+            }}</a>
+          </li>
+          <li class="mobile-dropdown__list-item">
+            <a @click="goHashTag(router, $event.target, 'team')" class="mobile-dropdown__link">{{
+              t('page.main.header.team')
+            }}</a>
+          </li>
+          <li class="mobile-dropdown__list-item">
             <a
               @click="goHashTag(router, $event.target, 'contacts')"
               class="mobile-dropdown__link"
               >{{ t('page.main.header.contacts') }}</a
             >
-          </li>
-          <li class="mobile-dropdown__list-item">
-            <router-link :to="{ name: 'about' }" class="mobile-dropdown__link">{{
-              t('page.main.header.about')
-            }}</router-link>
           </li>
           <li v-if="authUser.checkLocalAuthUser()" class="mobile-dropdown__list-item">
             <div class="flex-box">
@@ -192,7 +201,7 @@ const isOpenBurgerMenu = ref(false)
 const dropdownLaptop = ref(null)
 const dropdownMobile = ref(null)
 
-const hashTagLink = ref(null)
+// const hashTagLink = ref(null)
 
 const authUser = useAuthUserStore()
 
@@ -261,14 +270,9 @@ onBeforeMount(() => {
     gap: 10px;
     position: relative;
     margin-top: clamp(0.313rem, -0.142rem + 2.27vw, 1.563rem);
-    // margin-top: clamp(1.25rem, 0.682rem + 2.84vw, 2.813rem);
   }
 
   &--hidden {
-    // @include abs.breakpoint-min-media('laptop-sm') {
-    //   display: none;
-    // }
-
     @include abs.breakpoint('tablet') {
       display: none;
     }
@@ -312,6 +316,7 @@ onBeforeMount(() => {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 10;
 
     &--hidden {
       @include abs.breakpoint('tablet') {
