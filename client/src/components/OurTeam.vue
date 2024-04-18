@@ -2,7 +2,7 @@
   <div class="team" id="team">
     <div class="container">
       <div class="team__wrapper">
-        <h2 class="title">Наша Команда</h2>
+        <h2 class="title">{{ t('page.main.main.ourTeam.title') }}</h2>
         <div class="team__cards">
           <div class="card">
             <img src="../assets/images/people/ceoSM.png" alt="ceo" />
@@ -35,7 +35,9 @@
 </template>
 
 <script setup>
-// import Card from '@/components/TeamCard.vue'
+import { useI18n } from 'vue-i18n'
+
+const {t} = useI18n()
 </script>
 
 <style lang="scss" scoped>

@@ -18,13 +18,13 @@ import Content from '@/components/TrainingContent.vue'
 import Header from '@/components/HeaderMain.vue'
 import Waves from '@/components/WavesAnimation.vue'
 import Footer from '@/components/FooterMain.vue'
-
 </script>
 
 <style lang="scss" scoped>
 @use '@/assets/scss/abstracts' as abs;
 
 .training {
+  margin-top: 20px;
   display: flex;
   gap: 30px;
 
