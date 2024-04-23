@@ -46,7 +46,10 @@ export default {
 							cardDescription() { return `Наш курс состоит из ${this.contentsCourse.allListChapters()} уроков/ ${this.contentsCourse.list.length} частей. В вашем портфолио будет ${this.fullProjects} проекта до конца курса. Длительность: ${this.duration} недель. ` },
 
 							duration: 28,
+							weeks: 'недель',
 							fullProjects: 3,
+							currency: 'тенге',
+
 							previewImage: pythonSvg,
 							courseImage: pythonLogo,
 							circleItem: ['Онлайн', 'Старт: 6 мая'],
@@ -69,7 +72,11 @@ export default {
 							},
 							contentsCourse: {
 								title: 'Содержание курсов',
-								description: `Вы найдете {this.fullProjects} блоков по программированию на Python с разным уровнем сложности и дополнительные курсы.`,
+								fullProjects: 3,
+
+								description() { return `Вы найдете ${this.list.length} блоков по программированию на Python с разным уровнем сложности и дополнительные курсы.` },
+								trainingMonth: 'месяцов обучение',
+								finalProjects: 'итоговые проекты',
 								allListChapters() {
 									let sum = 0
 									this.list.forEach(item => sum += item.accordionList.length)
@@ -181,59 +188,91 @@ export default {
 								title: 'Выберите ваш тариф',
 								paket: [
 									{
-										title: 'Стадарт',
+										title: 'Standart',
 										description: 'Интенсивное обучение в группе студентов',
 										list: [
 											{
-												title: '3 проекта в портфолио'
+												fullProjects: 3,
+												title: function () {
+													return `${this.fullProjects} проекта в портфолио`;
+												}
 											},
 											{
-												title: 'Карьерный трек'
+												title: function () {
+													return 'Карьерный трек';
+												}
 											},
 											{
-												title: 'Гарантия трудоустройства'
+												title: function () {
+													return 'Гарантия трудоустройства';
+												}
 											},
 											{
-												title: 'Бессрочный доступ к учебным материалам'
+												title: function () {
+													return 'Бессрочный доступ к учебным материалам';
+												}
 											},
 											{
-												title: 'Комплексная подготовка'
+												title: function () {
+													return 'Комплексная подготовка';
+												}
 											},
 											{
-												title: 'Профориентация'
+												title: function () {
+													return 'Профориентация';
+												}
 											}
 										]
 									},
 									{
-										title: 'Стадарт',
-										description: 'Интенсивное обучение в группе студентов',
+										title: 'Ultimate',
+										description: 'Интенсивное и индивидуальное обучение',
 										list: [
 											{
-												title: '3 проекта в портфолио'
+												fullProjects: 3,
+												title: function () {
+													return `${this.fullProjects} проектов в портфолио`;
+												}
 											},
 											{
-												title: 'Карьерный трек'
+												title: function () {
+													return 'Карьерная траектория';
+												}
 											},
 											{
-												title: 'Гарантия трудоустройства'
+												title: function () {
+													return 'Гарантия трудоустройства';
+												}
 											},
 											{
-												title: 'Бессрочный доступ к учебным материалам'
+												title: function () {
+													return 'Неограниченный доступ к учебным материалам';
+												}
 											},
 											{
-												title: 'Комплексная подготовка'
+												title: function () {
+													return 'Полное обучение';
+												}
 											},
 											{
-												title: 'Профориентация'
+												title: function () {
+													return 'Профессиональная ориентация';
+												}
 											},
 											{
-												title: 'Персональное расписание'
+												title: function () {
+													return 'Личное расписание';
+												}
 											},
 											{
-												title: 'Индивидуальная траектория обучения'
+												title: function () {
+													return 'Индивидуальная траектория обучения';
+												}
 											},
 											{
-												title: '80 часов персональных консультаций с наставником'
+												title: function () {
+													return '80 часов личных консультаций с наставником';
+												}
 											}
 										]
 									}

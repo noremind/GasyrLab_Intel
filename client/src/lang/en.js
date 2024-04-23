@@ -46,6 +46,9 @@ export default {
 								return `Python is easy to learn, even if you have never programmed. An expert tutor will assist you during your training. You will develop ${this.fullProjects} portfolio projects, and the Career Center will help you find a job as a Python developer.`
 							},
 							duration: 28,
+							weeks: "weeks",
+
+							currency: 'tenge',
 							previewImage: pythonSvg,
 							circleItem: ['Online', 'Start: 6 may'],
 							fullProjects: 3,
@@ -57,7 +60,7 @@ export default {
 								title: 'About Profession',
 								description:
 									'Python is a great language for beginners. Python code is easy to write and read, the language consistently ranks high in popularity ratings, and "Pythonists" are in demand in almost all areas of IT-Programming, Data Analysis, System Management and testing. YouTube, Intel, Pixar, NASA, VK, Yandex are just a few of the well - known companies that use Python in their products.',
-								salary: '400 000 тенге',
+								salary: '400 000 tenge',
 								avarageSalary: 'the average salary of a specialist',
 								durationDescription:
 									'intensive classes and practice on the course are enough to find your first job'
@@ -69,7 +72,11 @@ export default {
 							},
 							contentsCourse: {
 								title: 'Course content',
-								description: `You will find {this.fullProjects} blocks on Python programming with different levels of difficulty and additional courses.`,
+								fullProjects: 3,
+								trainingMonth: 'learn months',
+								finalProjects: 'final projects',
+
+								description() { return `You will find ${this.list.length} blocks on Python programming with different levels of difficulty and additional courses.` },
 								allListChapters() {
 									let sum = 0
 									this.list.forEach(item => sum += item.accordionList.length)
@@ -181,61 +188,94 @@ export default {
 								title: 'Choose your tariff',
 								paket: [
 									{
-										title: 'Stadart',
+										title: 'Standart',
 										description: 'Intensive study in a group of students',
 										list: [
 											{
-												title: '3 проекта в портфолио'
+												fullProjects: 3,
+												title() {
+													return `${this.fullProjects} projects in portfolio`;
+												}
 											},
 											{
-												title: 'Карьерный трек'
+												title() {
+													return 'Career track';
+												}
 											},
 											{
-												title: 'Гарантия трудоустройства'
+												title() {
+													return 'Job placement guarantee';
+												}
 											},
 											{
-												title: 'Бессрочный доступ к учебным материалам'
+												title() {
+													return 'Unlimited access to learning materials';
+												}
 											},
 											{
-												title: 'Комплексная подготовка'
+												title() {
+													return 'Comprehensive training';
+												}
 											},
 											{
-												title: 'Профориентация'
-											}
+												title() {
+													return 'Career guidance';
+												}
+											},
 										]
 									},
 									{
 										title: 'Ultimate',
-										description: 'Intensive study in a group of students',
+										description: 'Intensive and individual training',
 										list: [
 											{
-												title: '3 проекта в портфолио'
+												fullProjects: 3,
+												title() {
+													return `${this.fullProjects} projects in portfolio`;
+												}
 											},
 											{
-												title: 'Карьерный трек'
+												title() {
+													return 'Career track';
+												}
 											},
 											{
-												title: 'Гарантия трудоустройства'
+												title() {
+													return 'Job placement guarantee';
+												}
 											},
 											{
-												title: 'Бессрочный доступ к учебным материалам'
+												title() {
+													return 'Unlimited access to learning materials';
+												}
 											},
 											{
-												title: 'Комплексная подготовка'
+												title() {
+													return 'Comprehensive training';
+												}
 											},
 											{
-												title: 'Профориентация'
+												title() {
+													return 'Career guidance';
+												}
 											},
 											{
-												title: 'Персональное расписание'
+												title() {
+													return 'Personal schedule';
+												}
 											},
 											{
-												title: 'Индивидуальная траектория обучения'
+												title() {
+													return 'Individual learning trajectory';
+												}
 											},
 											{
-												title: '80 часов персональных консультаций с наставником'
+												title() {
+													return '80 hours of personal consultations with a mentor';
+												}
 											}
 										]
+
 									}
 								]
 							},
