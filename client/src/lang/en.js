@@ -1,6 +1,6 @@
 import pythonSvg from '@/assets/images/courses/preview/python.svg'
-import javaSvg from '@/assets/images/courses/preview/java.svg'
-import dataAnalyticsSvg from '@/assets/images/courses/preview/dataAnalytics.svg'
+// import javaSvg from '@/assets/images/courses/preview/java.svg'
+// import dataAnalyticsSvg from '@/assets/images/courses/preview/dataAnalytics.svg'
 import pythonLogo from '@/assets/images/courses/python.png'
 
 export default {
@@ -255,6 +255,13 @@ export default {
             }
           ]
         },
+        aboutCEO: {
+          title: 'Jakub Halykberdiev',
+          descriptionFirst:
+            'An outstanding leader and strategist with over a decade of experience in education. His leadership in this project focuses on the introduction of innovative teaching methods and development, thus ensuring a high level of educational services.',
+          descriptionSecond:
+            'His dream is not just to provide knowledge, but to ensure that this knowledge is preserved and passed on from one generation to the next, which is a key part of the Gasyr Foundations philosophy.'
+        },
         subscription: {
           title: 'Help you with the choice',
           desc: 'If you have questions about the format or do not know what to choose, leave your number — we will call and answer all your questions',
@@ -322,6 +329,18 @@ export default {
           correctEmail: 'Enter the correct email'
         }
       }
+    },
+    training: {
+      nav: {
+        education: 'Education',
+        task: 'Tasks',
+        form: 'Forms',
+        mentors: 'Mentors',
+        journal: 'Journal',
+        settings: 'Settings'
+      },
+      preparation: 'Preparation',
+      lessonRecord: 'Video Record'
     }
 
     // ... another page texts
@@ -333,7 +352,9 @@ export default {
       move: 'Move to',
       back: 'Back',
       bookCourse: 'Booking course',
-      demand: 'Apply request'
+      demand: 'Apply request',
+      today: 'Today',
+      calendar: 'Calendar'
     }
   }
 }

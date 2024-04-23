@@ -1,6 +1,6 @@
 import pythonSvg from '@/assets/images/courses/preview/python.svg'
-import javaSvg from '@/assets/images/courses/preview/java.svg'
-import dataAnalyticsSvg from '@/assets/images/courses/preview/dataAnalytics.svg'
+// import javaSvg from '@/assets/images/courses/preview/java.svg'
+// import dataAnalyticsSvg from '@/assets/images/courses/preview/dataAnalytics.svg'
 
 import pythonLogo from '@/assets/images/courses/python.png'
 
@@ -40,12 +40,12 @@ export default {
           courses: [
             {
               id: 1,
-              title: 'Python Жалыпшысы',
+              title: 'Python Developer',
               titleDescription() {
                 return `Python үйрену оңай, тіпті сіз ешқашан бағдарламаламасаңыз да. Тренинг барысында сізге тәжірибелі тәлімгер көмектеседі. Сіз ${this.fullProjects} портфолио жобасын әзірлейсіз, ал Мансап орталығы сізге Python әзірлеушісі ретінде жұмыс табуға көмектеседі.`
               },
               cardDescription() {
-                return `Біздің курсы ${this.contentsCourse.allListChapters()} дерс/ ${this.contentsCourse.list.length} бөлімден тұрғыз. Курс аяқталған ертеңде сенің портфолиода ${this.fullProjects} проект болады. Мәлімет: ${this.duration} апта. `
+                return `Біздің курс ${this.contentsCourse.allListChapters()} сабақтан, ${this.contentsCourse.list.length} бөлімнен тұрады. Курсты аяқтағанға дейін сіздің портфолиоңызда  ${this.fullProjects} жоба болады. Ұзақтығы: ${this.duration} апта`
               },
               duration: 28,
               fullProjects: 3,
@@ -264,6 +264,13 @@ export default {
           rules:
             'Нысанды жіберу арқылы сіз “Дербес деректерді өңдеу туралы келісімді" және "Оферта" шарттарын қабылдау, сондай-ақ "Пайдаланушы шарттары" бойынша келісіміңізді бересіз'
         },
+        aboutCEO: {
+          title: 'Якуб Халықбердиев',
+          descriptionFirst:
+            'Білім беруде он жылдан астам тәжірибесі бар көрнекті көшбасшы және стратег. Оның осы жобадағы көшбасшылық қызметі оқытудың инновациялық әдістерін енгізуге және білім беру қызметтерінің жоғары деңгейін қамтамасыз етумен дамуға бағытталған.',
+          descriptionSecond:
+            'Оның арманы - тек білім беру ғана емес, сонымен бірге бұл білімнің сақталуын және бір ұрпақтан екінші ұрпаққа берілуін қамтамасыз ету, бұл Gasyr Foundation философиясының негізгі бөлігі.'
+        },
         ourTeam: {
           title: 'Біздің тобымыз'
         }
@@ -297,12 +304,11 @@ export default {
       }
     },
     auth: {
-      greetingSignIn: 'Қайта тіркелгендер!',
+      greetingSignIn: 'Тіркелгендер үшін!!',
       greetingSignUp: 'Сәлем, достым!',
       textSignIn:
-        'Барлық сайт функцияларын пайдалану үшін сіздің персоналдық маълуметерін енгізіңіз',
-      textSignUp:
-        'Барлық сайт функцияларын пайдалану үшін сіздің персоналдық маълуметерімен тіркелуді жасаңыз',
+        'Сайттың барлық функцияларына қолжетімділік қайттан алу үшін өзіңіздің персоналдық деректеріңізді енгізіңіз',
+      textSignUp: 'Сайттың барлық мүмкіндіктерін пайдалану үшін жеке деректеріңізбен тіркеліңіз',
 
       login: {
         title: 'Кіру',
@@ -326,6 +332,18 @@ export default {
           correctEmail: 'Дұрыс электрондық пошта енгізіңіз'
         }
       }
+    },
+    training: {
+      nav: {
+        education: 'Оқыту',
+        task: 'Тапсырмалар',
+        form: 'Сауалнама',
+        mentors: 'Ұстаздар',
+        journal: 'Журнал',
+        settings: 'Баптаулар'
+      },
+      preparation: 'Дайындық',
+      lessonRecord: 'Видео-жазба'
     }
   },
   global: {
@@ -335,7 +353,9 @@ export default {
       move: 'Өту',
       back: 'Артқа',
       bookCourse: 'Курсқа жазылу',
-      demand: 'Өтініш қалдыру'
+      demand: 'Өтініш қалдыру',
+      today: 'Бүгін',
+      calendar: 'Күнтізбе'
     }
   }
 }

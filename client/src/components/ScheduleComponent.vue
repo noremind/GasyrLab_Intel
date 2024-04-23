@@ -3,12 +3,12 @@
     <div class="schedule__heading">
       <h3>{{ formattedDate }}</h3>
       <div class="schedule__btns">
-        <ButtonCom class="btn btn--outline">Сегодня</ButtonCom>
-        <ButtonAdd class="btn btn--calendar">Календарь</ButtonAdd>
+        <ButtonCom class="btn btn--outline">{{ t('global.btn.today') }}</ButtonCom>
+        <ButtonAdd class="btn btn--calendar">{{ t('global.btn.calendar') }}</ButtonAdd>
       </div>
     </div>
     <div class="schedule__content">
-      <span>#Урок в записи</span>
+      <span>#{{ t('page.training.lessonRecord') }}</span>
       <h3>Массивы</h3>
       <p>Курс: Python с нуля до профи</p>
       <div class="schedule__content-lesson">
@@ -30,7 +30,9 @@
 <script setup>
 import ButtonCom from '@/components/littleComponent/ButtonComponent.vue'
 import ButtonAdd from '@/components/littleComponent/ButtonAdditional.vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const currentDate = new Date()
 const formattedDate = currentDate.toLocaleDateString('ru-RU', {
   weekday: 'long',

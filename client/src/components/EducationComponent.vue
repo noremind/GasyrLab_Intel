@@ -1,6 +1,6 @@
 <template>
   <div class="education">
-    <h2>Подготовка</h2>
+    <h2>{{ t('page.training.preparation') }}</h2>
     <div class="education__cards">
       <EduCard />
       <EduCard />
@@ -12,6 +12,9 @@
 
 <script setup>
 import EduCard from '@/components/EduCard.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
@@ -24,7 +27,7 @@ import EduCard from '@/components/EduCard.vue'
     font-size: 23px;
     font-weight: 600;
     color: #000;
-    .dark &{
+    .dark & {
       color: abs.$almost-white;
     }
   }
@@ -42,7 +45,6 @@ import EduCard from '@/components/EduCard.vue'
     @include abs.breakpoint('tablet-md') {
       grid-template-columns: repeat(1, 1fr);
     }
-
   }
 }
 </style>
