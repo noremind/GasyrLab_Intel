@@ -1,7 +1,9 @@
 <template>
   <div class="form-container sign-in">
     <form @submit.prevent="submitForm()" class="container-auth__form">
-      <ButtonAdd @click="authUser.goHomePage()" class="btn btn--transform">Назад</ButtonAdd>
+      <ButtonAdd @click="authUser.goHomePage()" class="btn btn--transform btn--transformTwo">
+        {{ t('global.btn.back') }}
+      </ButtonAdd>
       <h1 class="container-auth__title">{{ t('page.auth.login.title') }}</h1>
       <input
         class="container-auth__input"
@@ -33,7 +35,6 @@ import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
 import { useAuthUserStore } from '@/stores/authUser.js'
 import { useRouter } from 'vue-router'
-
 export default {
   components: {
     ButtonAdd,

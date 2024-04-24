@@ -22,7 +22,7 @@ const { t } = useI18n()
   --arrow-stroke: 2px;
   box-sizing: border-box;
   font-size: 15px;
-  width: 70px;
+  // width: 70px;
   border-radius: 20px;
   color: var(--secondary-color);
   display: flex;
@@ -30,6 +30,12 @@ const { t } = useI18n()
   align-items: center;
   gap: 0.6em;
   font-weight: 500;
+
+  &--transformTwo{
+    position: absolute;
+    transform: translate(-15px, -210px);
+    z-index: 10;
+  }
 }
 
 .btn.btn--white {

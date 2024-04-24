@@ -12,6 +12,7 @@
     "scss": "sass --watch src/assets/scss/main.scss:src/assets/style/main.css"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@vue-a11y/dark-mode": "^1.1.1",
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
@@ -22,6 +23,7 @@
     "gsap-trial": "^3.12.5",
     "pinia": "^2.1.7",
     "swiper": "^11.1.0",
+    "v-calendar": "^3.1.2",
     "vue": "^3.4.21",
     "vue-core-video-player": "^0.2.0",
     "vue-i18n": "^9.9.0",
