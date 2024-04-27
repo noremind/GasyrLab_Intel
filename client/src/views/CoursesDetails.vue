@@ -153,6 +153,7 @@
                   @close-modal="closeModal()"
                   :data="cardData.modalWindow"
                   :title="currentTarif"
+                  :courseId="props.courseId"
                 ></Modal>
               </transition>
             </teleport>
@@ -179,9 +180,9 @@ import Waves from '@/components/WavesAnimation.vue'
 import { useCounterStore } from '@/composables/counter.js'
 import { useI18n } from 'vue-i18n'
 import { ref, onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
 
-const route = useRoute()
+const props = defineProps(['courseId'])
+
 const counter = useCounterStore()
 const cardData = ref(null)
 const isModal = ref(false)
@@ -203,7 +204,7 @@ function openModal(tarif) {
 }
 function refreshLang() {
   const tmp = tm('page.main.main.ourCourses.courses')
-  cardData.value = tmp.find((item) => item.id === +route.params.courseId)
+  cardData.value = tmp.find((item) => item.id === +props.courseId)
 }
 onMounted(() => {
   refreshLang()

@@ -1,17 +1,13 @@
 <template>
   <Header></Header>
-  <section class="training">
+  <section v-if="videoData" class="training">
     <div class="container">
       <div class="training__wrapper">
         <h1 class="title training__title">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, ipsa!
+          {{ videoData.title }}
         </h1>
         <p class="description training__desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dolores dolorum. Porro
-          ipsam blanditiis a magni non excepturi temporibus facilis tempora omnis hic, libero
-          dolorem. Blanditiis explicabo nisi accusamus perspiciatis doloribus eius pariatur tempore
-          vel dicta enim tenetur possimus quibusdam molestiae non, quaerat consequatur, sint placeat
-          vero fuga. Ipsam, animi!
+          <!-- {{ data.description }} -->
         </p>
         <div class="training__box">
           <!-- <video
@@ -34,10 +30,19 @@
       </div>
     </div>
   </section>
+  <div v-else>Урок не загружен</div>
 </template>
 
 <script setup>
 import Header from '@/components/HeaderMain.vue'
+import { onMounted, ref } from 'vue'
+
+const videoData = ref(null)
+
+onMounted(() => {
+  const tmp = localStorage.getItem('currentLesson')
+  videoData.value = JSON.parse(tmp)
+})
 </script>
 
 <style lang="scss" scoped>
