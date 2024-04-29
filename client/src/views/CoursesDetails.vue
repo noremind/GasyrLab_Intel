@@ -25,7 +25,7 @@
                   {{ cardData.titleDescription() }}
                 </p>
                 <a href="#tarifs">
-                  <Button href="#tarifs" class="btn btn--outline intro-course__btn">{{
+                  <Button href="#tarifs" class="btn btn--primary-reverse intro-course__btn">{{
                     tm('global.btn.bookCourse')
                   }}</Button>
                 </a>
@@ -308,7 +308,7 @@ onMounted(() => {
   }
 
   &__header {
-    background: radial-gradient(circle, rgba(156, 152, 226, 1) 9%, rgba(123, 63, 242, 1) 97%);
+    background: radial-gradient(circle, rgba(156, 152, 226, 1) 9%, rgb(63, 81, 242) 97%);
     border-radius: 20px;
     padding: clamp(1.375rem, 0.875rem + 2.5vw, 2.75rem) clamp(1.375rem, 0.875rem + 2.5vw, 2.75rem)
       clamp(1.75rem, 1.114rem + 3.18vw, 3.5rem);

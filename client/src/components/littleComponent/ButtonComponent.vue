@@ -49,6 +49,31 @@ const { t } = useI18n()
       inset -4px -4px 8px #b071ef;
   }
 
+  &--primary-reverse {
+    padding: clamp(0.5rem, 0.455rem + 0.23vw, 0.625rem) clamp(0.938rem, 0.597rem + 1.7vw, 1.875rem);
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: rgb(219, 194, 241);
+    --btn-bg-2: hsl(260, 76%, 67%);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    background-size: 280% auto;
+    transition: 0.8s;
+    background-image: linear-gradient(
+      325deg,
+      var(--btn-bg-2) 0%,
+      var(--btn-bg-1) 55%,
+      var(--btn-bg-2) 90%
+    );
+
+    border-radius: var(--radii);
+    color: #ffffff;
+    box-shadow:
+      0px 0px 20px #4e3576,
+      0px 5px 5px -1px #47306d,
+      inset 4px 4px 8px #c4a6ff,
+      inset -4px -4px 8px #cc9efb;
+  }
+
   &--error {
     color: red;
   }
