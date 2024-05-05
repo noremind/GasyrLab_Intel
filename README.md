@@ -53,7 +53,7 @@ Our team is creating a website for the __"Gasyr Foundation School"__ that offers
 
 ## :zap: Link to Web site
 ```sh
-https://gasyr-lab.vercel.app/
+https://gasyr-intel-group.vercel.app/
 ```
 
 
